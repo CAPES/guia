@@ -1,3 +1,7 @@
+<div align="center">
+![CAPES](capes-logo.png)
+</div>
+
 # Conteúdo
 - [Visão Geral do Guia](README.md)
 - [Ambiente Tecnológico](docs/AmbienteTecnologico/README.md)
