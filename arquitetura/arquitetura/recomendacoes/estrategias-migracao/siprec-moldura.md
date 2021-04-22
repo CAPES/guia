@@ -85,7 +85,7 @@ siprec-web
 
 ## Um Digrama de Sequência
 
-![](uploads/2c40aa148f3470209e1a45ec779f1a49/_UML-Sequence_._CAPES.CSAB_.NovaGuiSiprec.png)
+![](UML-Sequence_._CAPES.CSAB_.NovaGuiSiprec.png)
 
 ## URIs & Paths
 
