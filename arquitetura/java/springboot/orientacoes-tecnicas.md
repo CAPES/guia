@@ -1,7 +1,5 @@
 # Pilha Spring Boot - Orientações Técnicas
 
-[[_TOC_]]
-
 ## Swagger-UI
 ### Exibição de versão implantada
 
