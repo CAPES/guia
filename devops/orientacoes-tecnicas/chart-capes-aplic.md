@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 O Capes Aplic é o chart template padrão de aplicações em container da Capes. Funcionando como um paas, ele possui os seguintes elementos kubernetes:
