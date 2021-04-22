@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 #Em construção#
 
 # Microsserviço

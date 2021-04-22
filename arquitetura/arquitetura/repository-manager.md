@@ -1,7 +1,5 @@
 `#Em construção#`
 
-[[_TOC_]]
-
 ## Visão Geral
 
 ```mermaid
@@ -77,7 +75,7 @@ No Nexus, um **Storage**, ou em sua definição, **Blob Storage**, trata-se de u
    *  **Path** - apague o conteúdo sugerido e informe o mesmo identificador preenchido em **Name**(slug)
    *  Clique em **Create blob store**
 
-![create-storage-01](uploads/5db591b52ee67137b3668aeececa64da/create-storage-01.png)
+![create-storage-01](create-storage-01.png)
 Figura 1 - Exemplo de preenchimento para criar um **Blob Storage**.
 
 ## Repositórios
@@ -99,13 +97,13 @@ Figura 1 - Exemplo de preenchimento para criar um **Blob Storage**.
    *  **Strict Content Type Validation** - deixe-o marco
    *  **Deployment policy:** - selecione "Allow redeploy"
 
-![create-repositorio-01](uploads/0154c7cffe43dd2812748aa2cd4b659a/create-repositorio-01.png)
+![create-repositorio-01](create-repositorio-01.png)
 Figura 2 - Selecionando a criação de repositório
 
-![create-repositorio-02](uploads/ba80df22e0a123c3f115641f6bcf9000/create-repositorio-02.png)
+![create-repositorio-02](create-repositorio-02.png)
 Figura 3 - Selecionando o tipo de repositório hosted
 
-![create-repositorio-03](uploads/623fe76f827a9b7625d675f74ebf9ea9/create-repositorio-03.png)
+![create-repositorio-03](create-repositorio-03.png)
 Figura 4 - Exemplo de preenchimento para criar um **Repositório hosted**.
 
 
