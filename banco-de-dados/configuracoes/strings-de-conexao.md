@@ -1,8 +1,8 @@
 # Índice
 1. [Introdução](#Introdução)
-1. [Oracle](#ORACLE)
-1. [Postgres](#POSTGRES)
-1. [Sybase](#SYBASE)
+1. [Oracle](#oracle)
+1. [Postgres](#postgres)
+1. [Sybase](#sybase)
 
 <br>
 
