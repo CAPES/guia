@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 O GitLab Runner é o projeto de código aberto usado para executar seus

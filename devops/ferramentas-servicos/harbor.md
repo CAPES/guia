@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 O Harbor é um _registry_ de imagem de contêiner de código aberto que
@@ -15,7 +13,7 @@ imagens em busca de vulnerabilidades e assina imagens como confiáveis.
 ### Criar Projeto no Harbor
 
 > Vide:
-> [Criar Projeto no Harbor](/Devops/procedimentos-operacionais/criar-projeto-harbor)
+> [Criar Projeto no Harbor](devops/procedimentos-operacionais/criar-projeto-harbor.md)
 
 ## Política de Uso
 
