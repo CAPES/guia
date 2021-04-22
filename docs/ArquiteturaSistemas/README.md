@@ -14,7 +14,7 @@ Seção destinada a documentação e definição do Núcleo de Arquitetura.
 
 # Python
 
-# [Javascript](./javascript)
+# Javascript
 ## [Angular](./javascript/angular.md)
 
 # CVS
@@ -24,8 +24,8 @@ Seção destinada a documentação e definição do Núcleo de Arquitetura.
 # Portais
 
 # Catálogo
-* [Arquitetura de frontend angular](./catalogo/frontend)
+* [Arquitetura de frontend angular](./catalogo/frontend.md)
 
 # Orientações Técnicas
-* [Logging de aplicações](./orientacoes-tecnicas/logback)
-* [JMX remoto no JBoss EAP 6](./orientacoes-tecnicas/jmx-remote-jboss-eap6)
+* [Logging de aplicações](./orientacoes-tecnicas/logback.md)
+* [JMX remoto no JBoss EAP 6](./orientacoes-tecnicas/jmx-remote-jboss-eap6.md)

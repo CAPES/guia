@@ -1,4 +1,3 @@
-[[_TOC_]]
 # Catálogo de interface
 Um catálogo tem a finalidade de definir padrões que podem ser reaproveitados para o desenvolvimento de sistemas em um âmbito mais geral, tendo como principal foco o padrão de experiência disponibilizado, isso permite uma melhor uniformização e aproveitamento do desenvolvimento, liberando os desenvolvedores de criar soluções próprias, também cria uma linguagem única que pode ser compartilhada entre os times de desenvolvimento e especificações, fazendo com que os casos de uso, tenham uma melhor legibilidade.
 
