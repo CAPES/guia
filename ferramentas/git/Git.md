@@ -18,10 +18,10 @@ Em resumo, a da solução permite:
   * troca de arquivos
 
 O **usuário** (desenvolvedor), pode através da interface Web usufruir do Git, mas pode utilizar softwares que utilizando o git, como o Github Desktop, sendo recomendado em alguns casos devido a limitação da interface Web. Já o MChat, pode ser utilizado também por um navegador e conta com aplicativo para os sistemas operacionais.
-> Vide os [**Procedimentos Operacionais**](Git/procedimentos-operacionais) para saber como instalar e configurar as ferramentas.
+> Vide os [**Procedimentos Operacionais**](procedimentos-operacionais/README.md) para saber como instalar e configurar as ferramentas.
 
 Logo, faz-se necessário padronizar e estabelecer regras de uso das ferramentas de acordo com as necessidades da instituição.
-> Vide a [**Política de Uso**](Git/Politica_de_Uso) para entender as diretrizes de uso do serviço.
+> Vide a [**Política de Uso**](norma-de-uso/Politica_de_Uso.md) para entender as diretrizes de uso do serviço.
 
 ## Diagrama Técnico
 ```mermaid
