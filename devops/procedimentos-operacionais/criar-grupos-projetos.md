@@ -10,11 +10,11 @@ Após logar, daremos início ao processo de criar um novo SubGrupo, que é uma o
 
 Serão apresentadas os Groups para que se possa selecionar dentro desses os subgroup que se deseja criar. Para tanto e preciso clicar em New Project no botão superior direito e selecionar a opção New subgroup.
 
-![image](uploads/f0bc1ee4f8073dddcb14a76c6d5d576b/image.png)
+![image](git-criar-subgrupo.png)
 
-Na tela a seguir preencha os dados do subgrupo a ser criado. É importante frisar que o nome do subgrupo deve ser único, pois faz parte da URL que será identificada pelo repositório. 
+Na tela a seguir preencha os dados do subgrupo a ser criado. É importante frisar que o nome do subgrupo deve ser único, pois faz parte da URL que será identificada pelo repositório.
 
-![image](uploads/68f3358c44e7e80d127639ff9ebb73c4/image.png)
+![image](git-criar-subgrupo1.png)
 
 Em seguida, forneça as demais informações solicitadas (nome do grupo, descrição, etc). Selecione a opção Private para que seus repositórios sejam privados, ou seja, acessíveis apenas para membros do grupo. Para concluir, clique em Create group.
 
@@ -24,7 +24,7 @@ Após criar o grupo você será redirecionado para o seu dashboard. Nessa tela, 
 
 Para adicionar um novo membro é necessário que ele tenha uma conta no Gitlab. Então basta digitar seu e-mail/login, definir sua função, sua data limite de acesso a esse repositório (opcional) e clicar em Add to group.
 
-![image](uploads/7e85d7682ccfa5ad4d4b0be16e38154a/image.png)
+![image](git-add-members.png)
 
 **Criando um novo projeto**
 
@@ -32,12 +32,10 @@ Agora que já temos nosso grupo criado e os membros adicionados a ele, podemos c
 
 Para isso, volte para a tela inicial do dashboard do grupo, clicando sobre sua logo no canto superior esquerdo, e na tela principal clique em New project. Informe então o nome do novo projeto, sua descrição e a opção Internal em (Visibility Level) em seguida clique em Create project.
 
-![image](uploads/263193d96e8c278f31384a522d2e7e4f/image.png)
+![image](git-novo-projeto.png)
 
+![image](git-novo-projeto1.png)
 
-![image](uploads/325ec07a81a35ec8bf87d2d7eeead12d/image.png)
+Observação: é importante dar nomes claros e significativos para os projetos.
 
-Observação: é importante dar nomes claros e significativos para os projetos. 
-
-Pronto, o novo projeto está criado e já temos acesso à sua URL, que será usada posteriormente para configurar nosso repositório local. 
-
+Pronto, o novo projeto está criado e já temos acesso à sua URL, que será usada posteriormente para configurar nosso repositório local.

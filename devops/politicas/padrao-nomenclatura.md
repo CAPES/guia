@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 Este documento define regras e normas de padrão de nomenclatura para as
@@ -100,7 +98,7 @@ cadastro-usuario e siscadus respectivamente.
 [^feature]: A palavra feature é obrigatória seguida de /
 [^semver]: Em conformidade com o padrão semver [https://semver.org/]
 [^imagem-docker]: Nome da Imagem docker
-[Padrão de Nomes de Imagem](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/ferramentas-servicos/docker#nome-da-imagem)
+[Padrão de Nomes de Imagem](devops/ferramentas-servicos/docker.md#nome-da-imagem)
 [^projeto]: Os nomes dos projetos no OpenShift somente poderão conter letras
   minúsculas, números e traços. Eles não podem começar ou terminar com
   um traço.

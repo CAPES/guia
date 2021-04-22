@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 O Harbor é um _registry_ de imagem de contêiner de código aberto que
@@ -15,8 +13,7 @@ Devemos criar o projeto no Harbor como projeto público
 
 > Vide: [Criação de projeto no Harbor](https://goharbor.io/docs/1.10/working-with-projects/create-projects/)
 >
-> Vide:
-> [https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/padrao-nomenclatura#harbor]
+> [Vide Norma de Uso](devops/politicas/padrao-nomenclatura.md#harbor)
 
 
 
