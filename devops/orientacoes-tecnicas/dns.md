@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 Este documento define regras para a criação de DNS para tanto para as aplicações novas, que serão implantadas no OpenShift, quanto para as aplicações legadas que estão sendo migradas para o mesmo.
@@ -93,4 +91,4 @@ Além disso deve-se criar uma rota do Openshift no padrão estabelecido.
 
 ## Referências
 
-- [^padroes]: [Padrão de nomenclatura](/padrao-nomenclatura)
+- [^padroes]: [Padrão de nomenclatura](devops/politicas/padrao-nomenclatura.md)

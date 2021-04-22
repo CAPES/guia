@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 A integracão entre o Openshift e o Cofre de Senhas é feita através de um Operator do Kubernetes.

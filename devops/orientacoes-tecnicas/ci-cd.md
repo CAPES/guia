@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 As metodologias contínuas de desenvolvimento de software são baseadas na
