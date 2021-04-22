@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 Neste Guia será descrito como é feito o processo de Implantação de uma aplicação no
@@ -47,7 +45,7 @@ graph TD
 
 ## Passos para fazer a implantação deploy de uma aplicação no OpenShift
 
->  Antes de começarmos a implantação da aplicação, vamos dar uma passada nos [Primeiros passos](/Devops/primeiros-passos/primeiros-passos).
+>  Antes de começarmos a implantação da aplicação, vamos dar uma passada nos [Primeiros passos](devops/primeiros-passos/primeiros-passos.md).
 
 Agora que temos todos os conhecimentos técnicos necessários, vamos saber tudo que precisamos para subir uma aplicação do ZERO no OpenShift.
 
@@ -63,9 +61,9 @@ várias instruções da linha de comando em sucessão.
 O Dockerfile da nossa aplicação que iremos escrever deve ser a receita
 da infraestrutura que a aplicação necessita para rodar.
 
-> Vide: [Pré-requisitos](/Devops/primeiros-passos/12factor)
+> Vide: [Pré-requisitos](devops/primeiros-passos/12factor.md)
 > 
-> Vide: [Como criar Dockerfiles](/Devops/ferramentas-servicos/docker)
+> Vide: [Como criar Dockerfiles](devops/ferramentas-servicos/docker.md)
 >
 > Equipe responsável: Time do projeto
 
@@ -90,7 +88,7 @@ Obrigado
 
 O time deverá solicitar a criação de volumes de storage para o armazenamento de LOG e de volumes do AplWeb que a aplicação necessite. esta deverá ser feita através de chamado CATI  para a fila INFRAESTRUTURA conforme o seguinte template:
 
-- [Solicitação de volume](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/templates/solicitacao_volume)
+- [Solicitação de volume](devops/templates/solicitacao_volume.md)
 
 > Equipe responsável: Time do projeto
 
@@ -104,7 +102,7 @@ Após seguir as instruções abaixo, devemos ter como resultado o
 projeto/namespace criado no OpenShift com o Tiller disponível para fazer
 o deploy da aplicação
 
-> Vide: [Como criar um projeto no Openshift](/Devops/procedimentos-operacionais/criar-projeto-openshift)
+> Vide: [Como criar um projeto no Openshift](devops/procedimentos-operacionais/criar-projeto-openshift.md)
 >
 > Equipes responsáveis: Arquitetura, GCM e Infraestrutura
 
@@ -117,7 +115,7 @@ Após seguir as instruções abaixo, devemos ter como resultado um projeto
 criado no Harbor e um usuário robô com um token com permissões para
 fazer `pull` e `push` de imagens neste projeto.
 
-> Vide: [Como criar um projeto no Harbor](/Devops/procedimentos-operacionais/criar-projeto-harbor)
+> Vide: [Como criar um projeto no Harbor](devops/procedimentos-operacionais/criar-projeto-harbor.md)
 >
 > Equipes responsáveis: Arquitetura, GCM e Infraestrutura
 
@@ -139,7 +137,7 @@ sistema de integração contínua tem, como ponto de partida, uma base de
 código que é construída e, posteriormente, implantada em
 desenvolvimento, teste e produção.
 
-> Vide: [Criar Grupos e projetos no Gitlab](/Devops/procedimentos-operacionais/criar-grupos-projetos)[^git] [^git-guia]
+> Vide: [Criar Grupos e projetos no Gitlab](devops/procedimentos-operacionais/criar-grupos-projetos.md)[^git] [^git-guia]
 >
 > Equipe responsável: GCM
 
@@ -186,7 +184,7 @@ Devemos então criar o chart da aplicação, que deve conter todas as
 definições de recursos necessários para a mesma rodar em um ambiente
 Kubernetes.
 
-> Vide: [Como criar Chart](/Devops/orientacoes-tecnicas/chart-capes-aplic)[^helm]
+> Vide: [Como criar Chart](devops/orientacoes-tecnicas/chart-capes-aplic.md)[^helm]
 >
 > Equipes responsáveis: Arquitetura e GCM
 
@@ -195,7 +193,7 @@ Kubernetes.
 O próximo passo é a definição dos _Jobs_ que entrarão na esteira de
 CI/CD.
 
-> Vide: [Como criar Pipeline](/Devops/orientacoes-tecnicas/pipeline)
+> Vide: [Como criar Pipeline](devops/orientacoes-tecnicas/pipeline.md)
 >
 > Equipes responsáveis: Arquitetura e GCM
 
@@ -204,15 +202,15 @@ CI/CD.
 
 Para a aplicação entrar em produção será necessário a entrega de uma GMUD, que é preenchida através do **Formulário de requisição de mudança**.
 
->  Anexo a GMUD deverá ser entregue um checklist com os débitos técnicos da aplicação. Vide [PDTIC](https://www.capes.gov.br/images/novo_portal/documentos/governanca_dti/01072020_PDTIC_2020_2023_CGD_junho2020.pdf) 
+>  Anexo a GMUD deverá ser entregue um checklist com os débitos técnicos da aplicação. Vide [PDTIC](https://www.capes.gov.br/images/novo_portal/documentos/governanca_dti/01072020_PDTIC_2020_2023_CGD_junho2020.pdf)
 
-> Vide: [Formulário de requisição de mudança](https://docs.google.com/forms/d/e/1FAIpQLSd8sBBItYPSVK6-s6O7ih0FIetOaPuSmLvNMQhzM2bqXRdlTg/viewform)
+> Vide: [Formulário de requisição de mudança](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home)
 >
 > Equipe responsável: Time do Projeto
 
 
 ## Referências
 
-[^git]: [Sobre o Git](/Git)
-[^git-guia]: [Guia de Uso](/Guia-de-uso-Git)
-[^helm]: [Helm Charts](/Devops/ferramentas-servicos/helm)
+[^git]: [Sobre o Git](ferramentas/git/Git.md)
+[^git-guia]: [Guia de Uso](ferramentas/norma-de-uso/Guia-de-uso-Git.md)
+[^helm]: [Helm Charts](devops/ferramentas-servicos/helm.md)
