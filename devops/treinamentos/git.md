@@ -1,4 +1,3 @@
-[[_TOC_]]
 
 # Introdução
 
@@ -13,7 +12,7 @@ Git é um sistema de controle de versões distribuído, usado principalmente no 
 
 ## Guia de referência
 
-[Guia de referência da CAPES](/version-control-system/guia-de-referencia-git)
+[Guia de referência da CAPES](ferramentas/version-control-system/guia-de-referencia-git.md)
 
 ## Diferenças entre Git e SVN
 
@@ -52,7 +51,7 @@ O GitLab CI / CD é uma ferramenta incorporada ao GitLab para desenvolvimento de
 
 ### Instalação no Windows
 
-:one: Fazer o [Download](https://git-scm.com/download/win) do instalador 
+:one: Fazer o [Download](https://git-scm.com/download/win) do instalador
 
 ![image](imagens/git/git-install-1.png)
 
@@ -76,7 +75,7 @@ O GitLab CI / CD é uma ferramenta incorporada ao GitLab para desenvolvimento de
 
 ![image](imagens/git/git-install-6.png)
 
-:seven: Marque a Opção **Launch Git Bash** 
+:seven: Marque a Opção **Launch Git Bash**
 
 ![image](imagens/git/git-install-7.png)
 
@@ -156,13 +155,13 @@ cd app-sample/
 ```bash
 git init
 ```
-:three: Adicionando o servidor remodo 
+:three: Adicionando o servidor remodo
 ```bash
 git remote add origin https://git.hom.capes.gov.br/cgs/devops/app-sample.git
 ```
 
 ### 2. Clonando um projeto
-:one: Execute o seguinte comando:   
+:one: Execute o seguinte comando:
 ```bash
 git clone clone https://git.hom.capes.gov.br/cgs/devops/app-sample.git
 ```
@@ -173,7 +172,7 @@ cd app-sample/
 
 # Fluxo do Git
 
-![Fluxo_do_Git](uploads/be817a8d0bf7cf9b9847a82a376b3ccb/Fluxo_do_Git.png)
+![Fluxo_do_Git](Fluxo_do_Git.png)
 
 ## Branches
 
