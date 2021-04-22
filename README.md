@@ -1,6 +1,3 @@
-<div align="center">
-![CAPES](capes-logo.png)
-</div>
 
 # Visão Geral deste Guia
 
@@ -17,3 +14,6 @@ Aqui encontram-se as principais orientações sobre o funcionamento dos serviço
 * [Infraestrtura Tecnológica](infraestrutura/README.md) - compreenda sobre a infraestrutura de TI (conectividade, plataformas, segurança) utilizada.
 * [Ferramentas](ferramentas/README.md) - veja as ferrementas homologadas que são utilizadas para trabalho.
 
+<div align="center">
+![CAPES](capes-logo.png)
+</div>
