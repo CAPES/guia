@@ -1,0 +1,581 @@
+openapi: 3.0.1
+info:
+  title: "CAPES-HealthChecks"
+  description: "Especificação de serviços que podem ser utilizados por sondas de monitoramento de status e saúde de aplicações"
+  contact:
+    name: "Lista de Arquitetura"
+    email: 'ListaArquitetura@capes.gov.br'
+  version: 1.1.0
+externalDocs:
+  description: "TODO(theom): apontar para a wiki com essa documentação."
+  url: https://app.capes.gov.br/refs
+servers:
+- url: https://app.capes.gov.br/
+- url: http://app.capes.gov.br/
+tags:
+- name: 'health'
+  description: "Endpoints para descrição de aplica"
+- name: 'readiness'
+  description: "Endpoints opcionais para indicação de prontidão"
+- name: 'liveness'
+  description: "Endpoints opcionais para indicação de disponibilidade"
+security:
+  - oauth: []
+paths:
+  #TODO(theom): ContentType da CAPES...
+  '/diagnostics':
+    get:
+      summary: "Informações fundamentais de saúde da aplicação."
+      responses:
+        200:
+          description: "OK - Aplicação está no ar e disponível. Esse HTTP code só deve ser retornado se o status do diagnóstico (#/components/schemas/Diagnostics.status) for 'UP'. Apesar de desencorajado é aceitável que status 'UNKNOWN' seja retornado com esse Response Code"
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/Diagnostic'
+              examples:
+                Up:
+                  $ref: '#/components/examples/UpDiagnostic'
+                UpLiveReady:
+                  $ref: '#/components/examples/UpLiveReadyDiagnostic'
+        303:
+          description: "See Other - A aplicação provavelmente não está pronta para receber requisições. Ela pode estar inicializando, ou com status 'UNKNOWN'."
+          headers:
+            Location:
+              $ref: '#/components/headers/RetryLocation'
+            Retry-After:
+              $ref: '#/components/headers/RetryTime'
+          content:
+            'application/json':
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/Diagnostic'
+                  - type: object
+              examples:
+                Unknown:
+                  $ref: '#/components/examples/UnknownDiagnostic'
+                Starting:
+                  summary: "Starting (não tem conteúdo)"
+                  description: "Caso a aplicação não consiga discriminar seu diagnóstico, provalvemente ainda está inicializando"
+                LiveReadyUnknown:
+                  $ref: '#/components/examples/UnknownLiveReadyDiagnostic'
+        503:
+          description: "Service Unavailable - 'Down'/'Out of Service'. A aplicação está indisponível ou foi colocada num estado fora de serviço e não deve estar aceitando (nem provavelmente processando) requisições. Esse não deve ser considerado um motivo suficiente para reiniciar a aplicação, apesar de poder ser tomado como recomendável."
+          headers:
+            Location:
+              $ref: '#/components/headers/RetryLocation'
+            Retry-After:
+              $ref: '#/components/headers/RetryTime'
+          content:
+            'application/json':
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/Diagnostic'
+                  - type: object
+              examples:
+                Down:
+                  $ref: '#/components/examples/DownDiagnostic'
+                OutOfService:
+                  $ref: '#/components/examples/ResourceOutDiagnostic'
+                DbDown:
+                  $ref: '#/components/examples/DbDownDiagnostic'
+                ResourceOut:
+                  $ref: '#/components/examples/ResourceOffDiagnostic'
+                NotReady:
+                  $ref: '#/components/examples/UpLiveNotReadyDiagnostic'
+                NotLive:
+                  $ref: '#/components/examples/UpReadyNotLiveDiagnostic'
+                Fatal:
+                  summary: "FATAL"
+                  description: "A aplicação pode estar até incapaz de discriminar seu diagnóstico mas o HTTP Code 503 deve indicar que ela está 'DOWN'"
+      security: []
+      tags:
+      - health
+  '/diagnostics/readiness':
+    get:
+      summary: "Serviço opcional para expor a readiness da aplicação através de REST."
+      description: "Diagnóstico de prontidão da aplicação. Esse endpoint expõe um Diagnótico que agrega no mínimo o 'readinessProbe'. É recomendado ser cuidadoso em não agregar dependências para calcular esse diagnóstico, para não disparar indisponibilidades em cadeia."
+      responses:
+        200:
+          description: "OK"
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/ReadinessDiagnostic'
+        503:
+          description: "Service Unavailable - Esse é o indicativo que pode ser utilizado para bloquear o roteamento de requisições para essa instância da aplicação."
+          content:
+            'application/json':
+                schema:
+                  $ref: '#/components/schemas/ReadinessDiagnostic'
+        404:
+          description: "Not Found - Não implementado. Como esse endpoint é opcional esse código de retorno provavelmente indica que não foi implementado. O cliente não deve esperar qualquer tipo de paylod adicional nesse caso."
+      tags:
+      - 'readiness'
+  '/diagnostics/liveness':
+    get:
+      summary: "Serviço opcional para expor a liveness da aplicação através de REST."
+      description: "Diagnóstico de vivacidade da aplicação. Esse endpoint expõe um Diagnótico que agrega no mínimo o 'livenessProbe'. É recomendado ser cuidadoso em não agregar dependências para calcular esse diagnóstico, para não disparar reinicializações em cadeia."
+      responses:
+        200:
+          description: "OK"
+          content:
+            'application/json':
+              schema:
+                $ref: '#/components/schemas/LivenessDiagnostic'
+        503:
+          description: "Service Unavailable - Esse é o indicativo que pode ser utilizado para efetuar uma reinicialização da aplicação."
+          content:
+            'application/json':
+                schema:
+                  $ref: '#/components/schemas/LivenessDiagnostic'
+        404:
+          description: "Not Found - Não implementado. Como esse endpoint é opcional esse código de retorno provavelmente indica que não foi implementado. O cliente não deve esperar qualquer tipo de paylod adicional nesse caso."
+      tags:
+      - 'liveness'
+components:
+  schemas:
+    Status:
+      type: string
+      description: "Os estados de saúde de um dado elemento ou diagnóstico."
+      enum: ['UP', 'DOWN', 'UNKNOWN', 'OUT_OF_SERVICE']
+    Diagnostic:
+      type: object
+      properties:
+        status:
+          $ref: '#/components/schemas/Status'
+        resources:
+          description: "Os recursos que compõem o diagnóstico. Devem estar estar listados todas dependências funcionais da aplicação (Bancos de Dados, Mensageria, outras aplicaçõe, etc.). O par de atributos `name` e `type` do tipo `Resource` devem formar uma chave de negócio única nessa lista."
+          type: array
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/Resource'
+              - $ref: '#/components/schemas/DbResource'
+              - $ref: '#/components/schemas/AppResource'
+              - $ref: '#/components/schemas/LivenessResource'
+              - $ref: '#/components/schemas/ReadinessResource'
+          minLength: 0
+      required:
+      - status
+    Resource: #TODO(theom): Os tipos especializados para os recursos (de tipos) conhecidos, definindo name e type (ou pelo menos type para as dependências)
+      type: object
+      properties:
+        name:
+          description: "O nome do recurso."
+          type: string
+        status:
+          $ref: '#/components/schemas/Status'
+        type:
+          description: "A tipificação do resource"
+          type: string
+          externalDocs:
+            description: ""
+            url: ""
+        description:
+          description: "(Opcional) Uma dica, descrição do status atual do recurso."
+          type: string
+      required:
+      - name
+      - status
+      - type
+    ReadinessDiagnostic:
+      allOf:
+        - $ref: '#/components/schemas/Diagnostic'
+        - type: object
+          description: "Diagnóstico (opcional) de prontidão da aplicação."
+          properties:
+            status:
+              $ref: '#/components/schemas/Status'
+            resources:
+              description: "Os recursos que compõem o diagnóstico. Deve conter pelo menos um ReadinessResource"
+              externalDocs:
+                description: ""
+                url: ""
+              type: array
+              items:
+                anyOf:
+                  - $ref: '#/components/schemas/ReadinessResource'
+                  - $ref: '#/components/schemas/Resource'
+              minLength: 1
+          required:
+          - status
+          - resources
+    LivenessDiagnostic:
+      allOf:
+        - $ref: '#/components/schemas/Diagnostic'
+        - type: object
+          description: "Diagnóstico (opcional) de disponibilidade da aplicação."
+          properties:
+            status:
+              $ref: '#/components/schemas/Status'
+            resources:
+              description: "Os recursos que compõem o diagnóstico. Deve conter pelo menos um LivenessResource"
+              externalDocs:
+                description: ""
+                url: ""
+              type: array
+              items:
+                anyOf:
+                  - $ref: '#/components/schemas/LivenessResource'
+                  - $ref: '#/components/schemas/Resource'
+              minLength: 1
+          required:
+          - status
+          - resources
+    DbResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um banco de dados."
+          properties:
+            type:
+              type: string
+              enum: ['db']
+    CassandraResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um banco de dados."
+          properties:
+            type:
+              type: string
+              enum: ['cassandra']
+    CpuResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é a CPU utilizada."
+          properties:
+            type:
+              type: string
+              enum: ['cpu']
+    DiskResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um disco de armazenamento de arquivos."
+          properties:
+            type:
+              type: string
+              enum: ['disk']
+    ElasticsearchResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um Elasticsearch."
+          properties:
+            type:
+              type: string
+              enum: ['elasticsSearch']
+    JmsResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um serviço de JMS."
+          properties:
+            type:
+              type: string
+              enum: ['jms']
+    LdapResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um serviço de LDAP."
+          properties:
+            type:
+              type: string
+              enum: ['ldap']
+    MailJmsResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um serviço de e-mails."
+          properties:
+            type:
+              type: string
+              enum: ['mail']
+    MemoryResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é a memória para o recurso."
+          properties:
+            type:
+              type: string
+              enum: ['memory']
+    MongoDbResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um MongoDB."
+          properties:
+            type:
+              type: string
+              enum: ['mongodb']
+    NodeStatusResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um node do cluster kubernetes."
+          properties:
+            type:
+              type: string
+              enum: ['nodeStatus']
+    RabbitMqResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um RabbitMQ."
+          properties:
+            type:
+              type: string
+              enum: ['rabbitmq']
+    RedisResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um Redis."
+          properties:
+            type:
+              type: string
+              enum: ['redis']
+    SolrResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é um Solr."
+          properties:
+            type:
+              type: string
+              enum: ['solr']
+    AppResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Dependência é outra aplicação"
+          properties:
+            type:
+              type: string
+              enum: ['application']
+    ReadinessResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Indicação (opcional) de prontidão da aplicação."
+          properties:
+            type:
+              type: string
+              enum: ['readinessProbe']
+            name:
+              type: string
+              enum: ['readiness']
+    LivenessResource:
+      allOf:
+        - $ref: '#/components/schemas/Resource'
+        - type: object
+          description: "Indicação (opcional) de vivacidade da aplicação."
+          properties:
+            type:
+              type: string
+              enum: ['livenessProbe']
+            name:
+              type: string
+              enum: ['liveness']
+  headers:
+    RetryLocation:
+      description: "Auto apontamento para a URI de /diagnostics a ser utilizado em conjunção com 'Retry-After'."
+      schema:
+        type: string
+        example: '/diagnostics'
+    RetryTime:
+      description: "A quantidade mínima de segundos que deve ser esperada antes de tentar a requisição em 'Location'."
+      schema:
+        type: integer
+  examples:
+    UpDiagnostic:
+      summary: "UP"
+      description: "Descrição mais simples de uma aplicação saudável."
+      value:
+        status: 'UP'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UP'
+    UnknownDiagnostic:
+      summary: "UNKNOWN"
+      description: "A aplicação por alguma razão está num estado desconhecido, mas suas dependências estão okay."
+      value:
+        status: 'UNKNOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UP'
+    ResourceUnknownDiagnostic:
+      summary: "Resource UNKNOWN"
+      description: "A aplicação está num estado desconhecido, por conta de alguma(s) de sua(s) dependência(s)."
+      value:
+        status: 'UNKNOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UNKNOWN'
+    DownDiagnostic:
+      summary: "DOWN"
+      description: "A aplicação não está saudável, apesar de suas dependências estarem disponíveis."
+      value:
+        status: 'DOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UP'
+    ResourceDownDiagnostic:
+      summary: "RESOURCE DOWN"
+      description: "A aplicação não está saudável pois algum de seus recursos também não está."
+      value:
+        status: 'DOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'DOWN'
+    ResourceOutDiagnostic:
+      summary: "RESOURCE OUT"
+      description: "A aplicação está indisponível pois um de seus recursos também está."
+      value:
+        status: 'OUT_OF_SERVICE'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'OUT_OF_SERVICE'
+    UpLiveReadyDiagnostic:
+      summary: "UP & LIVE & READY"
+      description: "A aplicação está saudável, viva e disponível."
+      value:
+        status: 'UP'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UP'
+        - name: "readiness"
+          type: "readinessProbe"
+          status: 'UP'
+        - name: "liveness"
+          type: "livenessProbe"
+          status: 'UP'
+    UnknownLiveReadyDiagnostic:
+      summary: "LIVE & READY but not HEALTHY"
+      description: "A aplicação está viva e pronta, mas não perfeitamente saudável por conta de um de seus recursos"
+      value:
+        status: 'UNKNOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UNKNOWN'
+        - name: "readiness"
+          type: "readinessProbe"
+          status: 'UP'
+        - name: "liveness"
+          type: "livenessProbe"
+          status: 'UP'
+    DbDownDiagnostic:
+      summary: "LIVE & READY but DOWN"
+      description: "A aplicação está viva e pronta, mas não está saudável por conta de sua dependência com o Banco de Dados."
+      value:
+        status: 'DOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'DOWN'
+        - name: "infopes"
+          type: "application"
+          status: 'UP'
+        - name: "readiness"
+          type: "readinessProbe"
+          status: 'UP'
+        - name: "liveness"
+          type: "livenessProbe"
+          status: 'UP'
+    ResourceOffDiagnostic:
+      summary: "LIVE & READY but OUT"
+      description: "A aplicação está viva e pronta, mas fora de serviço, pois uma de suas dependências também está."
+      value:
+        status: 'OUT_OF_SERVICE'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'OUT_OF_SERVICE'
+        - name: "readiness"
+          type: "readinessProbe"
+          status: 'UP'
+        - name: "liveness"
+          type: "livenessProbe"
+          status: 'UP'
+    UpLiveNotReadyDiagnostic:
+      summary: "Not READY"
+      description: "A aplicação está viva e saudável, mas não está pronta para atender requisições."
+      value:
+        status: 'DOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UP'
+        - name: "readiness"
+          type: "readinessProbe"
+          status: 'DOWN'
+        - name: "liveness"
+          type: "livenessProbe"
+          status: 'UP'
+    UpReadyNotLiveDiagnostic:
+      summary: "Not LIVE"
+      description: "A aplicação está pronta e se entende saudável, mas não está devidamente viva. É recomendável reiniciar a aplicação, mas por conta do estado do resource 'readiness' pois a aplicação não tem obrigação de retornar um diagnóstico 'DOWN' por conta de um 'readinessProbe' com status 'DOWN'."
+      value:
+        status: 'DOWN'
+        resources:
+        - name: "Oracle"
+          type: "db"
+          status: 'UP'
+        - name: "infopes"
+          type: "application"
+          status: 'UP'
+        - name: "readiness"
+          type: "readinessProbe"
+          status: 'UP'
+        - name: "liveness"
+          type: "livenessProbe"
+          status: 'DOWN'
+  securitySchemes:
+    oauth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://des.capes.gov.br/sso/oauth
+          scopes: {}
