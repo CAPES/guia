@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Motivações & Objetivos
 
 Existem categorias de software projetado para receber informações de outros sistemas, processá-las e disponibilizá-las para o consumo por outros sistemas. Tais informações podem ser utilizadas para monitorar a saúde do sistema monitorado.
@@ -20,7 +18,7 @@ Como exemplo do que é requisitado para **1** há diversos exemplos praticados:
 - Twitter - https://api.twitterstat.us/
 - Discord - https://status.discord.com/
 
-![Exemplos Status Dashboards](uploads/46c716c1d8161312660bfbb8761dc893/Exemplos-StatusDashboards.png)
+![Exemplos Status Dashboards](Exemplos-StatusDashboards.png)
 
 O exemplo de **2** pode ser mais evasivo, mas há representações bem gráficas para exibir esses diagnósticos com metáforas de cores para estados (verde OK, vermelho PROBLEMA), linhas de ligação para expressar a interdependência existentes.
 
@@ -72,7 +70,7 @@ Considerando não apenas natural, mas provalvemente inevitável o processo de de
 <!---
 ![Ciclo de Vida de Aplicação](uploads/4a632f9b82ea54826987e2f535c154d3/FST-StatusMonitoramentoApps.svg)
 -->
-![maquina-de-estado](uploads/e9054917e0b27b8765132ad74919daf1/maquina-de-estado.png)
+![maquina-de-estado](maquina-de-estado.png)
 
 Na máquina de estados acima temos os seguintes estados:
 
@@ -103,7 +101,7 @@ O trabalho de **M** é coletar os diagnósticos necessários e reagir a resultad
 
 # Especificação
 
-Com tudo isso chegamos a especificação em [OpenAPI](uploads/2c5e34a9cfec4e5cd1e0b7acbb766c60/OpenAPI-MonitoramentoApps.yaml) de enspoints de **Diagnóstico**. Essa especificação pode ser aberta na ferramenta web [Swagger Editor](https://editor.swagger.io/)
+Com tudo isso chegamos a especificação em [OpenAPI](OpenAPI-MonitoramentoApps.yaml) de enspoints de **Diagnóstico**. Essa especificação pode ser aberta na ferramenta web [Swagger Editor](https://editor.swagger.io/)
 
 ## Formação da URIs
 
@@ -216,7 +214,7 @@ De forma mais básica o que se quer diagnosticar é a capacidade de **A<sub>1</s
 
 ## Observações
 
-[Conforme apontado na especificação](uploads/2c5e34a9cfec4e5cd1e0b7acbb766c60/OpenAPI-MonitoramentoApps.yaml):
+[Conforme apontado na especificação](OpenAPI-MonitoramentoApps.yaml):
 
 - O atributo `description` de um `Resource` é **opcional**;
 - Cada `Resource` na lista `resources` num `Diagnostic` deve ser unicamente identificável pela **chave de negócio** formada por `name` e `type`. Ou seja: não deve existir mais de um recurso na lista com o mesmo nome **e** tipo.
