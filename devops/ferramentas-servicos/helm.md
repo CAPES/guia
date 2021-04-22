@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 ## O que é o Helm?
@@ -793,7 +791,7 @@ service:
 ```
 
 # Referências
-1. [Guia de uso Git](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Guia-de-uso-Git)
+1. [Guia de uso Git](ferramentas/git/norma-de-uso/Guia-de-uso-Git.md)
 1. [Docs - CI/CD do GitLab](https://docs.gitlab.com/ee/ci/README.html)
 1. [Docs - Helm](https://helm.sh/docs/)
 1. [Docs - Openshift](https://docs.openshift.com/)

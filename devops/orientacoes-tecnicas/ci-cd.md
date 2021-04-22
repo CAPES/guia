@@ -73,7 +73,7 @@ Se todos os _Jobs_ em um _Stage_:
 - Com sucesso, o pipeline passa para o próximo estágio.
 - Falha, o próximo _Stage_ não é (geralmente) executado e o _pipeline_ termina mais cedo.
 
-> [Git Flow](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Guia-de-uso-Git#git-flow)
+> [Git Flow](ferramentas/git/norma-de-uso/Guia-de-uso-Git.md#git-flow)
 
 
 ### Estrutura
@@ -94,7 +94,7 @@ E --- F>"values-{ambiente}.yaml"]
 E --- I>Chart.yaml]
 ```
 
-> **[Guia de uso](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Guia-de-uso-Git#estrutura)**
+> **[Guia de uso](ferramentas/git/norma-de-uso/Guia-de-uso-Git.md#estrutura)**
 
 #### _.gitlab-ci.yml_
 
@@ -293,7 +293,7 @@ Os _Jobs_ para a _Stage_ Deploy são para aplicar:
 - Implantar seu aplicativo em um ambiente de produção em um cluster
   Kubernetes com o Helm.
   
-> [Guia de uso do Helm](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/ferramentas-servicos/helm)
+> [Guia de uso do Helm](devops/ferramentas-servicos/helm.md)
 
 ###### _Jobs_ para a _Stage_ Review
 Os _Jobs_ para a _Stage_ Review são para:
@@ -305,8 +305,8 @@ Os _Jobs_ para a _Stage_ Cleanup são para:
 - Limpar os ambientes de Review com o Helm.
 
 # Referências
-1. [Guia de uso Git](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Guia-de-uso-Git)
-2. [Guia de uso Helm](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/ferramentas-servicos/helm)
+1. [Guia de uso Git](ferramentas/git/norma-de-uso/Guia-de-uso-Git.md)
+2. [Guia de uso Helm](devops/ferramentas-servicos/helm.md)
 1. [Docs - CI/CD do GitLab](https://docs.gitlab.com/ee/ci/README.html)
 1. [Docs - Helm](https://helm.sh/docs/)
 1. [Docs - Openshift](https://docs.openshift.com/)

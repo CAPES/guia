@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 O Velero é uma ferramenta de código aberto para fazer backup e
