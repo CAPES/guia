@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 O _pipeline_ é o componente de alto nível da integração contínua, entrega e implantação.
@@ -18,7 +16,7 @@ Se todos os _Jobs_ em um _Stage_:
 - Com sucesso, o pipeline passa para o próximo estágio.
 - Falha, o próximo _Stage_ não é (geralmente) executado e o _pipeline_ termina mais cedo.
 
-> [Git Flow](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Guia-de-uso-Git#git-flow)
+> [Git Flow](ferramentas/norma-de-uso/Guia-de-uso-Git.md#git-flow)
 
 ## Configuração
 
@@ -45,4 +43,4 @@ include:
 
 
 ## Referências
-- [Guia de Uso](/Guia-de-uso-Git)
+- [Guia de Uso](ferramentas/git/norma-de-uso/Guia-de-uso-Git.md)
