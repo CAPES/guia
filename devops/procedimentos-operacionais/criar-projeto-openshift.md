@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 Um projeto permite que uma comunidade de usuários organize e gerencie
 seu conteúdo isoladamente de outras comunidades.
@@ -17,7 +15,7 @@ cada Ambiente que a mesma é utilizada.
 > - sap-prod
 > - sap-preprod
 
-> Vide: [https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/padrao-nomenclatura#openhsift]
+> [Vide Norma de Uso](devops/politicas/padrao-nomenclatura.md)
 
 
 ## Passos para a criação de um projeto no Openshift

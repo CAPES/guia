@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Política de Uso do Openshift
 
 ## Introdução

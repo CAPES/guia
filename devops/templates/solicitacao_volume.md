@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 Neste Guia será descrito o formato de como deve ser solicitado volumes para o Openshift.
