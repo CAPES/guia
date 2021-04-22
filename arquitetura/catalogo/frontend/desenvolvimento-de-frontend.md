@@ -1,4 +1,3 @@
-[[_TOC_]]
 ## [Boas práticas](#boas-praticas)
 ## [Otimizações](#otimizacoes)
 ## [Apoio ao desenvolvimento](#apoio-ao-desenvolvimento)
@@ -10,13 +9,13 @@ Erros que são gerados no backend como de uma aplicação php ou java, estão so
 
 Entretanto não temos este mesmo benefício no frontend de aplicações SPA, uma vez que as aplicações são executadas no browser. O erro disparado, geralmente, é tratado pelo navegador, que envia o log para o console do browser.
 
-![400px-DTI_Arquitetura_Frontend_angular_logging-erros-browser](uploads/06c327d71dc056590b04796b112ea2d0/400px-DTI_Arquitetura_Frontend_angular_logging-erros-browser.jpg)
+![400px-DTI_Arquitetura_Frontend_angular_logging-erros-browser](400px-DTI_Arquitetura_Frontend_angular_logging-erros-browser.jpg)
 
 Para que o time responsável pela manutenção da aplicação seja notificado que ocorreu um erro, é necessário a notificação a um servidor agregador de logs que tem o papel de receber os logs gerados no frontend e repassar para o backend para armazenamento e processamento.
 
 Outra responsabilidade do servidor é o processamento do sourcemap para gerar uma _stacktrace_ com o erro localizado corretamente. Abaixo vemos a solução proposta:
 
-![800px-DTI_Arquitetura_Frontend_angular_solucao-logging-javascript](uploads/9fe8e51db8f2122daac455b42a35f720/800px-DTI_Arquitetura_Frontend_angular_solucao-logging-javascript.png)
+![800px-DTI_Arquitetura_Frontend_angular_solucao-logging-javascript](800px-DTI_Arquitetura_Frontend_angular_solucao-logging-javascript.png)
 
 ## [Acessibilidade](#acessibilidade)
 ## [Internacionalização](#internacionalizacao)

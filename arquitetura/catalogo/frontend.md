@@ -6,5 +6,5 @@ Esta seção tem por objetivo definir as diretrizes que precisarão ser atendida
 ## [Otimizações](frontend/desenvolvimento-de-frontend.md#otimizacoes)
 ## [Apoio ao desenvolvimento](frontend/desenvolvimento-de-frontend.md#apoio-ao-desenvolvimento)
 ## [Autenticação e Autorização](frontend/desenvolvimento-de-frontend.md#autenticacao-e-autorizacao)
-## [Logging](frontend/desenvolvimento-de-frontend.mdlogging)
+## [Logging](frontend/desenvolvimento-de-frontend.md#logging)
 #  [Componentes](frontend/componentes.md)
