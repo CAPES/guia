@@ -1,18 +1,16 @@
-[[_TOC_]]
-
 # Estrutura
 
-![diretorio-git-3__1_](uploads/2b545bfa50610d753ad092fc555b83fd/diretorio-git-3__1_.png)
+![diretorio-git-3__1_](diretorio-git-3__1_.png)
 
 ### Projeto
 
 Cada projeto ficará organizado conforme mostrado na figura acima em que cada item está descriminado a seguir.
- 
+
 - **COORDENAÇÃO GERAL**: Grupo[^1] do gitlab que representa a coordenação geral que mantém os projetos.
 - **COORDENAÇÃO**: Subgrupo[^2] do gitlab que representa a coordenação abaixo da coordenação geral.
 - **PROJETO**: Subgrupo[^2] do gitlab que representa que agrupa um ou mais projetos[^3].
 - **SISTEMA**: Subgrupo[^3] do gitlab que vai gerenciar o conteúdo/arquivo do sistema.
-* Vide item:  [DevOps - Criar Projetos](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/procedimentos-operacionais/criar-grupos-projetos)
+* Vide item:  [DevOps - Criar Projetos](devops/procedimentos-operacionais/criar-grupos-projetos.md)
 
 ### Repositório
 A raiz do repositório deverá ser composta apenas dos seguintes elementos:
@@ -22,14 +20,14 @@ A raiz do repositório deverá ser composta apenas dos seguintes elementos:
 
 ### Grupos
 1. No gitlab, um **grupo** é um agrupador que concentra várias funcionalidades, tais como: subgrupos, wiki, variáveis que podem ser compartilhadas com seus subcomponentes.
-1. No gitlab, um **subgrupo** é criado tal qual a grupo normal, diferente apenas por estar dentro de um grupo. Porém, um subgrupo herda várias propriedades do grupo pai. 
-1. No gitlab, um **projeto** é um agrupador de várias funcionalidades, dentre elas um repositório git. 
-* Vide item:  [DevOps - Criar Grupos](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/procedimentos-operacionais/criar-grupos-projetos)
+1. No gitlab, um **subgrupo** é criado tal qual a grupo normal, diferente apenas por estar dentro de um grupo. Porém, um subgrupo herda várias propriedades do grupo pai.
+1. No gitlab, um **projeto** é um agrupador de várias funcionalidades, dentre elas um repositório git.
+* Vide item:  [DevOps - Criar Grupos](devops/procedimentos-operacionais/criar-grupos-projetos.md)
 
 # Git Flow
-![Fluxo_do_Git](uploads/be817a8d0bf7cf9b9847a82a376b3ccb/Fluxo_do_Git.png)
+![Fluxo_do_Git](Fluxo_do_Git.png)
 O fluxo adotado aborda branches dedicados para cada ambiente de deploy:
-- Produção (master) 
+- Produção (master)
 - Desenvolvimento/Homologação (homolog).
 
 ## Funcionamento
@@ -93,17 +91,18 @@ As características dos perfis seguem as seguintes premissas:
 
 |                            | **Guest** | **Reporter** | **Developers** | **Maintainers** | **Owner** |
 | ------                     | :------:  | :------:     | :------:       | :------:        |:------:   |
-| **GCM**                    |           |              |                |                 |x          | 
-| **Gerente do Projeto**     |           |              |                |x                |           | 
-| **Arquitetura**            |           |              |                |x                |           |  
-| **Devops**                 |           |              |                |x                |           | 
-| **Time de Desenvolvimento**|           |              |x               |                 |           |  
+| **GCM**                    |           |              |                |                 |x          |
+| **Gerente do Projeto**     |           |              |                |x                |           |
+| **Arquitetura**            |           |              |                |x                |           |
+| **Devops**                 |           |              |                |x                |           |
+| **Time de Desenvolvimento**|           |              |x               |                 |           |
 
 **Caso algum técnico do Time deseja ter permissão de maior nível, este deverá solicitar ao coordenador de sua área uma formalização para a equipe da qualidade.**
 
 O fluxo que define a concessão de permissão de acesso ao GitLab na Capes segue as seguintes etapas dado pelo processo “Permissão de acesso ao GitLab”:
 
-![DP_AcessoGitLab_v0.2_-_Copia](uploads/ee6e45f1a646c74c075e2b9214a1c790/DP_AcessoGitLab_v0.2_-_Copia.png)
+![DP_AcessoGitLab_v0.2](DP_AcessoGitLab_v0.2_-_Copia.png)
+
 
 **DESCRIÇÃO DO PROCESSO (Permissão de acesso ao GitLab)**
 

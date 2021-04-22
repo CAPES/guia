@@ -10,7 +10,7 @@ Seção destinada a documentação e definição do Núcleo de Arquitetura.
 # JAVA
 * Jboss
 * Spring Boot
-  * [Orientações Técnicas](./java/springboot-orientacoes-tecnicas.md)
+  * [Orientações Técnicas](/java/springboot/orientacoes-tecnicas.md)
 
 # Python
 
