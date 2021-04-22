@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## Introdução
 
 Docker é um software contêiner da empresa Docker, Inc, que fornece uma
@@ -78,7 +76,7 @@ graph TD
 
 ### Catálogo de imagens
 
-> Vide: [Catálogo de imagens](/Devops/catalogo-imagens/catalogo-imagens)
+> Vide: [Catálogo de imagens](devops/catalogo-imagens/catalogo-imagens.md)
 
 ### Camadas
 
