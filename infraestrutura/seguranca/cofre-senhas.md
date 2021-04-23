@@ -1,3 +1,8 @@
+1. [Visão geral](#visão-geral)
+2. [Normas Gerais de Uso](#normas-gerais-de-uso)
+3. [Como Acessar](#como-acessar)
+
+
 # Visão Geral
 No gerenciamento de um ambiente computacional com certa complexidade, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados, se faz necessário. O uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades problemas na gestão de forma profissional. Com isto, a DTI/CGII implantou um **[cofre de senhas](https://git.capes.gov.br/cgii/seguranca/pmp)** (acesso restrito), utilizando o software **Password Manager Pro** (PMP), que centraliza tais dados sensíveis e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
 
@@ -22,6 +27,8 @@ No gerenciamento de um ambiente computacional com certa complexidade, o gerencia
 > :blue_book: As exceções a estas regras devem ser registradas via CATI sendo necessário autorização da coordenação.
 
 As normas específicas de uso podem ser encontradas na [documentação da solução](https://git.capes.gov.br/cgii/seguranca/pmp/wikis/home) (acesso restrito).
+
+<br>
 
 # Como Acessar
 
