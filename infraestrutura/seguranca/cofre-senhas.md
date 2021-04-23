@@ -17,8 +17,14 @@ No gerenciamento de um ambiente computacional com certa complexidade, o gerencia
 * **Alteração / Exclusão da senha** - a alteração da senha requer atualização tanto no cofre de senhas quanto na aplicação, sendo necessário o [registro de uma mudança](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home), aplicando-se também para o caso de desativação de uma senha.
 
 * **Contas locais, super usuários e senhas de certificados** - as senhas locais de administração (root, admin, sa, administrador...), normalmente criadas na instalação de um serviço, precisam estar registradas no cofre de senhas e serão compartilhadas apenas com os administradores respectivos daquela ferramenta, **quando estritamente necessário**. Os sistemas que permitem a criação de contas pessoais (ou integradas ao AD), com perfil de administrador devem ser utilizadas sempre que possível.
-* 
+
 
 > :blue_book: As exceções a estas regras devem ser registradas via CATI sendo necessário autorização da coordenação.
 
 As normas específicas de uso podem ser encontradas na [documentação da solução](https://git.capes.gov.br/cgii/seguranca/pmp/wikis/home) (acesso restrito).
+
+# Como Acessar
+
+Veja o [manual de como acessar o PMP](https://git.capes.gov.br/cgii/seguranca/pmp/snippets/3).
+
+> :blue_book: Com base na norma acima, somente usuários previamente cadastradas podem acessar. As solicitações são feitas pelo CATI.
