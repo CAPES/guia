@@ -3,7 +3,7 @@
 Seção destinada a documentação e definição do Núcleo de Arquitetura.
 
 # PHP
-* Laravel
+* [Laravel](php/laravel)
 * Zend
 * Symfony
 
