@@ -367,15 +367,13 @@ jdbc:postgresql://172.19.100.155:5432/producao
 #### ENTERPRISEDB
 
 
-##### DESENVOLVIMENTO ==>> DESATIVADO <<== 
-Host name: v-des-enterprisedb01.des.capes.gov.br(melhor opção) ou 172.19.100.177
+##### DESENVOLVIMENTO ==>> ***DESATIVADO*** <<== 
+~~Host name: v-des-enterprisedb01.des.capes.gov.br(melhor opção) ou 172.19.100.177
 Port number: 5432
-Banco: Dsnv 
+Banco: Dsnv~~ 
  
-```bash
-jdbc:postgresql://v-des-enterprisedb01.des.capes.gov.br:5432/Dsnv ==>> DESATIVADO <<== 
-```
- 
+~~jdbc:postgresql://v-des-enterprisedb01.des.capes.gov.br:5432/Dsnv~~
+
 ##### HOMOLOGACAO
 Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
 Port number: 5432
