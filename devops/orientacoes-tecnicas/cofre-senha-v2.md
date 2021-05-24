@@ -43,7 +43,7 @@ Arquivo localizado em: `devops/backend|frontend/aplicacao/values-[ambiente].yaml
 ```yaml
 cofresenha:
   enable: true
-  secretName: token-api-secret
+  secretName: cofre-secret
     
   secretsList:
     - name: "token-api"
@@ -55,11 +55,11 @@ cofresenha:
 | Parâmetro                                    | Descrição                                                                                    | Default                                              |
 | -------------------------------------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
 | `enable`                                     | Habilita a integração do cofre de senhas.                                                    | `true`                                               |
-| `secretName`                                 | Nome da secret que será criada no namespace do projeto.                                      | `cofre-secret`                                          |
-| `cofre-secret`                               | Listagem de todos os segredos a serem buscados no cofre de senhas                             | `[]`                                                 |
-| `cofre-secret.name`                          | Nome da key a ser criada na secret                                                                    | ` `                                                 |
-| `cofre-secret.resourceName`                  | Nome do Resource Name cadastro no cofre de senhas                                                                    | ` `                                                 |
-| `cofre-secret.prefixo`                       | Prefixo do User Account do cofre de senhas. Para este campo no cofre de senha, deve seguir o padrão PREFIXO_<NOME_APLICACAO>                                                                    | ` `                                                 |
+| `secretName`                                 | Nome da secret que será criada no namespace do projeto. Pode ser qualquer valor que faça sentido.               | `cofre-secret`                                          |
+| `secretsList`                                | Listagem de todos os segredos a serem buscados no cofre de senhas (PMP)                            | `[]`                                                 |
+| `secretsList.name`                           | Nome da key a ser criada na secret                                                                    | ` `                                                 |
+| `secretsList.resourceName`                   | Nome do Resource Name cadastro no cofre de senhas                                                                    | ` `                                                 |
+| `secretsList.prefixo`                        | Prefixo do User Account do cofre de senhas. Para este campo no cofre de senha, deve seguir o padrão PREFIXO_<NOME_APLICACAO>                                                                    | ` `                                                 |
 
 
 Para acessar o valor do segredo, no exemplo abaixo é criado a variável de ambiente `TOKEN_API`.
@@ -73,7 +73,7 @@ deployment:
       - name: TOKEN_API
         valueFrom:
           secretKeyRef:
-            name: token-api-secret
+            name: cofre-secret
             key: token-api
 ...
 ```
