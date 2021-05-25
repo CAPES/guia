@@ -430,6 +430,16 @@ Banco: postgres
 jdbc:postgresql://postgres9.hom.capes.gov.br:5432/postgres
 ```
 
+##### POSTGRES9 TESTE
+Host name: postgres9.teste.capes.gov.br
+Port number: 5432
+Banco: postgres, teste, administrativo cadastrodepessoas, tst_scba, etc. 
+ 
+```bash
+jdbc:postgresql://postgres9.teste.capes.gov.br:5432/<banco de dados>
+```
+
+
 <br><br><br>
 
 # SYBASE
