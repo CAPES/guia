@@ -40,5 +40,5 @@ Essa sintaxe pode ser utilizada tanto como arquivos dentro dos repositórios, co
 
 # Normas
 * [Guia de Uso do Git](./norma-de-uso/Guia-de-uso-Git.md)
-* [Politica de Uso do Git](./norma-de-uso/Politica_de_uso.md)
+* [Politica de Uso do Git](./norma-de-uso/Politica_de_Uso.md)
  
