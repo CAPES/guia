@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 # Política de Uso
 Para uma melhor compreensão de regras adotadas no uso do Gitlab, exemplifica-se a estrutura de seu funcionamento no qual existem **Grupos** (retângulos) e **Projetos** (círculos). Cada grupo pode ter permissões diferentes, porém seguem a herança do grupo superior e cada projeto segue a herança do grupo. Todavia, os projetos e grupos podem ter permissões diferentes e também diferentes membros.
 
