@@ -392,14 +392,12 @@ Banco: preprod
 jdbc:postgresql://postgres.hom.capes.gov.br:5432/preprod
 ```
  
-##### TESTE
-Host name: postgres.teste.capes.gov.br(melhor opção) ou 172.19.100.121
+##### TESTE  ==>> ***DESATIVADO*** <<==
+~~Host name: postgres.teste.capes.gov.br(melhor opção) ou 172.19.100.121
 Port number: 5432
-Banco: teste 
+Banco: teste~~ 
  
-```bash
-jdbc:postgresql://postgres.teste.capes.gov.br:5432/teste
-```
+~~jdbc:postgresql://postgres.teste.capes.gov.br:5432/teste~~
  
  
 ##### SISREL DES
@@ -431,12 +429,12 @@ jdbc:postgresql://postgres9.hom.capes.gov.br:5432/postgres
 ```
 
 ##### POSTGRES9 TESTE
-Host name: postgres9.teste.capes.gov.br
+Host name: postgresdhtsrv03.hom.capes.gov.br
 Port number: 5432
 Banco: postgres, teste, administrativo cadastrodepessoas, tst_scba, etc. 
  
 ```bash
-jdbc:postgresql://postgres9.teste.capes.gov.br:5432/<banco de dados>
+jdbc:postgresql://postgresdhtsrv03.hom.capes.gov.br:5432/<banco de dados>
 ```
 
 
