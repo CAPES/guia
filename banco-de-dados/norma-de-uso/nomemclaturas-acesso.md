@@ -11,8 +11,8 @@ No geral, os grupos de usuários (contas) são classificados em:
 graph LR
 
 u((Usuários))---owner(Owner de Schema)
-u--->pes(Pessoais)
-u--->imp(Impessoais)
+u---pes(Pessoais)
+u---imp(Impessoais)
 
 imp---api(Aplicações Internas)
 imp---ape(Aplicações Externas)
@@ -104,7 +104,7 @@ Iniciado pelo prefixo `E + <CPF_do_usuario_externo>`. Onde ambos são obrigatór
 | Usuários internos	                             | sem prefixo definido |
 | Usuários externos                              | E |
 
-:bluenote: 
+**Notas**:
 * O Nome do Projeto empregado na denominação dos usuários (WEB_, CRG_, SRV_, USR_) deve ser idêntico ao definido pela equipe de sistemas no GIT ou outra ferramenta que venha substituí-lo.
 * A senha deve estar aderente às normas definidas pela Área de Segurança da DTI  , sendo exigido, atualmente, letras maiúsculas, letras minúsculas, números e pelo menos 2 caracteres especiais.
 * O usuário de esquema deverá ser criado bloqueado, os acessos aos objetos deste esquema, sempre, se darão pelos usuários pessoais e/ou impessoais que possuírem os privilégios necessários.
