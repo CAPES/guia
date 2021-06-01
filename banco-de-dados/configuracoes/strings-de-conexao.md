@@ -367,15 +367,13 @@ jdbc:postgresql://172.19.100.155:5432/producao
 #### ENTERPRISEDB
 
 
-##### DESENVOLVIMENTO
-Host name: v-des-enterprisedb01.des.capes.gov.br(melhor opção) ou 172.19.100.177
+##### DESENVOLVIMENTO ==>> ***DESATIVADO*** <<== 
+~~Host name: v-des-enterprisedb01.des.capes.gov.br(melhor opção) ou 172.19.100.177
 Port number: 5432
-Banco: Dsnv 
+Banco: Dsnv~~ 
  
-```bash
-jdbc:postgresql://v-des-enterprisedb01.des.capes.gov.br:5432/Dsnv
-```
- 
+~~jdbc:postgresql://v-des-enterprisedb01.des.capes.gov.br:5432/Dsnv~~
+
 ##### HOMOLOGACAO
 Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
 Port number: 5432
@@ -394,14 +392,12 @@ Banco: preprod
 jdbc:postgresql://postgres.hom.capes.gov.br:5432/preprod
 ```
  
-##### TESTE
-Host name: postgres.teste.capes.gov.br(melhor opção) ou 172.19.100.121
+##### TESTE  ==>> ***DESATIVADO*** <<==
+~~Host name: postgres.teste.capes.gov.br(melhor opção) ou 172.19.100.121
 Port number: 5432
-Banco: teste 
+Banco: teste~~ 
  
-```bash
-jdbc:postgresql://postgres.teste.capes.gov.br:5432/teste
-```
+~~jdbc:postgresql://postgres.teste.capes.gov.br:5432/teste~~
  
  
 ##### SISREL DES
@@ -415,12 +411,12 @@ jdbc:postgresql://v-postegres-sisrel-des.capes.gov.br:5432/sisrel_des
 ```
  
 ##### POSTGRES9 DES
-Host name: postgres9.des.capes.gov.br (melhor opção) ou 172.19.128.22
+Host name: postgresdhtsrv01.hom.capes.gov.br
 Port number: 5432
-Banco: postgres 
+Banco: postgres, Dsnv, administrativo. etc 
  
 ```bash
-jdbc:postgresql://postgres9.des.capes.gov.br:5432/postgres
+jdbc:postgresql://postgresdhtsrv01.hom.capes.gov.br:5432/<banco de dados>
 ```
  
 ##### POSTGRES9 HOM
@@ -431,6 +427,16 @@ Banco: postgres
 ```bash
 jdbc:postgresql://postgres9.hom.capes.gov.br:5432/postgres
 ```
+
+##### POSTGRES9 TESTE
+Host name: postgresdhtsrv03.hom.capes.gov.br
+Port number: 5432
+Banco: postgres, teste, administrativo cadastrodepessoas, tst_scba, etc. 
+ 
+```bash
+jdbc:postgresql://postgresdhtsrv03.hom.capes.gov.br:5432/<banco de dados>
+```
+
 
 <br><br><br>
 
