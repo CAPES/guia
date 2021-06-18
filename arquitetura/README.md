@@ -2,40 +2,38 @@
 
 Seção destinada a documentação e definição do Núcleo de Arquitetura.
 
-# PHP
-* [Laravel](php/laravel)
-* Zend
-* Symfony
+# Definições
+- [Definições para construção de API REST](rest-apis.md)
+- [Microsserviços](microsservices.md)
+- [Especificações de Monitoramento de Aplicações](arquitetura/monitoramento-aplicacoes.md)
+# Tecnologias
 
-# JAVA
-* Jboss
-* Spring Boot
-  * [Orientações Técnicas](java/springboot/orientacoes-tecnicas.md)
+## Backend
 
-# Python
+### Java
+- JBoss
+  - [JMX remoto no JBoss EAP 6](jboss/jmx-remote-jboss-eap6.md)
+- Spring Boot
+  - [Orientações Técnicas](java/springboot/orientacoes-tecnicas.md)
+  - [Logging de aplicações](java/springboot/logback.md)
 
-# Javascript
-## [Angular](javascript/angular.md)
+### PHP
 
-# CVS
+- [Laravel](php/laravel)
+- Zend
+- Symfony
 
-# Infraestrutura
+### Python
 
-# Portais
+## [Frontend](frontend/README.md)
+- [Angular](frontend/angular.md)
 
-# Catálogo
-* [Arquitetura de frontend angular](catalogo/frontend.md)
+## Ferramentas
 
-# Orientações Técnicas
-* [Logging de aplicações](orientacoes-tecnicas/logback.md)
-* [JMX remoto no JBoss EAP 6](orientacoes-tecnicas/jmx-remote-jboss-eap6.md)
+  - [Nexus - Gerenciador de Respositórios de Artefatos](ferramentas/nexus.md)
 
-# [Microsservices](arquitetura/arquitetura/microsservice.md)
+# Instruções Técnicas
 
-# [Gerenciador de Respositórios](arquitetura/arquitetura/repository-manager.md)
+  - [Construção & Implantação de Aplicações](arquitetura/arquitetura/release-and-deploy.md)
 
-# [Especificações de Monitoramento de Aplicações](arquitetura/arquitetura/monitoramento-aplicacoes.md)
-
-# [Recomendações](arquitetura/arquitetura/recomendacoes.md)
-
-# [Construção & Implantação de Aplicações](arquitetura/arquitetura/release-and-deploy.md)
+# [Recomendações e Considerações](recomendacoes/README.md)
