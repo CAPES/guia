@@ -14,3 +14,4 @@ Diretrizes sobre o assunto de segurança da informação, sobre:
 
 * [Cofre de Senhas](seguranca/cofre-senhas.md) - gestão das **senhas de serviço** uilizadas para interconexão entre sistemas, serviços e bancos de dados.
 
+* [Logs de Eventos - SIEM](seguranca/logs.md) - envio e gerenciamento dos **logs** dos servidores, serviços e sistemas para a ferramenta de correlacionamento de eventos SIEM - *Security information and event management*.
