@@ -120,4 +120,4 @@ Iniciado pelo prefixo `E + <CPF_do_usuario_externo>`. Onde ambos são obrigatór
 * c.	Renomear, nos bancos e no cofre, os usuários de serviços e micro serviços srv pelo prefixo srv_
 
 # Utilização do Cofre de Senhas
-REVER (Mover para Orientações do Cofre de Senhas)
+Veja como [utilizar o cofre de senhas](/infraestrutura/seguranca/cofre-senhas.md).
