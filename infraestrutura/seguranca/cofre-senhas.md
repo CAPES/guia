@@ -2,7 +2,7 @@
 - [Normas Gerais de Uso](#normas-gerais-de-uso)
   - [Nomenclatura](#nomenclatura)
     - [Caminho dos Segredos](#caminho-dos-segredos)
-  - [Nome dos Usuários (nas Integrações via API)](#nome-dos-usuários-nas-integrações-via-api)
+    - [Nome dos Usuários (nas Integrações via API)](#nome-dos-usuários-nas-integrações-via-api)
 - [Como Acessar o PMP](#como-acessar-o-pmp)
   - [Interface Web](#interface-web)
     - [Segundo Fator de Autenticação](#segundo-fator-de-autenticação)
@@ -67,7 +67,7 @@ Onde:
 
 <br>
 
-## Nome dos Usuários (nas Integrações via API)
+### Nome dos Usuários (nas Integrações via API)
 Para que a integração com o cofre de senhas, através de esteiras de desenvolvimento, fosse feita de forma padronizada, tornando algumas configurações transparentes para o desenvolvedor, foi definido o padrão a seguir. Sendo um exemplo, o `WEB_FINANCEIRO-WEB`, indicando 
 
 > Nota: No cofre de senhas (PMP) o caminho é chamado de *resource name*.
