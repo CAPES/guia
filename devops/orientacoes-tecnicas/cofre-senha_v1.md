@@ -1,3 +1,5 @@
+> **Versão Antiga (v1)** - Você está lendo a documentação de uma versão antiga. Leia a [mais recente](cofre-senhas.md).  
+
 ## Introdução
 
 A integracão entre o Openshift e o Cofre de Senhas é feita através de um Operator do Kubernetes.
