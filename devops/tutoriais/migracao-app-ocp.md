@@ -3,19 +3,29 @@
 Neste Guia será descrito o passo a passo de como realizar a migração de uma aplicação do Openshift OKD para a nova infraestrutura do Openshift OCP.
 
 
-### 1. Criação de projeto no OCP
+### 1. Solicitação de Acesso ao OCP
+
+Responsabilidade: Time Desenvolvimento - Gerente
+
+- Solicitar acesso, via CATI, informando todos os usuários (login de rede) da equipe, para a fila de Infraestrutura. Caso ainda não tenha projeto no OCP, os chamados dos passos 1 e 2 podem ser os mesmos.
+
+Responsabilidade: Time Infraestrutura
+
+- Liberação de acesso ao Openshift OCP 
+
+### 2. Criação de projeto no OCP
 
 Responsabilidade: Time Desenvolvimento
 
 - Solicitar criação, via chamado, do projeto no Openshift OCP
 
-Responsabilidade: Time GCM
+Responsabilidade: Time Infraestrutura
 - Criação do projeto no Openshift OCP; 
 - Criação do projeto no registry Harbor do OCP; 
 - Configuração das variáveis CI/CD de tokens (REGISTRY_TOKEN e REGISTRY_USER) no projeto git para acesso ao novo registry de imagens.
 
 
-### 2. Alteração de pipeline
+### 3. Alteração de pipeline
 
 Responsabilidade: Time Desenvolvimento
 
@@ -31,7 +41,7 @@ include:
     ref: ocp
 ```
 
-### 3. Apontamento de Charts
+### 4. Apontamento de Charts
 
 Responsabilidade: Time Desenvolvimento
 
@@ -51,7 +61,7 @@ dependencies:
 ...
 ```
 
-### 4. Alteração de registry de imagem nos Dockerfiles
+### 5. Alteração de registry de imagem nos Dockerfiles
 
 Responsabilidade: Time Desenvolvimento
 
@@ -68,7 +78,7 @@ WORKDIR /sistema
 ```
 
 
-### 5. Alteração de dns da aplicação
+### 6. Alteração de dns da aplicação
 
 Responsabilidade: Time Desenvolvimento
 
