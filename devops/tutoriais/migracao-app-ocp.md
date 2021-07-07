@@ -5,9 +5,14 @@ Neste Guia será descrito o passo a passo de como realizar a migração de uma a
 
 ### 1. Criação de projeto no OCP
 
-Responsabilidade: Time Desenvolvimento / Time GCM
+Responsabilidade: Time Desenvolvimento
 
-Realizar a solicitação da criação do projeto no Openshift OCP. Essa solicitação deve ser feita para o time de GCM. Com essa solicitação, será criado o projeto no Openshift, o projeto no registry Harbor do OCP além de reconfigurar as variáveis de tokens (REGISTRY_TOKEN e REGISTRY_USER) no projeto git para acesso ao novo registry de imagens.
+- Solicitar criação, via chamado, do projeto no Openshift OCP
+
+Responsabilidade: Time GCM
+- Criação do projeto no Openshift OCP; 
+- Criação do projeto no registry Harbor do OCP; 
+- Configuração das variáveis CI/CD de tokens (REGISTRY_TOKEN e REGISTRY_USER) no projeto git para acesso ao novo registry de imagens.
 
 
 ### 2. Alteração de pipeline
@@ -40,7 +45,7 @@ Para: http://charts.capes.gov.br/capes/infra
 ...
 dependencies:
   - name: capes-aplic
-    version: "0.6.1"
+    version: "0.6.2"
     repository: "http://charts.capes.gov.br/capes/infra"
     alias: app
 ...
