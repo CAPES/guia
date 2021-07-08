@@ -2,6 +2,7 @@
 
 Neste Guia será descrito o passo a passo de como realizar a migração de uma aplicação do Openshift OKD para a nova infraestrutura do Openshift OCP.
 
+[Vídeo tutorial](https://drive.google.com/file/d/1wh2OgwpNtp6l2QP5ZdacGpEMugcd6Uy1/view?usp=sharing)
 
 ### 1. Solicitação de Acesso ao OCP
 
