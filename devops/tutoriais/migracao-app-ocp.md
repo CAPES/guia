@@ -11,7 +11,8 @@ Responsabilidade: Time Desenvolvimento - Gerente
 
 Responsabilidade: Time Infraestrutura
 
-- Liberação de acesso ao Openshift OCP 
+- Liberação de acesso ao Openshift OCP
+
 
 ### 2. Criação de projeto no OCP
 
@@ -20,9 +21,27 @@ Responsabilidade: Time Desenvolvimento
 - Solicitar criação, via chamado, do projeto no Openshift OCP
 
 Responsabilidade: Time Infraestrutura
-- Criação do projeto no Openshift OCP; 
-- Criação do projeto no registry Harbor do OCP; 
+- Criação do projeto no Openshift OCP;
+- Criação do projeto no registry Harbor do OCP;
 - Configuração das variáveis CI/CD de tokens (REGISTRY_TOKEN e REGISTRY_USER) no projeto git para acesso ao novo registry de imagens.
+
+#### Exemplo de chamado:
+
+```
+Prezados,
+
+Solicito criação do projeto <nome-projeto> no Openshift OCP.
+
+Os usuários de rede abaixo devem ter acesso ao Openshift e a esse projeto.
+
+Gerente: 
+- José Ricardo - joser 
+
+Equipe
+- Ricardo José - ricardoj
+- José Castro - josec 
+```
+*** O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT.
 
 
 ### 3. Alteração de pipeline
@@ -47,7 +66,7 @@ Responsabilidade: Time Desenvolvimento
 
 No arquivo `devops/<backend|frontend>/<nome-projeto>/Chart.yaml` realizar a alteração do repositório de charts para cada chart dependente.
 
-De: http://charts.apps.ocp.capes.gov.br/capes/infra
+De: http://charts.paas.capes.gov.br/capes/infra
 
 Para: http://charts.capes.gov.br/capes/infra
 
