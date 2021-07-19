@@ -31,7 +31,7 @@ Responsabilidade: Time Infraestrutura
 ```
 Prezados,
 
-Solicito criação do projeto <nome-projeto> no Openshift OCP.
+Solicito criação do projeto <sigla-projeto> no Openshift OCP.
 
 Os usuários de rede abaixo devem ter acesso ao Openshift e a esse projeto.
 
@@ -42,7 +42,7 @@ Equipe
 - Ricardo José - ricardoj
 - José Castro - josec 
 ```
-*** O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT.
+*** O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
 
 
 ### 3. Alteração de pipeline
@@ -118,3 +118,61 @@ route:
       termination: edge
 ...
 ```
+
+### 7. Migração de Persistent Volumes
+
+Responsabilidade: Time Desenvolvimento
+
+Solicitar via chamado CATI, a criação dos PVs (Persistent Volumes) de dht e produção no Openshift OCP.
+
+Enviar a lista dos nomes dos PVs no chamado. Os nomes podem ser vistos nos arquivos values-<des|prod>.yaml
+
+```
+app:
+...
+  pvc:
+  - pvcname: sap-des-log-pvc
+    accessMode: ReadWriteMany
+    size: 1Gi
+    volumeName: sap-des-log-pv
+  - pvcname: sap-des-arquivos-pvc
+    accessMode: ReadWriteMany
+    size: 1Gi
+    volumeName: sap-des-arquivos-pv
+
+```
+
+Exemplo de chamado:
+
+```
+Prezados,
+
+Solicito criação dos PVs do projeto '<nome-projeto>' no Openshift OCP
+
+Volumes a serem criados:
+- sap-des-log-pv
+- sap-des-arquivos-pv
+
+```
+
+Responsabilidade: Time Infraestrutura
+- Criação dos PVs no Openshift OCP
+
+
+### 8. Testar DNS em produção
+
+Responsabilidade: Time Desenvolvimento
+
+Para testar a aplicação em produção no Openshift OCP, basta realizar o deploy normalmente no ambiente de produção com a criação da tag.
+
+Após o deploy, é necessário configurar o dns interno da máquina para que o o dns da aplicação será apontada para os ips do Openshift OCP.
+
+No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do OCP. Já no windows o arquivo é o `C:\Windows\System32\drivers\etc\hosts`.
+
+```
+...
+172.19.208.60 aplicacao.capes.gov.br
+...
+```
+
+*** Lembrar de remover a linha após os testes.
