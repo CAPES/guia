@@ -24,7 +24,7 @@ Utilizando a ferramenta [Mobaxterm](https://mobaxterm.mobatek.net/download-home-
 Em um terminal (Linux, MacOS ou Windows pelo MobaXterm, digite o comando, alterando o `<login>` e o `<servidor_destino>`, conforme necesidade.
 
 ```
-ssh -N <login>@fc.capes.gov.br@<servidor_destino>.capes.gov.br -J <login>@ssh.capes.gov.br
+ssh <login>@fc.capes.gov.br@<servidor_destino>.capes.gov.br -J <login>@ssh.capes.gov.br
 ```
 
 <br><br>
