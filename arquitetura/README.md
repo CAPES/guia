@@ -4,6 +4,7 @@ Seção destinada a documentação e definição do Núcleo de Arquitetura.
 
 # Definições
 - [Definições para construção de API REST](rest-apis.md)
+- [Eventos & Mensageria entre aplicações](definicoes/eventos/README.md)
 - [Microsserviços](microsservices.md)
 - [Especificações de Monitoramento de Aplicações](arquitetura/monitoramento-aplicacoes.md)
 # Tecnologias
