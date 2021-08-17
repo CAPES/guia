@@ -24,14 +24,15 @@ Depois de entrar, veja as opções:
 
 > **Para que serve a *Blacklist*?** Ela seleciona e repassa aos provedores quais IPs / domínios que você considera impertinente e assim bloqueia a entrega na sua caixa de entrada.
 
-3 - Definir o período que deseja ver seus e-mails que foram direcionados para quarentena. 
+* 3 - Definir o período que deseja ver seus e-mails que foram direcionados para quarentena. 
 
 > A ferramenta de anti-spam faz uma retenção máxima na quarentena de `60 dias`.
 
 * 4 - No botão *whitelist* você incluirá o e-mail / domínio na sua pessoal (*whitelist*) e e-mail dessa origem não será mais bloqueados. 
 * 5 - No botão *blacklist* você incluirá o e-mail / domínio na sua pessoal (*blacklist*) e e-mail dessa origem será bloqueados permanentemente.
-  * Vale salientar que uma vez o e-mail / domínio incluído na blacklist não será possível de recuperação e será descartado pela 
+> Vale salientar que uma vez o e-mail / domínio incluído na blacklist não será possível de recuperação e será descartado pela 
 ferramenta de AntiSpam. 
+<br> 
 
 * 6 - Caso você tenha interesse no o e-mail bloqueado na quarentena, clique no botão enviar e você receberá o e-mail na sua caixa. 
 
