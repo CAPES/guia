@@ -45,7 +45,12 @@ Equipe
 *** O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
 
 
-### 3. Alteração de pipeline
+### 3. Atualização para o CofreSenha 2.0
+
+Ver documentação [implantação cofre de senha 2.02](../orientacoes-tecnicas/cofre-senhas.md)
+
+
+### 4. Alteração de pipeline
 
 Responsabilidade: Time Desenvolvimento
 
@@ -61,7 +66,7 @@ include:
     ref: ocp
 ```
 
-### 4. Apontamento de Charts
+### 5. Apontamento de Charts
 
 Responsabilidade: Time Desenvolvimento
 
@@ -81,7 +86,7 @@ dependencies:
 ...
 ```
 
-### 5. Alteração de registry de imagem nos Dockerfiles
+### 6. Alteração de registry de imagem nos Dockerfiles
 
 Responsabilidade: Time Desenvolvimento
 
@@ -98,7 +103,7 @@ WORKDIR /sistema
 ```
 
 
-### 6. Alteração de dns da aplicação
+### 7. Alteração de dns da aplicação
 
 Responsabilidade: Time Desenvolvimento
 
@@ -119,7 +124,7 @@ route:
 ...
 ```
 
-### 7. Migração de Persistent Volumes
+### 8. Migração de Persistent Volumes
 
 Responsabilidade: Time Desenvolvimento
 
@@ -159,7 +164,7 @@ Responsabilidade: Time Infraestrutura
 - Criação dos PVs no Openshift OCP
 
 
-### 8. Testar DNS em produção
+### 9. Testar DNS em produção
 
 Responsabilidade: Time Desenvolvimento
 
@@ -176,3 +181,9 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 ```
 
 *** Lembrar de remover a linha após os testes.
+
+### 10. Implantar em produção
+
+Responsabilidade: Time Desenvolvimento
+
+Solicitar GMUD com a mudança de DNS
