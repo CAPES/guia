@@ -38,7 +38,7 @@ Se a aplicação estiver subindo no OCP (Openshift 4.5+), deve ser utilizado da 
 dependencies:
   - name: cofresenha
     version: "2.0.0"
-    repository: "http://charts.apps.ocp.capes.gov.br/capes/infra"
+    repository: "http://charts.capes.gov.br/capes/infra"
 ```
 
 <br><br>
