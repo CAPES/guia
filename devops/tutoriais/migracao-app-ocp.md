@@ -179,7 +179,7 @@ Origem:
 [Compute Nodes OCP (DHT/PROD-INT/PROD-EXT)]
 
 Destino:
-Host: xpt.capers.gov.br
+Host: xpt.capes.gov.br
 Port: 80 e 443
 ```
 #### 9.1 Comunicação sentido [Aplicação/Serviço externo >> OCP]
