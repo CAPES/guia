@@ -163,8 +163,27 @@ Volumes a serem criados:
 Responsabilidade: Time Infraestrutura
 - Criação dos PVs no Openshift OCP
 
+### 9. Validar integrações e regras de firewall
 
-### 9. Testar DNS em produção
+Responsabilidade: Time Desenvolvimento
+
+Após migração da aplicação, é necessário a validação de todas as integrações da aplicação. Em caso de falha, mas especificamente time out, o problema pode ser de firewall.
+
+Para solicitar uma nova regra de firewall, deve ser aberto um chamado para o time de infraestrutura informando a ORIGEM e DESTINO da conexão.
+
+A tabela de IPs do OCP pode ser consultada em [Tabela de IPs OCP](ocp-ips-maquinas.md)
+
+#### 9.1 Comunicação sentido [OCP >> Aplicação/Serviço externo]
+
+A origem deve ser os ips de worker do OCP e o destino a url + porta (80, 443) da aplicação/serviço.
+
+#### 9.1 Comunicação sentido [Aplicação/Serviço externo >> OCP]
+
+A origem deve ser o(s) ip(s) da aplicação/serviço e o destino o ip da VIP do OCP.
+
+
+
+### 10. Testar DNS em produção
 
 Responsabilidade: Time Desenvolvimento
 
@@ -182,7 +201,7 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 
 *** Lembrar de remover a linha após os testes.
 
-### 10. Implantar em produção
+### 11. Implantar em produção
 
 Responsabilidade: Time Desenvolvimento
 
