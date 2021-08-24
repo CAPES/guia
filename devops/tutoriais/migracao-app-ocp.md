@@ -186,7 +186,7 @@ Port: 80 e 443
 
 ```
 Origem:
-Host: xpt.capers.gov.br
+Host: xpt.capes.gov.br
 
 Destino:
 [VIP OCP de (DHT/PROD-INT/PROD-EXT)]
