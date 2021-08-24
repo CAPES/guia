@@ -171,15 +171,27 @@ Após migração da aplicação, é necessário a validação de todas as integr
 
 Para solicitar uma nova regra de firewall, deve ser aberto um chamado para o time de infraestrutura informando a ORIGEM e DESTINO da conexão.
 
-A tabela de IPs do OCP pode ser consultada em [Tabela de IPs OCP](ocp-ips-maquinas.md)
+Exemplos:
 
 #### 9.1 Comunicação sentido [OCP >> Aplicação/Serviço externo]
+```
+Origem:
+[Compute Nodes OCP (DHT/PROD-INT/PROD-EXT)]
 
-A origem deve ser os ips de worker do OCP e o destino a url + porta (80, 443) da aplicação/serviço.
-
+Destino:
+Host: xpt.capers.gov.br
+Port: 80 e 443
+```
 #### 9.1 Comunicação sentido [Aplicação/Serviço externo >> OCP]
 
-A origem deve ser o(s) ip(s) da aplicação/serviço e o destino o ip da VIP do OCP.
+```
+Origem:
+Host: xpt.capers.gov.br
+
+Destino:
+[VIP OCP de (DHT/PROD-INT/PROD-EXT)]
+```
+
 
 
 
