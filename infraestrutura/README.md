@@ -14,7 +14,7 @@ Diretrizes sobre o assunto de segurança da informação, sobre:
 
 * [Acesso SSH](seguranca/acesso-ssh.md) - método para **acesso, via protocolo ssh, nos servidores**, através de um gateway, utilizando login de rede.
 
-* [Anti-SPAM](seguranca/antispam.md) - veja como utilizar o filtro de e-mails não solicitados (SPAM).
+* [Anti-SPAM](seguranca/antispam/README.md) - veja como utilizar o filtro de e-mails não solicitados (SPAM).
 
 * [Cofre de Senhas](seguranca/cofre-senhas.md) - gestão das **senhas de serviço** uilizadas para interconexão entre sistemas, serviços e bancos de dados.
 
