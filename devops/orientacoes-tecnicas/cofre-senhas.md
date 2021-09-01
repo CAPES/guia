@@ -86,7 +86,7 @@ deployment:
         valueFrom:
           secretKeyRef:
             name: database-secret
-            key: token-api
+            key: password
 ...
 ```
 
