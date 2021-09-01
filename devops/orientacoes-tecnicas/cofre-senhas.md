@@ -85,7 +85,7 @@ deployment:
       - name: DATABASE_PASSWORD
         valueFrom:
           secretKeyRef:
-            name: database-secret
+            name: database-cofre-secret
             key: password
 ...
 ```
