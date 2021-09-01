@@ -23,7 +23,17 @@ Quando tudo estiver configurado, a integração funciona da seguinte forma:
 # Configuração
 Como o `cofresenha` é um chart template, ele deve ser utilizado como dependencia nos chart dummy específicos de cada aplicação. No arquivo `Chart.yaml`, incluir o `cofresenha` como dependencia da aplicação.
 
-Caso a aplicação esteja executando no OKD (Openshift 3.11), o repositório deve ser:
+
+Caso a aplicação já esteja no OCP (Openshift 4.7+), deve ser utilizado da seguinte forma:
+
+```yaml
+dependencies:
+  - name: cofresenha
+    version: "2.0.0"
+    repository: "http://charts.capes.gov.br/capes/infra"
+```
+
+Se a aplicação ainda esteja no OKD (Openshift 3.11), o repositório deve ser:
 
 ```yaml
 dependencies:
@@ -32,14 +42,6 @@ dependencies:
     repository: "http://charts.paas.capes.gov.br/capes/infra"
 ```
 
-Se a aplicação estiver subindo no OCP (Openshift 4.5+), deve ser utilizado da seguinte forma:
-
-```yaml
-dependencies:
-  - name: cofresenha
-    version: "2.0.0"
-    repository: "http://charts.capes.gov.br/capes/infra"
-```
 
 <br><br>
 
@@ -49,14 +51,15 @@ Após a configuração da dependencia do chart, para de fato utilizar a funciona
 
 Arquivo localizado em: `devops/backend|frontend/aplicacao/values-[ambiente].yaml`
 
+Exemplo:
 ```yaml
 cofresenha:
   enable: true
-  secretName: cofre-secret
+  secretName: database-cofre-secret
     
   secretsList:
-    - name: "token-api"
-      resourceName: "DES_APPTESTE"
+    - name: "password"
+      resourceName: "DES_ORACLE_OSHIFT"
       prefixo: "WEB"
 ```
 
@@ -68,10 +71,10 @@ cofresenha:
 | `secretsList`                                | Listagem de todos os segredos a serem buscados no cofre de senhas (PMP)                            | `[]`                                                 |
 | `secretsList.name`                           | Nome da key a ser criada na secret                                                                    | ` `                                                 |
 | `secretsList.resourceName`                   | Nome do Resource Name cadastro no cofre de senhas                                                                    | ` `                                                 |
-| `secretsList.prefixo`                        | Prefixo do User Account do cofre de senhas. Para este campo no cofre de senha, deve seguir o padrão PREFIXO_<NOME_APLICACAO>                                                                    | ` `                                                 |
+| `secretsList.prefixo`                        | Prefixo do User Account do cofre de senhas. Para este campo no cofre de senha, deve seguir o padrão PREFIXO_<NOME_APLICACAO>. Valores possívels: WEB e SRV                                                                     | ` `                                                 |
 
 
-Para acessar o valor do segredo, no exemplo abaixo é criado a variável de ambiente `TOKEN_API`.
+Para acessar o valor do segredo, no exemplo abaixo é criado a variável de ambiente `DATABASE_PASSWORD`.
 
 ```yaml
 ...
@@ -79,10 +82,10 @@ deployment:
 ...
     containers:
       environments:
-      - name: TOKEN_API
+      - name: DATABASE_PASSWORD
         valueFrom:
           secretKeyRef:
-            name: cofre-secret
+            name: database-secret
             key: token-api
 ...
 ```
