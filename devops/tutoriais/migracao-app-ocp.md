@@ -4,6 +4,17 @@ Neste Guia será descrito o passo a passo de como realizar a migração de uma a
 
 [Vídeo tutorial](https://drive.google.com/file/d/1wh2OgwpNtp6l2QP5ZdacGpEMugcd6Uy1/view?usp=sharing)
 
+## Pré-requisito
+
+### Atualização para o CofreSenha 2.0
+
+Como pré-requisito para migração ao OCP, é necessário que a aplicação já esteja utilizando a versão 2.0 do Cofre de Senhas.
+
+Ver documentação de [implantação cofre de senha 2.0](../orientacoes-tecnicas/cofre-senhas.md)
+
+
+## Passo a passo de Migração
+
 ### 1. Solicitação de Acesso ao OCP
 
 Responsabilidade: Time Desenvolvimento - Gerente
@@ -45,12 +56,9 @@ Equipe
 *** O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
 
 
-### 3. Atualização para o CofreSenha 2.0
-
-Ver documentação [implantação cofre de senha 2.02](../orientacoes-tecnicas/cofre-senhas.md)
 
 
-### 4. Alteração de pipeline
+### 3. Alteração de pipeline
 
 Responsabilidade: Time Desenvolvimento
 
@@ -66,7 +74,7 @@ include:
     ref: ocp
 ```
 
-### 5. Apontamento de Charts
+### 4. Apontamento de Charts
 
 Responsabilidade: Time Desenvolvimento
 
@@ -86,7 +94,7 @@ dependencies:
 ...
 ```
 
-### 6. Alteração de registry de imagem nos Dockerfiles
+### 5. Alteração de registry de imagem nos Dockerfiles
 
 Responsabilidade: Time Desenvolvimento
 
@@ -103,7 +111,7 @@ WORKDIR /sistema
 ```
 
 
-### 7. Alteração de dns da aplicação
+### 6. Alteração de dns da aplicação
 
 Responsabilidade: Time Desenvolvimento
 
@@ -124,7 +132,7 @@ route:
 ...
 ```
 
-### 8. Migração de Persistent Volumes
+### 7. Migração de Persistent Volumes
 
 Responsabilidade: Time Desenvolvimento
 
@@ -163,7 +171,7 @@ Volumes a serem criados:
 Responsabilidade: Time Infraestrutura
 - Criação dos PVs no Openshift OCP
 
-### 9. Validar integrações e regras de firewall
+### 8. Validar integrações e regras de firewall
 
 Responsabilidade: Time Desenvolvimento
 
@@ -173,7 +181,7 @@ Para solicitar uma nova regra de firewall, deve ser aberto um chamado para o tim
 
 Exemplos:
 
-#### 9.1 Comunicação sentido [OCP >> Aplicação/Serviço externo]
+#### 8.1 Comunicação sentido [OCP >> Aplicação/Serviço externo]
 ```
 Origem:
 [Compute Nodes OCP (DHT/PROD-INT/PROD-EXT)]
@@ -182,7 +190,7 @@ Destino:
 Host: xpt.capes.gov.br
 Port: 80 e 443
 ```
-#### 9.1 Comunicação sentido [Aplicação/Serviço externo >> OCP]
+#### 8.1 Comunicação sentido [Aplicação/Serviço externo >> OCP]
 
 ```
 Origem:
@@ -194,8 +202,7 @@ Destino:
 
 
 
-
-### 10. Testar DNS em produção
+### 9. Testar DNS em produção
 
 Responsabilidade: Time Desenvolvimento
 
@@ -207,14 +214,32 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 
 ```
 ...
-172.19.208.60 aplicacao.capes.gov.br
+## Para aplicações internas 
+172.19.208.52 xpto.capes.gov.br
+
+## Para aplicações externas
+172.19.208.60 xpto.capes.gov.br
 ...
 ```
 
 *** Lembrar de remover a linha após os testes.
 
-### 11. Implantar em produção
+### 10. Implantar em produção
 
 Responsabilidade: Time Desenvolvimento
 
-Solicitar GMUD com a mudança de DNS
+Abrir chamado CATI para a infraestrutura solicitando a mudança de DNS.
+
+```
+Prezados,
+
+Para finalizar a migração da aplicação XPTO para o Openshift OCP.
+
+Solicito alteração do DNS abaixo.
+
+DNS:
+xpto.capes.gov.br
+
+Destino:
+[VIP OCP de (PROD-INT/PROD-EXT)]
+```
