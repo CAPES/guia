@@ -42,10 +42,12 @@ dependencies:
 
 ## Pré-requisitos
 
-Para aplicações JAVA que utilizam versões de drive OJDBC abaixo da 19 e que devido ao novo padrão de nome de usuário, este `excede 30 caracteres`, é necessário atualizar a versão do OBDBC.
+### Aplicações Java 8 (ou superior)
+
+Aplicações em Java 8 ou superior podem utilizar a bilbioteca ojdbc8 (biblioteca de JDBC da Oracle, compilada com major version 52). Isso pode contornar o problema de incompatibilidade com **usernames com mais de 30 caracteres** que pode ocorrer ao seguir os padrões de nomenclatura necessários para a integração com o cofre de senhas.
 
 
-No pom.xml, favor utiliza a seguinte dependência:
+No pom.xml, favor utilizar a dependência do driver JDBC da Oracle para:
 
 ```yaml
 <dependency>
