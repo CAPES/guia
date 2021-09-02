@@ -6,7 +6,6 @@ Foi criado o chart de `cofresenha` para facilitar a utilização dessa integraç
 ## Normas de Uso
 Leia sobre as [diretrizes definidas sobre o uso de cofre de senhas](/infraestrutura/seguranca/cofre-senhas.md).
 
-<br><br>
 
 # Como funciona
 
@@ -18,7 +17,6 @@ Quando tudo estiver configurado, a integração funciona da seguinte forma:
 - Após encontrado o segredo, o operator cria um objeto `secret` no repositório do projeto. A secret é formada por uma combinação de `chave: valor`, sendo a chave definida nas configurações do chart e o valor é o segredo registrado no cofre de senhas.
 - Com a `secret` criada, é possível acessá-la pela aplicação inserindo o seu valor em uma variável de ambiente.
 
-<br><br>
 
 # Configuração
 Como o `cofresenha` é um chart template, ele deve ser utilizado como dependencia nos chart dummy específicos de cada aplicação. No arquivo `Chart.yaml`, incluir o `cofresenha` como dependencia da aplicação.
@@ -42,8 +40,24 @@ dependencies:
     repository: "http://charts.paas.capes.gov.br/capes/infra"
 ```
 
+## Pré-requisitos
 
-<br><br>
+### Aplicações Java 8 (ou superior)
+
+Aplicações em Java 8 ou superior podem utilizar a bilbioteca ojdbc8 (biblioteca de JDBC da Oracle, compilada com major version 52). Isso pode contornar o problema de incompatibilidade com **usernames com mais de 30 caracteres** que pode ocorrer ao seguir os padrões de nomenclatura necessários para a integração com o cofre de senhas.
+
+
+No pom.xml, favor utilizar a dependência do driver JDBC da Oracle para:
+
+```yaml
+<dependency>
+    <groupId>com.oracle.database.jdbc</groupId>
+    <artifactId>ojdbc8</artifactId>
+    <version>19.3.0.0</version>
+</dependency>
+```
+
+
 
 # Utilização
 
@@ -90,7 +104,7 @@ deployment:
 ...
 ```
 
-<br><br>
+
 # Referências
 - [Chart do cofre de senha](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha)
 - [Operator do cofre de senha](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator)
