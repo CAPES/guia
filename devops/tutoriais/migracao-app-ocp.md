@@ -187,14 +187,14 @@ Origem:
 [Compute Nodes OCP (DHT/PROD-INT/PROD-EXT)]
 
 Destino:
-Host: xpt.capes.gov.br
+Host: xpto.capes.gov.br
 Port: 80 e 443
 ```
-#### 8.1 Comunicação sentido [Aplicação/Serviço externo >> OCP]
+#### 8.2 Comunicação sentido [Aplicação/Serviço externo >> OCP]
 
 ```
 Origem:
-Host: xpt.capes.gov.br
+Host: xpto.capes.gov.br
 
 Destino:
 [VIP OCP de (DHT/PROD-INT/PROD-EXT)]
