@@ -374,22 +374,22 @@ Banco: Dsnv~~
  
 ~~jdbc:postgresql://v-des-enterprisedb01.des.capes.gov.br:5432/Dsnv~~
 
-##### HOMOLOGACAO
-Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
+##### HOMOLOGACAO ==>> ***DESATIVADO*** <<== 
+~~Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
 Port number: 5432
-Banco: homologacao 
+Banco: homologacao~~ 
  
 ```bash
-jdbc:postgresql://postgres.hom.capes.gov.br:5432/homologacao
+~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/homologacao~~
 ```
  
-##### PREPROD
-Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
+##### PREPROD ==>> ***DESATIVADO*** <<== 
+~~Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
 Port number: 5432
-Banco: preprod 
+Banco: preprod~~ 
  
 ```bash
-jdbc:postgresql://postgres.hom.capes.gov.br:5432/preprod
+~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/preprod~~
 ```
  
 ##### TESTE  ==>> ***DESATIVADO*** <<==
@@ -420,12 +420,12 @@ jdbc:postgresql://postgresdhtsrv01.hom.capes.gov.br:5432/<banco de dados>
 ```
  
 ##### POSTGRES9 HOM
-Host name: postgres9.hom.capes.gov.br (melhor opção) ou 172.19.126.31
+Host name: postgresdhtsrv02.hom.capes.gov.br
 Port number: 5432
-Banco: postgres 
+Banco: postgres, homologacao 
  
 ```bash
-jdbc:postgresql://postgres9.hom.capes.gov.br:5432/postgres
+jdbc:postgresql:/postgresdhtsrv02.hom.capes.gov.br:5432/<banco de dados>
 ```
 
 ##### POSTGRES9 TESTE
@@ -437,6 +437,14 @@ Banco: postgres, teste, administrativo cadastrodepessoas, tst_scba, etc.
 jdbc:postgresql://postgresdhtsrv03.hom.capes.gov.br:5432/<banco de dados>
 ```
 
+##### POSTGRES9 PREPROD
+Host name: postgresdhtsrv04.hom.capes.gov.br
+Port number: 5432
+Banco: postgres, preprod 
+ 
+```bash
+jdbc:postgresql:/postgresdhtsrv04.hom.capes.gov.br:5432/<banco de dados>
+```
 
 <br><br><br>
 
