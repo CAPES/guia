@@ -240,13 +240,13 @@ A **RDM** é feita pelo [formulário](https://docs.google.com/forms/d/e/1FAIpQLS
   * **Tipo de Mudança** -  `Aleração` (considerando que o nome DNS já existia)
   * **Título da Mudança** - `Migração da infraestrutura da aplicação para o OCP`
   * **Onde será feita a Mudança** - Entre com o nome do sistema que está sofrendo alteração. Exemplo: `SAP`
-  * **O que será feito** - `Alteração de DNS para a infraestrutura no OCP.`
+  * **O que será feito** - `Alteração de DNS da aplicação para a infraestrutura no OCP.`
   * **Por que será feito** - `Aplicação está sendo migrada da plataforma Openshift OKD para a OCP.`
 * **DNS e Contextos** - `alteração`
   * **Necessário utilizar página de aviso de manutenção com previsão de retorno do Serviço?** - `não`
   * **Qual tipo de ação no DNS/Contexto?** - A resposta irá varias de acordo com o sistema a ser migrado.
   * **Necessário utilizar um certificado digital?** - `Sim - O Padrão`
-  * **Quais mudanças no DNS|contexto|certificados serão feitas?** - inserir o DNS que será alterado, exemplo `XPTO.capes.gov.br`.
+  * **Quais mudanças no DNS|contexto|certificados serão feitas?** - Inserir o DNS que será alterado, exemplo `XPTO.capes.gov.br`.
 * **Segurança e Controle de Acesso** - `Inclusão` considerando que regras já tenham sido mapeadas, porém ainda não solicitadas. As respostas neste tópico, irão depender do sistema que está sendo migrado.
 * **Monitoramento** - `Inclusão`, para incluir a página de monitoramento do sistema.
 
