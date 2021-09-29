@@ -244,10 +244,16 @@ A **RDM** é feita pelo [formulário](https://docs.google.com/forms/d/e/1FAIpQLS
   * **Por que será feito** - `Aplicação está sendo migrada da plataforma Openshift OKD para a OCP.`
 * **DNS e Contextos** - `alteração`
   * **Necessário utilizar página de aviso de manutenção com previsão de retorno do Serviço?** - `não`
-  * **Qual tipo de ação no DNS/Contexto?** - A resposta irá varias de acordo com o sistema a ser migrado.
+  * **Qual tipo de ação no DNS/Contexto?** - A resposta irá varias de acordo com o sistema a ser migrado, podendo ser interno e/ou externo.
   * **Necessário utilizar um certificado digital?** - `Sim - O Padrão`
-  * **Quais mudanças no DNS|contexto|certificados serão feitas?** - Inserir o DNS que será alterado, exemplo `XPTO.capes.gov.br`.
-* **Segurança e Controle de Acesso** - `Inclusão` considerando que regras já tenham sido mapeadas, porém ainda não solicitadas. As respostas neste tópico, irão depender do sistema que está sendo migrado.
+  * **Quais mudanças no DNS|contexto|certificados serão feitas?** - Inserir o DNS que será alterado, exemplo: 
+    * DNS interno: `XPTO.capes.gov.br` para balanceador interno.
+    * DNS externo: `XPTO.capes.gov.br` para balanceador externo.
+* **Segurança e Controle de Acesso** - `Inclusão` considerando que regras já tenham sido mapeadas, porém ainda não solicitadas. As respostas neste tópico, irão depender do sistema que está sendo migrado. Exemplo:
+    * Acessível pela Internet: A depender
+    * Regra de Firewall: `sim`
+    * Demais opções: `não`
+    * 
 * **Monitoramento** - `Inclusão`, para incluir a página de monitoramento do sistema.
 
 > IMPORTANTE: Ao finalizar o preenchimento do formulário, convoque os membros do CCM pelo **Discord** no canal #ccm. Escreva no canal `@ccm favor avaliar a mudança para migração para o OCP`.
