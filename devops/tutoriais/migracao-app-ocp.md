@@ -242,18 +242,24 @@ A **RDM** é feita pelo [formulário](https://docs.google.com/forms/d/e/1FAIpQLS
   * **Onde será feita a Mudança** - Entre com o nome do sistema que está sofrendo alteração. Exemplo: `SAP`
   * **O que será feito** - `Alteração de DNS da aplicação para a infraestrutura no OCP.`
   * **Por que será feito** - `Aplicação está sendo migrada da plataforma Openshift OKD para a OCP.`
+  * **Riscos previstos** - `Riscos operacinais na execução da mudança.`
 * **DNS e Contextos** - `alteração`
   * **Necessário utilizar página de aviso de manutenção com previsão de retorno do Serviço?** - `não`
   * **Qual tipo de ação no DNS/Contexto?** - A resposta irá varias de acordo com o sistema a ser migrado, podendo ser interno e/ou externo.
   * **Necessário utilizar um certificado digital?** - `Sim - O Padrão`
   * **Quais mudanças no DNS|contexto|certificados serão feitas?** - Inserir o DNS que será alterado, exemplo: 
-    * DNS interno: `XPTO.capes.gov.br` para balanceador interno.
-    * DNS externo: `XPTO.capes.gov.br` para balanceador externo.
+    * DNS interno: `XPTO.capes.gov.br para balanceador interno do OCP`.
+    * DNS externo: `XPTO.capes.gov.br para balanceador externo do OCP`.
 * **Segurança e Controle de Acesso** - `Inclusão` considerando que regras já tenham sido mapeadas, porém ainda não solicitadas. As respostas neste tópico, irão depender do sistema que está sendo migrado. Exemplo:
-    * Acessível pela Internet: A depender
-    * Regra de Firewall: `sim`
-    * Demais opções: `não`
-    * 
+    * **Acessível pela Internet**: A depender
+    * **Regra de Firewall**: `sim`
+    * **Demais opções**: `N/A`
+    * **Acesso Wi-Fi**: Sim - Se estiver disponível para Internet.
+    * **Acesso VPN**: Sim - Se estiver disponível para Internet.
 * **Monitoramento** - `Inclusão`, para incluir a página de monitoramento do sistema.
+    * **Monitoramento Web (Web Cenário)** - `sim`
+    * **Demais**: `N/A`
+    * **Resumo da mudança no serviço de monitoramento** - Monitorar a URL da alicação e a página de diagnóstico. Exemplo: `https://sap.capes.gov.br/diagnostics`
+* **Documentação** - Caso haja documentação a ser feita, selecione os sistemas que precisam ser alterados. Exemplo: `Wiki (Git) `
 
 > IMPORTANTE: Ao finalizar o preenchimento do formulário, convoque os membros do CCM pelo **Discord** no canal #ccm. Escreva no canal `@ccm favor avaliar a mudança para migração para o OCP`.
