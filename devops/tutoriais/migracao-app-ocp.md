@@ -4,14 +4,17 @@ Neste Guia será descrito o passo a passo de como realizar a migração de uma a
 
 [Vídeo tutorial](https://drive.google.com/file/d/1wh2OgwpNtp6l2QP5ZdacGpEMugcd6Uy1/view?usp=sharing)
 
-## Pré-requisito
+## Pré-requisitos
 
-### Atualização para o CofreSenha 2.0
+### a) Atualização para o CofreSenha 2.0
 
 Como pré-requisito para migração ao OCP, é necessário que a aplicação já esteja utilizando a versão 2.0 do Cofre de Senhas.
 
 Ver documentação de [implantação cofre de senha 2.0](../orientacoes-tecnicas/cofre-senhas.md)
 
+### b) Revisão das URIs de conexão com banco de dados
+
+Revisar nos arquivos `values-*.yaml` as _strings_ das conexões com os bancos de dados para utilizarem os valores documentados pelo time de banco de dados - [Strings de conexão](../../banco-de-dados/configuracoes/strings-de-conexao.md).
 
 ## Passo a passo de Migração
 
@@ -46,12 +49,12 @@ Solicito criação do projeto <sigla-projeto> no Openshift OCP.
 
 Os usuários de rede abaixo devem ter acesso ao Openshift e a esse projeto.
 
-Gerente: 
-- José Ricardo - joser 
+Gerente:
+- José Ricardo - joser
 
 Equipe
 - Ricardo José - ricardoj
-- José Castro - josec 
+- José Castro - josec
 ```
 > O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
 
@@ -214,7 +217,7 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 
 ```
 ...
-## Para aplicações internas 
+## Para aplicações internas
 172.19.208.52 xpto.capes.gov.br
 
 ## Para aplicações externas

@@ -1,6 +1,6 @@
 # Introdução
 
-Essa documentação aborda os aspectos técnicos da integracão, via API, entre o Openshift e o Cofre de Senhas que é feita através de um Operator do Kubernetes. 
+Essa documentação aborda os aspectos técnicos da integracão, via API, entre o Openshift e o Cofre de Senhas que é feita através de um Operator do Kubernetes.
 Foi criado o chart de `cofresenha` para facilitar a utilização dessa integração.
 
 ## Normas de Uso
@@ -9,7 +9,7 @@ Leia sobre as [diretrizes definidas sobre o uso de cofre de senhas](/infraestrut
 
 # Como funciona
 
-O primeiro passo é solicitar o cadastro do segredo/senha no PMP Cofre de Senhas da Capes. 
+O primeiro passo é solicitar o cadastro do segredo/senha no PMP Cofre de Senhas da Capes.
 Após o cadastro do segredo, é necessário realizar a configuração do chart no repositório git do projeto.
 
 Quando tudo estiver configurado, a integração funciona da seguinte forma:
@@ -57,11 +57,12 @@ No pom.xml, favor utilizar a dependência do driver JDBC da Oracle para:
 </dependency>
 ```
 
-
+> Lembrar de remover ou excluir das dependências transitivas outras versões do driver JDBC da Oracle (`ojbc6` por exemplo).
+> A partir da versão 1.2.0 da pilha Java, o driver já é o `ojdb8` numa versão adequada.
 
 # Utilização
 
-Após a configuração da dependencia do chart, para de fato utilizar a funcionalidade, é necessário inserir as seguintes configurações nos arquivos de values. 
+Após a configuração da dependencia do chart, para de fato utilizar a funcionalidade, é necessário inserir as seguintes configurações nos arquivos de values.
 
 Arquivo localizado em: `devops/backend|frontend/aplicacao/values-[ambiente].yaml`
 
@@ -70,7 +71,7 @@ Exemplo:
 cofresenha:
   enable: true
   secretName: database-cofre-secret
-    
+
   secretsList:
     - name: "password"
       resourceName: "DES_ORACLE_OSHIFT"
