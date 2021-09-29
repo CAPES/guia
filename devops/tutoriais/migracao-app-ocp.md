@@ -53,7 +53,7 @@ Equipe
 - Ricardo José - ricardoj
 - José Castro - josec 
 ```
-*** O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
+> O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
 
 
 
@@ -222,7 +222,7 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 ...
 ```
 
-*** Lembrar de remover a linha após os testes.
+> Lembrar de remover a linha após os testes.
 
 ### 10. Implantar em produção
 
