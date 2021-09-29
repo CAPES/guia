@@ -56,7 +56,7 @@ Equipe
 - Ricardo José - ricardoj
 - José Castro - josec
 ```
-*** O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
+> O nome do projeto no Openshift deve ser o mesmo nome do projeto no GIT. Enviar a sigla do projeto no Git.
 
 
 
@@ -225,24 +225,44 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 ...
 ```
 
-*** Lembrar de remover a linha após os testes.
+> Lembrar de remover a linha após os testes.
 
 ### 10. Implantar em produção
 
 Responsabilidade: Time Desenvolvimento
 
-Abrir chamado CATI para a infraestrutura solicitando a mudança de DNS.
+Devido a alteração no ambiente de produção é necessário fazer uma **Requisição de Mudança (RDM)**, na qual é submetida ao **Comitê Consultivo de Mudanças (CCM)**.
+> IMPORTANTE: As migrações para o OCP serão tratadas como mudanças extraordinárias e poderão ser feitas durante o expediente nas quais serão analisadas pelos membros do CCM, **porém não serão consideradas mudanças emergenciais**.
 
-```
-Prezados,
+A **RDM** é feita pelo [formulário](https://docs.google.com/forms/d/e/1FAIpQLSd8sBBItYPSVK6-s6O7ih0FIetOaPuSmLvNMQhzM2bqXRdlTg/viewform) e seu preenchimento deve ser o modelo abaixo, para as principais questões:
 
-Para finalizar a migração da aplicação XPTO para o Openshift OCP.
+* **Solicitante da Mudança** - Detalhes de quem solicita a mudança.
+* **Responsáveis pela Mudança** - Informação de quem irá liderar da mudança, assim como envolvidos.
+* **Visão Geral sobre a Mudança**:
+  * **Categoria** - `Normal`
+  * **Tipo de Mudança** -  `Aleração` (considerando que o nome DNS já existia)
+  * **Título da Mudança** - `Migração da infraestrutura da aplicação para o OCP`
+  * **Onde será feita a Mudança** - Entre com o nome do sistema que está sofrendo alteração. Exemplo: `SAP`
+  * **O que será feito** - `Alteração de DNS da aplicação para a infraestrutura no OCP.`
+  * **Por que será feito** - `Aplicação está sendo migrada da plataforma Openshift OKD para a OCP.`
+  * **Riscos previstos** - `Riscos operacinais na execução da mudança.`
+* **DNS e Contextos** - `alteração`
+  * **Necessário utilizar página de aviso de manutenção com previsão de retorno do Serviço?** - `não`
+  * **Qual tipo de ação no DNS/Contexto?** - A resposta irá varias de acordo com o sistema a ser migrado, podendo ser interno e/ou externo.
+  * **Necessário utilizar um certificado digital?** - `Sim - O Padrão`
+  * **Quais mudanças no DNS|contexto|certificados serão feitas?** - Inserir o DNS que será alterado, exemplo: 
+    * DNS interno: `XPTO.capes.gov.br para balanceador interno do OCP`.
+    * DNS externo: `XPTO.capes.gov.br para balanceador externo do OCP`.
+* **Segurança e Controle de Acesso** - `Inclusão` considerando que regras já tenham sido mapeadas, porém ainda não solicitadas. As respostas neste tópico, irão depender do sistema que está sendo migrado. Exemplo:
+    * **Acessível pela Internet**: A depender
+    * **Regra de Firewall**: `sim`
+    * **Demais opções**: `N/A`
+    * **Acesso Wi-Fi**: Sim - Se estiver disponível para Internet.
+    * **Acesso VPN**: Sim - Se estiver disponível para Internet.
+* **Monitoramento** - `Inclusão`, para incluir a página de monitoramento do sistema.
+    * **Monitoramento Web (Web Cenário)** - `sim`
+    * **Demais**: `N/A`
+    * **Resumo da mudança no serviço de monitoramento** - Monitorar a URL da alicação e a página de diagnóstico. Exemplo: `https://sap.capes.gov.br/diagnostics`
+* **Documentação** - Caso haja documentação a ser feita, selecione os sistemas que precisam ser alterados. Exemplo: `Wiki (Git) `
 
-Solicito alteração do DNS abaixo.
-
-DNS:
-xpto.capes.gov.br
-
-Destino:
-[VIP OCP de (PROD-INT/PROD-EXT)]
-```
+> IMPORTANTE: Ao finalizar o preenchimento do formulário, convoque os membros do CCM pelo **Discord** no canal #ccm. Escreva no canal `@ccm favor avaliar a mudança para migração para o OCP`.
