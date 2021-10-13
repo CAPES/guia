@@ -1,21 +1,21 @@
 - [Visão Geral](#visão-geral)
 - [Normas Gerais de Uso](#normas-gerais-de-uso)
   - [Nomenclatura](#nomenclatura)
-    - [Caminho dos Segredos](#caminho-dos-segredos)
-    - [Nome dos Usuários (nas Integrações via API)](#nome-dos-usuários-nas-integrações-via-api)
-- [Como Acessar o PMP](#como-acessar-o-pmp)
+    - [Estrutura dos Segredos](#estrutura-dos-segredos)
+  - [Permissões](#permissões)
+    - [Tabela de Acessos](#tabela-de-acessos)
+- [Como Acessar o Cofre de Senhas Vault](#como-acessar-o-cofre-de-senhas-vault)
   - [Interface Web](#interface-web)
-    - [Segundo Fator de Autenticação](#segundo-fator-de-autenticação)
   - [API](#api)
-    - [Ver os Recursos Compartilhados com o Usuário](#ver-os-recursos-compartilhados-com-o-usuário)
-    - [Consulta IDs através do resource e usuário](#consulta-ids-através-do-resource-e-usuário)
-    - [Ver uma Senha de uma Conta](#ver-uma-senha-de-uma-conta)
+    - [Listar os Segredos](#listar-os-segredos)
 - [Integração via OpenShift (Chart)](#integração-via-openshift-chart)
 
 <br><br>
 
 # Visão Geral
-No gerenciamento de um ambiente computacional com certa complexidade, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados, se faz necessário. O uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades problemas na gestão de forma profissional. Com isto, a DTI/CGII implantou um **[cofre de senhas](https://git.capes.gov.br/cgii/seguranca/pmp)** (acesso restrito), utilizando o software **Password Manager Pro** (PMP), que centraliza tais dados sensíveis e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
+No gerenciamento de um ambiente computacional com certa complexidade, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados, se faz necessário. O uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades problemas na gestão de forma profissional. 
+
+Com isto, a DTI/CGII implantou um **[cofre de senhas](https://git.capes.gov.br/cgii/seguranca/vault)** (acesso restrito), utilizando o software **Vault** da empresa Hashicorp, que centraliza tais dados sensíveis e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
 
 <br><br>
 
@@ -42,150 +42,211 @@ No gerenciamento de um ambiente computacional com certa complexidade, o gerencia
 <br>
 
 ## Nomenclatura 
-### Caminho dos Segredos
-O caminho onde os segredos ficam armazenados segue a seguinte nomenclatura abaixo. Sendo um exemplo, o `PROD_Antimalware-Mcafee`, onde as senhas de produção do sistema de antimalware, da empresa Mcafee. Logo, todos os segredos (usuários/senhas) ficarão armazenadas dentro de recurso (*resource name*).
+### Estrutura dos Segredos
+A estrutura do cofre de senhas foi definida de forma que os segredos fiquem organizados de acordo com o respectivo sistema, além de facilitar a criação de políticas no compartilhamento com os usuários, quando um sistema form descontinuado, a exclusão dos segredos atrelados também será fácil.
 
-> Nota: No cofre de senhas (PMP) o caminho é chamado de *resource name*.
+Os segredos foram hierarquizados em sub-pastas ou caminhos (*paths*), considerando o *secret engine* do tipo **chave-valor**, pois este será o mais utilizado. Para os demais *secret engines* adota-se o caminho raiz com o nome do próprio *secret engine*.
+> ***Secret Engine*** - O cofre de senha possui mecanismos diferentes para o armazenamento de segredos (ssh, totp, pki), porém essa documentação é voltada para o de **chave-valor** (KV - *Key Value*).
 
+Em resumo, os segredos (senhas, certificados, tokens...) são armazenados na hierarquia, definida abaixo, e compartilhada com as equipes. O acesso aos segredos pode ser feito via API ou pela interface web, com usuário da Rede CAPES.
+
+A estrutura criada para armazenar os segredos segue as diretriz:
+* **AZUL** - é **mandatório** e indicarão o nome do **sistema** e o **ambiente**. 
+  * **IMPORTANTE**: O nome do sistema será exatamente igual ao cadastrado no Git. Havendo nome igual, recomenda-se alteração do nome no Git.
+* **AMARELO** - irá variar de acordo com a necessidade do sistema, isto é, não haverá necessariamente toda as pasta (storage, automacao...), porém deverão ser usados os nomes aqui padronizados, de forma a facilitar a criação das políticas de compartilhamento.
+* **VERDE** - são sub-pastas que não tem um critério, podendo existir ou não, servirá como forma de organizar os segredos que possam vir a ter o nome da chave igual, porém atrelados ao mesmo nicho. Entretanto, não haverá criação de políticas neste nível, somente no nível superior (amarelo).
+* **Vermelho** - constarão os segredos.
+
+> Exemplo: `sucupira/hom/banco_dados/oracle` - local onde os segredo do sistema "sucupira" no ambiente de homologação, para a categoria de "banco de dados" do tipo "oracle" estarão armazenados.
+
+```mermaid
+graph TD
+
+u[Usuário/API]-->sistema(Sistema)
+sistema-->ambiente(Ambiente)
+
+style sistema fill:#87CEFA
+style ambiente fill:#87CEFA
+
+ambiente-->s1d1_a(automacao)
+s1d1_a-->s1d1_a_cm(cm)
+s1d1_a-->s1d1_a_cicd(cicd)
+
+ambiente-->s1d1_b(banco_dados)
+ambiente-->s1d1_s(storage)
+ambiente-->s1d1_w(windows)
+ambiente-->s1d1_l(linux)
+ambiente-->s1d1_mon(monitoria)
+ambiente-->s1d1_seg(seguranca)
+
+s1d1_b-->s1d1_b_o(oracle)
+s1d1_b-->s1d1_b_p(postgres)
+s1d1_b-->s1d1_b_m(mysql)
+s1d1_b-->s1d1_b_s(sybase)
+s1d1_b-->s1d1_b_ms(mssql)
+
+style s1d1_a fill:#FFD433
+style s1d1_a_cm fill:#FFD433
+style s1d1_a_cicd fill:#FFD433
+style s1d1_b fill:#FFD433
+style s1d1_b_o fill:#FFD433 
+style s1d1_b_p fill:#FFD433 
+style s1d1_b_m fill:#FFD433 
+style s1d1_b_s fill:#FFD433 
+style s1d1_b_ms fill:#FFD433 
+style s1d1_s fill:#FFD433
+style s1d1_w fill:#FFD433
+style s1d1_l fill:#FFD433
+style s1d1_seg fill:#FFD433
+style s1d1_mon fill:#FFD433
+
+s1d1_a_cm-->s1d1_a_cm_x(opcional-n)
+s1d1_a_cicd-->s1d1_a_cicd_x(opcional-n)
+s1d1_b_o-->s1d1_b_o_x(opcional-n)
+s1d1_b_p-->s1d1_b_p_x(opcional-n)
+s1d1_b_m-->s1d1_b_m_x(opcional-n)
+s1d1_b_s-->s1d1_b_s_x(opcional-n)
+s1d1_b_ms-->s1d1_b_ms_x(opcional-n)
+s1d1_s-->s1d1_s_x(opcional-n)
+s1d1_w-->s1d1_w_x(opcional-n)
+s1d1_l-->s1d1_l_x(opcional-n)
+s1d1_seg-->s1d1_seg_x(opcional-n)
+s1d1_mon-->s1d1_mon_x(opcional-n)
+
+style s1d1_a_cm_x fill:#08DB3B
+style s1d1_a_cicd_x fill:#08DB3B
+style s1d1_b_o_x fill:#08DB3B
+style s1d1_b_p_x fill:#08DB3B
+style s1d1_b_m_x fill:#08DB3B
+style s1d1_b_s_x fill:#08DB3B
+style s1d1_b_ms_x fill:#08DB3B
+
+style s1d1_s_x fill:#08DB3B
+style s1d1_w_x fill:#08DB3B
+style s1d1_l_x fill:#08DB3B
+style s1d1_seg_x fill:#08DB3B
+style s1d1_mon_x fill:#08DB3B
+
+s1d1_a_cm_x---s1d1_a_cm_s((segredos))
+s1d1_a_cicd_x---s1d1_a_cicd_s((segredos))
+s1d1_b_o_x---s1d1_b_o_s((segredos))
+s1d1_b_p_x---s1d1_b_p_s((segredos))
+s1d1_b_m_x---s1d1_b_m_s((segredos))
+s1d1_b_s_x---s1d1_b_s_s((segredos))
+s1d1_b_ms_x---s1d1_b_ms_s((segredos))
+s1d1_s_x---s1d1_s_s((segredos))
+s1d1_w_x---s1d1_w_s((segredos))
+s1d1_l_x---s1d1_l_s((segredos))
+s1d1_seg_x---s1d1_seg_s((segredos))
+s1d1_mon_x---s1d1_mon_s((segredos))
+
+style s1d1_a_cm_s fill:#FA8072
+style s1d1_a_cicd_s fill:#FA8072
+style s1d1_b_o_s fill:#FA8072
+style s1d1_b_p_s fill:#FA8072
+style s1d1_b_m_s fill:#FA8072
+style s1d1_b_s_s fill:#FA8072
+style s1d1_b_ms_s fill:#FA8072
+style s1d1_s_s fill:#FA8072
+style s1d1_w_s fill:#FA8072
+style s1d1_l_s fill:#FA8072
+style s1d1_seg_s fill:#FA8072
+style s1d1_mon_s fill:#FA8072
 ```
-XXX_AAA-BBB
-```
 
-Onde:
-* XXX: prefixo que indica o ambiente (vide tabela abaixo)
-* AAA: Indica o serviço/sistema a qual aquele recurso contém informações. Exemplo: Antimalware, PortalCapes, Wireless, Oracle, Intranet
-* BBB: Indica o produto daquele serviço ou o fabricante. Exemplo: Microsoft, Google, Itautec
-
-
-| **Prefixo XXX <br>(Ambiente)** | **Descrição** |
-| ------------ | ------------- |
-| `PROD`      | Prefixo para os segredos do ambiente de produção |
-| `PREPROD`   | Prefixo para os segredos do ambiente de pre-produção|
-| `HOM`       | Prefixo para os segredos do ambiente de homologação|
-| `DES`       | Prefixo para os segredos do ambiente de desenvolvimento|
-| `TESTE`     | Prefixo para os segredos do ambiente de testes|
 
 <br>
 
-### Nome dos Usuários (nas Integrações via API)
-Para que a integração com o cofre de senhas, através de esteiras de desenvolvimento, fosse feita de forma padronizada, tornando algumas configurações transparentes para o desenvolvedor, foi definido o padrão a seguir. Sendo um exemplo, o `WEB_FINANCEIRO-WEB`, indicando 
+## Permissões
 
-> Nota: No cofre de senhas (PMP) o caminho é chamado de *resource name*.
+O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, mediante justificativa. Todavia, grupos pré-definidos são utilizados no compartilhamento dos segredos com as equipes que atuam em determinada categoria (linux, windows...). A tabela abaixo mostrar a regra padrão adotada.
 
-```
-SSS_PPP ou SSS-OOO_PPP
-```
+### Tabela de Acessos
 
-Onde:
-* SSS: prefixo usado para identificar o tipo de usuário (Vide tabela abaixo)
-  * OOO: nome **opcinal** também considerado como parte do prefixo
-* PPP: nome exatamente igual ao projeto no repositório (Git)
+| **Pasta** | **Objetivo** | **Permissões** |
+| --------- | ------------ | -------------- |
+| **sistema** exemplo:<br>`sucupira` | Raiz da estrutura onde estarão os segredos daquele respectivo sistema. | Gerente do Cofre (RW) |
+| **amiente**, podendo ser:<br>`teste` <br>`des` <br>`hom` <br>`preprod` <br>`prod` | Ambiente a qual se destina tais segredos. | Gerente do Cofre (RW) |
+| --------- | ------------ | -------------- |
+| `automacao` | Pasta contendo as demais sub-pastas contendo os segredos usados para as integrações automatizadas. | Contas de integração (R) |
+| `cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Equipe de Infraestrutura (RW) |
+| `cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Equipe de Infraestrutura (RW)<br>Equipe DevOps (RW) <br>Equipe de Desenvolvimento (RW - **somente para DHT**) |
+| `banco_dados` | Segredos das bases de dados. |  <br>Equipe de Banco (RW) <br>Equipe de Infraestrutura (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
+| `storage` | Segredos do sistema de armazenamento. |  Equipe Storage (RW) |
+| `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. |  Equipe Windows (RW) |
+| `linux` | Segredos que sejam do sistema operacional Linux, como contas de serviço e root. |  Equipe Linux (RW) |
+| `seguranca` | Segredos que ficarão mais restritos, à equipe de segurança. |  Equipe Segurança (RW) |
+| `monitoria` | Segredos utilizados pela equipe de monitoramento | Equipe Monitoramento(RW) <br>Equipe Segurança(R) <br>Equipe Windows(R)<br>Equipe Linux(R) |
 
-
-
-
-| **Prefixo SSS <br>(Tipo da Conta)** | **Descrição** |
-| ------------ | ------------- |
-| `WEB`      | Prefixo do usuário que indica uma conta para uso de aplicação web |
-| `SRV`      | Prefixo do usuário que indica uma conta de serviço|
 
 <br><br>
 
-# Como Acessar o PMP
-Veja abaixo as formas para acessar os segredos na ferramenta PMP.
+# Como Acessar o Cofre de Senhas Vault
+Veja abaixo as formas para acessar o Cofre de Senhas Vault.
 
-> :blue_book: Com base na norma acima, somente usuários previamente cadastradas podem acessar. As solicitações são feitas pelo CATI.
+> :blue_book: Com base nas definições acima, somente usuários previamente cadastradas poderão ter acesso aos segredos. As solicitações são feitas pelo CATI.
 
 <br>
 
 ## Interface Web
-O acesso a ferramenta PMP é feito da seguinte forma:
-* Gerenciador de Senhas (PMP) - https://pmp.capes.gov.br:7272
-  * **Usuário**: adm.<usuário> (conta administrativa)
-  * **Senha**: <senha_da_rede>
-  * **Segundo Fator de Autenticação (TFA - Two Facto Authentication)**: utilize um dos aplicativo abaixo
+O acesso a ferramenta Vault pode ser feito feito da seguinte forma:
+* Acesse a URL https://cofre.capes.gov.br:8200
+* Selecione o **Método** `LDAP`
+  * **Username**: 
+    * <login> - conta de Rede da CAPES
+    * <adm.login> - usuários administradores do Cofre (conta administrativa).
+  * **Password**: <senha_da_rede>
 
-### Segundo Fator de Autenticação
-Para uso do mecanismo de segundo fator de autenticação um dos aplicativos abaixo precisam ser utilizados:
 
-* **[Authy](https://authy.com/) (Preferencial)** -  Recomenda-se instalá-lo no dispositivo móvel particular e de uso restrito.
-  * [Android](https://play.google.com/store/apps/details?id=com.authy.authy)
-  * [IOS](https://itunes.apple.com/us/app/authy/id494168017)
-<br>
-
-* **[Google Authenticator](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=pt-BR)** - recomenda-se instalá-lo no dispositivo móvel particular e de uso restrito.
-  * [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=pt_BR)
-  * [IOS](https://itunes.apple.com/br/app/google-authenticator/id388497605?mt=8)
-<br>
-
-> :warning: **Sincronia de Data/Hora** - A autenticação com segundo fator é sensível ao sincronismo de data/hora. Certifique que seu dispositivo está sincronizado (consulte a hora certa em https://ntp.br/.
-<br>
-
-Caso seja necessário re-criar o segundo fator de autenticação no dispositivo (troca de aparelho) entre em contato com a CGII.
+![Vault](cofre-senhas-ldap.png)
 
 
 <br>
 
 ## API
-O uso de API permite ver, alterar, trocar os recursos (usuários/senhas) dentro do PMP, porém as aplicações na CAPES até o momento são apenas para ver uma senha. 
-> Para a listagem completa, vide [documentação do fabricante](https://www.manageengine.com/products/passwordmanagerpro/help/restapi.html).
+Também é possível usar a API para ver os segredos.  
+> Para a listagem completa, vide [documentação do fabricante](https://www.vaultproject.io/api-docs).
 
+Um dos métodos é acessar a ferramenta com o Token do usuário. Para conseguir um token, faça login pela [Interface Web](#interface-web) e no menu do canto superior direito, clique em `copy token`.
 
-> :blue_book: Os exemplos abaixo utilizam a chave (token) como uma variável de ambiente (`$TOKENPMP`), porém poderia ser informado o token na própria requisição, porém não recomendado.
-
-<br>
-
-### Ver os Recursos Compartilhados com o Usuário 
-Considerando que já existem recursos (usuários/senhas) compartilhados com o usuário da API. Veja como listar quais são.
-
-* **Exemplo**
-```
-curl -k -H "AUTHTOKEN:$TOKENPMP" https://pmp.capes.gov.br:7272/restapi/json/v1/resources
-```
-
-Saída:
-```
-{"operation":{"result":{"message":"Resources fetched successfully","status":"Success"},"Details":[{"RESOURCE DESCRIPTION":"","RESOURCE TYPE":"Windows","RESOURCE ID":"1","RESOURCE NAME":"TESTE_testeAPI","NOOFACCOUNTS":"2"}],"name":"GET RESOURCES","totalRows":1}}
-```
-
+> :blue_book: Os exemplos abaixo utilizam a chave (token) como uma variável de ambiente (`$TOKENVAULT`), porém poderia ser informado o token na própria requisição, porém **não é recomendado**.
 
 <br>
 
-### Consulta IDs através do resource e usuário
+### Listar os Segredos 
+* **Lista todas as senhas** - para listar todas as senhas (chave-valor) existentes no segredo `teste_vault/des/banco_dados/oracle`
 
-* **Exemplos**
-```
-curl -k -H "AUTHTOKEN:$TOKENPMP" https://pmp.capes.gov.br:7272/restapi/json/v1/resources/1/accounts
+```bash
+curl -sH "X-Vault-Token: $TOKENVAULT" -X GET "https://cofre.capes.gov.br:8200/v1/teste_vault/data/des/banco_dados/oracle" |jq -r '.data.data'
 ```
 
-Saída:
-```
-{"operation":{"result":{"message":"Resource details with account list fetched successfully","status":"Success"},"Details":{"LOCATION":"","RESOURCE DESCRIPTION":"","RESOURCE TYPE":"Windows","RESOURCE URL":"","DOMAIN NAME":"","RESOURCE ID":"1","ACCOUNT LIST":[{"AUTOLOGONSTATUS":"User is not allowed to automatically logging in to remote systems in mobile","IS_TICKETID_REQD_ACW":"false","PASSWDID":"1","ISFAVPASS":"false","IS_TICKETID_REQD_MANDATORY":"false","ACCOUNT ID":"1","AUTOLOGONLIST":["Windows Remote Desktop","RDP Console Session"],"ACCOUNT NAME":"user1","PASSWORD STATUS":"****","IS_TICKETID_REQD":"false","ACCOUNT PASSWORD POLICY":"CAPES","ISREASONREQUIRED":"false"},{"AUTOLOGONSTATUS":"User is not allowed to automatically logging in to remote systems in mobile","IS_TICKETID_REQD_ACW":"false","PASSWDID":"2","ISFAVPASS":"false","IS_TICKETID_REQD_MANDATORY":"false","ACCOUNT ID":"2","AUTOLOGONLIST":["Windows Remote Desktop","RDP Console Session"],"ACCOUNT NAME":"user2","PASSWORD STATUS":"****","IS_TICKETID_REQD":"false","ACCOUNT PASSWORD POLICY":"CAPES","ISREASONREQUIRED":"false"}],"RESOURCE NAME":"TESTE_testeAPI","DEPARTMENT":"","DNS NAME":"","RESOURCE OWNER":"admin","RESOURCE PASSWORD POLICY":"CAPES"},"name":"GET RESOURCE ACCOUNTLIST"}}
+Saída do comando:
+```yaml
+{
+  "db1-oracle": "senha_des1",
+  "db2-oracle": "senha_des2"
+}
 ```
 
 <br>
 
-### Ver uma Senha de uma Conta 
-Para isto, é necessário saber qual é o ID do recursos e o ID da conta.
 
-* **Exemplo**
+* **Lista apenas um valor** - para visualizar apenas o valor da chave `db1-oracle` existente no segredo `teste_vault/des/banco_dados/oracle`
+
+```bash
+curl -sH "X-Vault-Token: $TOKENVAULT" -X GET "https://cofre.capes.gov.br:8200/v1/teste_vault/data/des/banco_dados/oracle" |jq -r '.data.data["db1-oracle"]'
 ```
-curl -k -H "AUTHTOKEN:$TOKENPMP" https://pmp.capes.gov.br:7272/restapi/json/v1/resources/1/accounts/2/password
+
+
+Saída do comando:
+```yaml
+senha_des1
 ```
-
-Saída:
-```
-{"operation":{"result":{"message":"Password fetched successfully","status":"Success"},"Details":{"PASSWORD":"XXXXXXXX"},"name":"GET PASSWORD"}}
-```
-<br><br><br>
-
-
-
-
 
 <br><br>
 
 # Integração via OpenShift (Chart)
 
-A integração entre o Openshift e o Cofre de Senhas é feita através de um Operator do Kubernetes.
-Foi criado o chart de `cofresenha` para facilitar a utilização dessa integração. Veja [como usar](/devops/orientacoes-tecnicas/cofre-senhas.md).
+A integração entre o Openshift e o Cofre de Senhas é feita através de um [Operator do Kubernetes](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator).
+Foi criado o [*chart*](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração. 
+Veja [como usar](/devops/orientacoes-tecnicas/cofre-senhas.md).
