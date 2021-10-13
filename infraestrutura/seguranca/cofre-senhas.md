@@ -170,7 +170,7 @@ O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, me
 | --------- | ------------ | -------------- |
 | `automacao` | Pasta contendo as demais sub-pastas contendo os segredos usados para as integrações automatizadas. | Contas de integração (R) |
 | `cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Equipe de Infraestrutura (RW) |
-| `cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Equipe de Infraestrutura (RW)<br>Equipe DevOps (RW) <br>Equipe de Desenvolvimento (RW - **somente para DHT**) |
+| `cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Equipe de Infraestrutura (RW)<br>Equipe DevOps (RW) |
 | `banco_dados` | Segredos das bases de dados. |  <br>Equipe de Banco (RW) <br>Equipe de Infraestrutura (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
 | `storage` | Segredos do sistema de armazenamento. |  Equipe Storage (RW) |
 | `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. |  Equipe Windows (RW) |
@@ -193,9 +193,9 @@ O acesso a ferramenta Vault pode ser feito feito da seguinte forma:
 * Acesse a URL https://cofre.capes.gov.br:8200
 * Selecione o **Método** `LDAP`
   * **Username**: 
-    * <login> - conta de Rede da CAPES
-    * <adm.login> - usuários administradores do Cofre (conta administrativa).
-  * **Password**: <senha_da_rede>
+    * `<login>` - conta de Rede da CAPES
+    * `<adm.login>` - usuários administradores do Cofre (conta administrativa).
+  * **Password**: `<senha_da_rede>`
 
 
 ![Vault](cofre-senhas-ldap.png)
@@ -209,7 +209,7 @@ Também é possível usar a API para ver os segredos.
 
 Um dos métodos é acessar a ferramenta com o Token do usuário. Para conseguir um token, faça login pela [Interface Web](#interface-web) e no menu do canto superior direito, clique em `copy token`.
 
-> :blue_book: Os exemplos abaixo utilizam a chave (token) como uma variável de ambiente (`$TOKENVAULT`), porém poderia ser informado o token na própria requisição, porém **não é recomendado**.
+> :blue_book: Os exemplos abaixo utilizam o *token* como uma variável de ambiente (`$TOKENVAULT`), porém poderia ser informado o token na própria requisição, porém **não é recomendado**.
 
 <br>
 
