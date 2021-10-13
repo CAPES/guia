@@ -190,11 +190,11 @@ Veja abaixo as formas para acessar o Cofre de Senhas Vault.
 
 ## Interface Web
 O acesso a ferramenta Vault pode ser feito feito da seguinte forma:
-* Acesse a URL https://cofre.capes.gov.br:8200
-* Selecione o **Método** `LDAP`
+* Acesse a URL https://cofre.capes.gov.br:8200/ui/vault/auth?with=ldap
+* Pelo **Método** `LDAP`, entre com as credenciais:
   * **Username**: 
-    * `<login>` - conta de Rede da CAPES
-    * `<adm.login>` - usuários administradores do Cofre (conta administrativa).
+    * `<login>` - conta de Rede da CAPES.
+    * `<adm.login>` - para usuários administradores do Cofre (conta administrativa).
   * **Password**: `<senha_da_rede>`
 
 
