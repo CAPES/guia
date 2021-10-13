@@ -1,13 +1,13 @@
-> **Versão Antiga (v1)** - Você está lendo a documentação de uma versão antiga. Leia a [mais recente](cofre-senhas.md).  
+> **Versão 1.0.0** - Você está lendo a documentação de uma versão antiga. Leia a [mais recente](cofre-senha.md).
 
 ## Introdução
 
-A integracão entre o Openshift e o Cofre de Senhas é feita através de um Operator do Kubernetes.
-Foi criado o chart de `cofresenha` para facilitar a utilização dessa integração.
+A integração entre o Openshift e o Cofre de Senhas (ferramenta PMP da ManageEngine) é feita através de um Operator do Kubernetes.
+Foi criado o *chart* chamado de `cofresenha` para facilitar a utilização dessa integração.
 
 
 ## Configuração
-Como o cofresenha é um chart template, ele deve ser utilizado como dependencia nos chart dummy específicos de cada aplicação. No arquivo `Chart.yaml`, incluir o cofresenha como dependencia da aplicação.
+Como o `cofresenha` é um *chart* template, ele deve ser utilizado como dependencia nos *chart dummy* específicos de cada aplicação. No arquivo `Chart.yaml`, incluir o cofresenha como dependencia da aplicação.
 ```yaml
 dependencies:
     repository: "http://charts.paas.capes.gov.br/capes/infra"
