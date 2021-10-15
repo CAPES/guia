@@ -70,13 +70,11 @@ cofresenha:
     - name: "password_oracle"
       tipo: "banco_dados/oracle"
       chave: "WEB_APP"
-
-  secretsList:
+  
     - name: "password_mysql"
       tipo: "banco_dados/mysql"
       chave: "WEB_APP"
-
-  secretsList:
+  
     - name: "token"
       tipo: "automacao/cicd"
       chave: "token_api"
