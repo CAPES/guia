@@ -168,15 +168,14 @@ O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, me
 | **sistema** exemplo:<br>`sucupira` | Raiz da estrutura onde estarão os segredos daquele respectivo sistema. | Gerente do Cofre (RW) |
 | **amiente**, podendo ser:<br>`teste` <br>`des` <br>`hom` <br>`preprod` <br>`prod` | Ambiente a qual se destina tais segredos. | Gerente do Cofre (RW) |
 | --------- | ------------ | -------------- |
-| `automacao` | Pasta contendo as demais sub-pastas contendo os segredos usados para as integrações automatizadas. | Contas de integração (R) |
-| `cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Equipe de Infraestrutura (RW) |
-| `cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Equipe de Infraestrutura (RW)<br>Equipe DevOps (RW) |
-| `banco_dados` | Segredos das bases de dados. |  <br>Equipe de Banco (RW) <br>Equipe de Infraestrutura (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
-| `storage` | Segredos do sistema de armazenamento. |  Equipe Storage (RW) |
-| `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. |  Equipe Windows (RW) |
-| `linux` | Segredos que sejam do sistema operacional Linux, como contas de serviço e root. |  Equipe Linux (RW) |
-| `seguranca` | Segredos que ficarão mais restritos, à equipe de segurança. |  Equipe Segurança (RW) |
-| `monitoria` | Segredos utilizados pela equipe de monitoramento | Equipe Monitoramento(RW) <br>Equipe Segurança(R) <br>Equipe Windows(R)<br>Equipe Linux(R) |
+| `automacao/cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Gerente do Cofre - Infraestrutura (RW) <br>Contas de integração - CM  (R) |
+| `automacao/cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Gerente do Cofre - Infraestrutura (RW)<br>Gerente do Cofre - DevOps (RW) <br>Contas de integração - CICD (R) |
+| `banco_dados` | Segredos das bases de dados. |  <br>Gerente do Cofre - Banco (RW)<br>Equipe de Linux (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
+| `storage` | Segredos do sistema de armazenamento. |  Gerente do Cofre - Infraestrutura (RW) <br>Equipe Storage (R) |
+| `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. | Gerente do Cofre - Infraestrutura (RW) <br>Equipe Windows (R) |
+| `linux` | Segredos que sejam do sistema operacional Linux, como contas de serviço e root. |  Gerente do Cofre - Infraestrutura (RW) <br>Equipe Linux (R) |
+| `seguranca` | Segredos que ficarão mais restritos, à equipe de segurança. |  Gerente do Cofre - Infraestrutura (RW) <br>Equipe Segurança (R) |
+| `monitoria` | Segredos utilizados pela equipe de monitoramento | Gerente do Cofre - Infraestrutura (RW) <br> Equipe Monitoramento(R) <br>Equipe Segurança(R) <br>Equipe Windows(R)<br>Equipe Linux(R) |
 
 
 <br><br>
