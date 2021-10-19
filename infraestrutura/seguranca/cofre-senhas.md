@@ -248,4 +248,4 @@ senha_des1
 
 A integração entre o Openshift e o Cofre de Senhas é feita através de um [Operator do Kubernetes](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator).
 Foi criado o [*chart*](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração. 
-Veja [como usar](/devops/orientacoes-tecnicas/cofre-senhas.md).
+Veja [como usar](/devops/orientacoes-tecnicas/cofre-senha.md).
