@@ -170,7 +170,7 @@ O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, me
 | --------- | ------------ | -------------- |
 | `automacao/cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Gerente do Cofre - Infraestrutura (RW) <br>Contas de integração - CM  (R) |
 | `automacao/cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Gerente do Cofre - Infraestrutura (RW)<br>Gerente do Cofre - DevOps (RW) <br>Contas de integração - CICD (R) |
-| `banco_dados` | Segredos das bases de dados. |  <br>Gerente do Cofre - Banco (RW)<br>Equipe de Linux (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
+| `banco_dados` e seus tipos:<br>`mssql`<br>`mysql`<br>`oracle`<br>`postgres`<br>`sybase` | Segredos das bases de dados. |  <br>Gerente do Cofre - Banco (RW)<br>Equipe de Linux (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
 | `storage` | Segredos do sistema de armazenamento. |  Gerente do Cofre - Infraestrutura (RW) <br>Equipe Storage (R) |
 | `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. | Gerente do Cofre - Infraestrutura (RW) <br>Equipe Windows (R) |
 | `linux` | Segredos que sejam do sistema operacional Linux, como contas de serviço e root. |  Gerente do Cofre - Infraestrutura (RW) <br>Equipe Linux (R) |
