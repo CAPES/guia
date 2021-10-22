@@ -1,7 +1,10 @@
+> **Versão 2.0.0** - Você está lendo a documentação de uma versão antiga. Leia a [mais recente](cofre-senha.md).
+
 # Introdução
 
-Essa documentação aborda os aspectos técnicos da integracão, via API, entre o Openshift e o Cofre de Senhas que é feita através de um Operator do Kubernetes.
-Foi criado o chart de `cofresenha` para facilitar a utilização dessa integração.
+Essa documentação aborda os aspectos técnicos da integração, via API, entre o Openshift e o Cofre de Senhas (ferramenta PMP da ManageEngine) que é feita através de um Operator do Kubernetes.
+Foi criado o *chart* nomeado de `cofresenha` para facilitar a utilização dessa integração.
+
 
 ## Normas de Uso
 Leia sobre as [diretrizes definidas sobre o uso de cofre de senhas](/infraestrutura/seguranca/cofre-senhas.md).
