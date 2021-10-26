@@ -69,15 +69,15 @@ cofresenha:
   secretName: cofresenha-secret
 
   secretsList:
-    - name: "password_oracle"
+    - nome: "password_oracle"
       tipo: "banco_dados/oracle"
       chave: "WEB_APP"
   
-    - name: "password_mysql"
+    - nome: "password_mysql"
       tipo: "banco_dados/mysql"
       chave: "WEB_APP"
   
-    - name: "token"
+    - nome: "token"
       tipo: "automacao/cicd"
       chave: "token_api"
 ```
@@ -88,7 +88,7 @@ cofresenha:
 | `enable`            | Habilita a integração do Cofre de Senhas. | `true`                                               |
 | `secretName`        | Nome do objeto do tipo `secret` que será criado no *namespace* da aplicação no Openshift. Deve ser qualquer nome que faça sentido. | `cofresenha-secret` |
 | `secretsList`       | Listagem de todos os segredos (senhas, tokens, certificados e etc) a serem buscados no Cofre de Senhas (Vault) | - |
-| `secretsList.name`  | Nome da chave a ser criada no objeto `cofresenha-secret`, na qual conterá o valor do segredo. Deve ser qualquer nome que faça sentido.   | `password ` ou <br>`senha` ou <br> `token`                                                 |
+| `secretsList.nome`  | Nome da chave a ser criada no objeto `cofresenha-secret`, na qual conterá o valor do segredo. Deve ser qualquer nome que faça sentido.   | `password ` ou <br>`senha` ou <br> `token`                                                 |
 | `secretsList.tipo`  | Tipo do segredo a ser buscado. Informado pela equipe que fez o cadastro no Cofre de Senhas.<br>Definições da [Norma de Uso](/infraestrutura/seguranca/cofre-senhas.md). Alguns tipos: <br> `banco_dados/oracle` ou<br>`banco_dados/mysql` ou<br>`automacao/cicd`  | `<consultar>` |
 | `secretsList.chave` | Nome da chave do segredo. Informado pela equipe que fez o cadastro no Cofre de Senhas. | `<consultar>`|
 
