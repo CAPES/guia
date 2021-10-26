@@ -1,3 +1,5 @@
+> PARA USO DESSA VERSÃO, ACIONE O THIAGO CRUZ, POIS AS SENHAS AINDA ESTÃO SENDO MIGRADAS.
+
 # Introdução
 
 Essa documentação aborda os aspectos técnicos da integração, via API, entre o Openshift e o Cofre de Senhas (ferramenta Vault da Hashicorp) que é feita através de um [Operator do Kubernetes](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator).
