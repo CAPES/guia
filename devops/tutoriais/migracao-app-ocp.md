@@ -229,7 +229,7 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 
 ### 10. Implantar em produção
 
-Responsabilidade: Time Desenvolvimento
+Responsabilidade: Gerente do Time de Arquitetura (**Luciano Cozac**) ou Gerente de Projetos da Infraestrutura (**Adriano Herman**)
 
 Devido a alteração no ambiente de produção é necessário fazer uma **Requisição de Mudança (RDM)**, na qual é submetida ao **Comitê Consultivo de Mudanças (CCM)**.
 > IMPORTANTE: As migrações para o OCP serão tratadas como mudanças extraordinárias e poderão ser feitas durante o expediente nas quais serão analisadas pelos membros do CCM, **porém não serão consideradas mudanças emergenciais**.
