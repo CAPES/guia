@@ -177,7 +177,7 @@ O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, me
 | **Pasta** | **Objetivo** | **Permissões** |
 | --------- | ------------ | -------------- |
 | **sistema** exemplo:<br>`sucupira` | Raiz da estrutura onde estarão os segredos daquele respectivo sistema. | Gerente do Cofre (RW) |
-| **amiente**, podendo ser:<br>`teste` <br>`des` <br>`hom` <br>`preprod` <br>`prod` | Ambiente a qual se destina tais segredos. | Gerente do Cofre (RW) |
+| **ambiente**, podendo ser:<br>`teste` <br>`des` <br>`hom` <br>`preprod` <br>`prod` | Ambiente a qual se destina tais segredos. | Gerente do Cofre (RW) |
 | --------- | ------------ | -------------- |
 | `automacao/cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Gerente do Cofre - Infraestrutura (RW)<br>Gerente do Cofre - DevOps (RW) <br>Contas de integração - CICD (R) |
 | `automacao/cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Gerente do Cofre - Infraestrutura (RW) <br>Contas de integração - CM  (R) |
