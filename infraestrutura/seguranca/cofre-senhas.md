@@ -81,6 +81,7 @@ ambiente-->s1d1_seg(seguranca)
 ambiente-->s1d1_s(storage)
 ambiente-->s1d1_w(windows)
 
+s1d1_b-->s1d1_b_e(elasticsearch)
 s1d1_b-->s1d1_b_ms(mssql)
 s1d1_b-->s1d1_b_m(mysql)
 s1d1_b-->s1d1_b_o(oracle)
@@ -92,11 +93,13 @@ style s1d1_app fill:#FFD433
 style s1d1_a_cm fill:#FFD433
 style s1d1_a_cicd fill:#FFD433
 style s1d1_b fill:#FFD433
+style s1d1_b_e fill:#FFD433
+style s1d1_b_ms fill:#FFD433
+style s1d1_b_m fill:#FFD433
 style s1d1_b_o fill:#FFD433 
 style s1d1_b_p fill:#FFD433 
-style s1d1_b_m fill:#FFD433 
-style s1d1_b_s fill:#FFD433 
-style s1d1_b_ms fill:#FFD433 
+ style s1d1_b_s fill:#FFD433 
+ 
 
 style s1d1_l fill:#FFD433
 style s1d1_mon fill:#FFD433
@@ -106,11 +109,12 @@ style s1d1_w fill:#FFD433
 
 s1d1_a_cm-->s1d1_a_cm_x(opcional-n)
 s1d1_a_cicd-->s1d1_a_cicd_x(opcional-n)
+s1d1_b_e-->s1d1_b_e_x(opcional-n)
+s1d1_b_ms-->s1d1_b_ms_x(opcional-n)
+s1d1_b_m-->s1d1_b_m_x(opcional-n)
 s1d1_b_o-->s1d1_b_o_x(opcional-n)
 s1d1_b_p-->s1d1_b_p_x(opcional-n)
-s1d1_b_m-->s1d1_b_m_x(opcional-n)
 s1d1_b_s-->s1d1_b_s_x(opcional-n)
-s1d1_b_ms-->s1d1_b_ms_x(opcional-n)
 
 s1d1_app-->s1d1_app_x(opcional-n)
 s1d1_l-->s1d1_l_x(opcional-n)
@@ -121,11 +125,13 @@ s1d1_w-->s1d1_w_x(opcional-n)
 
 style s1d1_a_cm_x fill:#08DB3B
 style s1d1_a_cicd_x fill:#08DB3B
+style s1d1_b_e_x fill:#08DB3B
+style s1d1_b_ms_x fill:#08DB3B
+style s1d1_b_m_x fill:#08DB3B
 style s1d1_b_o_x fill:#08DB3B
 style s1d1_b_p_x fill:#08DB3B
-style s1d1_b_m_x fill:#08DB3B
 style s1d1_b_s_x fill:#08DB3B
-style s1d1_b_ms_x fill:#08DB3B
+
 
 style s1d1_app_x fill:#08DB3B
 style s1d1_s_x fill:#08DB3B
@@ -136,11 +142,13 @@ style s1d1_w_x fill:#08DB3B
 
 s1d1_a_cm_x---s1d1_a_cm_s((segredos))
 s1d1_a_cicd_x---s1d1_a_cicd_s((segredos))
+s1d1_b_e_x---s1d1_b_e_s((segredos))
+s1d1_b_ms_x---s1d1_b_ms_s((segredos))
+s1d1_b_m_x---s1d1_b_m_s((segredos))
 s1d1_b_o_x---s1d1_b_o_s((segredos))
 s1d1_b_p_x---s1d1_b_p_s((segredos))
-s1d1_b_m_x---s1d1_b_m_s((segredos))
 s1d1_b_s_x---s1d1_b_s_s((segredos))
-s1d1_b_ms_x---s1d1_b_ms_s((segredos))
+
 
 s1d1_app_x---s1d1_app_s((segredos))
 s1d1_l_x---s1d1_l_s((segredos))
@@ -151,11 +159,13 @@ s1d1_w_x---s1d1_w_s((segredos))
 
 style s1d1_a_cm_s fill:#FA8072
 style s1d1_a_cicd_s fill:#FA8072
+style s1d1_b_e_s fill:#FA8072
+style s1d1_b_ms_s fill:#FA8072
+style s1d1_b_m_s fill:#FA8072
 style s1d1_b_o_s fill:#FA8072
 style s1d1_b_p_s fill:#FA8072
-style s1d1_b_m_s fill:#FA8072
 style s1d1_b_s_s fill:#FA8072
-style s1d1_b_ms_s fill:#FA8072
+
 
 style s1d1_app_s fill:#FA8072
 style s1d1_l_s fill:#FA8072
@@ -181,7 +191,7 @@ O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, me
 | --------- | ------------ | -------------- |
 | `automacao/cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Gerente do Cofre - Infraestrutura (RW)<br>Gerente do Cofre - DevOps (RW) <br>Contas de integração - CICD (R) |
 | `automacao/cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Gerente do Cofre - Infraestrutura (RW) <br>Contas de integração - CM  (R) |
-| `banco_dados` e seus tipos:<br>`mssql`<br>`mysql`<br>`oracle`<br>`postgres`<br>`sybase` | Segredos das bases de dados. |  Gerente do Cofre - Banco (RW)<br>Equipe de Linux (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
+| `banco_dados` e seus tipos:<br>`elasticsearch`<br>`mssql`<br>`mysql`<br>`oracle`<br>`postgres`<br>`sybase` | Segredos das bases de dados. |  Gerente do Cofre - Banco (RW)<br>Equipe de Linux (R) <br>Equipe de Desenvolvimento (R - **somente para DHT**)|
 | `aplicacao` | Segredos utilizados para o acesso ao sistema que serão utilizados por equipe fora da infraestrutura. Normalmente cadastra-se senhas de "admin" das aplicações que são softwares de prateleira geridos por outros setores que não infraestrura. | Gerente do Cofre - Infraestrutura (RW) <br>Equipe da Aplicação (R)|
 | `storage` | Segredos do sistema de armazenamento. |  Gerente do Cofre - Infraestrutura (RW) <br>Equipe Storage (R) |
 | `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. | Gerente do Cofre - Infraestrutura (RW) <br>Equipe Windows (R) |
