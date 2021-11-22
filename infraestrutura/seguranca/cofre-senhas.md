@@ -3,7 +3,7 @@
   - [Nomenclatura](#nomenclatura)
     - [Estrutura dos Segredos](#estrutura-dos-segredos)
   - [Permissões](#permissões)
-    - [Tabela de Acessos](#tabela-de-acessos)
+    - [Tabela de Controle de Acesso](#tabela-de-controle-de-acesso)
 - [Como Acessar o Cofre de Senhas Vault](#como-acessar-o-cofre-de-senhas-vault)
   - [Interface Web](#interface-web)
   - [API](#api)
@@ -198,21 +198,27 @@ O acesso aos segredos serão concedidos conforme necessidade de uso, mediante ju
 <br>
 
 ### Tabela de Controle de Acesso
+Definições:
+* **Admin** - grupo com perfil de administrar todo o cofre.
+* **Gerente** - grupo de usuários com privilégios de escrita (criação/alteração) dos segredos.
+* **Equipe** - grupo de usuários com privilégios de leitura apenas aos segredos.
+* **R** - permissão de leitura (*read*).
+* **RW** - permissão de leitura (*read*) e escrita (*write*).
 
 | **Pasta** | **Objetivo** | **Permissões** |
 | --------- | ------------ | -------------- |
-| **sistema** exemplo:<br>`sucupira` | Raiz da estrutura onde estarão os segredos daquele respectivo sistema. | Gerente do Cofre (RW) |
-| **ambiente**, podendo ser:<br>`teste` <br>`des` <br>`hom` <br>`preprod` <br>`prod` | Ambiente a qual se destina tais segredos. | Gerente do Cofre (RW) |
+| **sistema** exemplo:<br>`sucupira` | Raiz da estrutura onde estarão os segredos daquele respectivo sistema. | Admin do Cofre (RW) |
+| **ambiente**, podendo ser:<br>`teste` <br>`des` <br>`hom` <br>`preprod` <br>`prod` | Ambiente a qual se destina tais segredos. | Admin do Cofre (RW) |
 | --------- | ------------ | -------------- |
-| `automacao/cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Gerente do Cofre - Infraestrutura (RW)<br><br>Gerente do Cofre - DevOps (RW) <br><br>API - Contas de integração - CICD (R) |
-| `automacao/cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Gerente do Cofre - Infraestrutura (RW) <br><br>API - Contas de integração - CM  (R) |
-| `banco_dados` e seus tipos:<br>`elasticsearch`<br>`mssql`<br>`mysql`<br>`oracle`<br>`postgres`<br>`sybase` | Segredos das bases de dados. |  Gerente do Cofre - Banco (RW)<br>Equipe de Banco (R)<br><br>API - Contas de integração - CICD (R)<br>API - Contas de integração - CM  (R)<br><br>Equipe de Linux (R) <br><br>Equipe de Desenvolvimento (R - **somente para DHT**)|
-| `aplicacao` | Segredos utilizados para o acesso ao sistema. Normalmente são as contas "admin" das aplicações. | Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe da Aplicação (**quando necessário**) (R)|
-| `storage` | Segredos do sistema de armazenamento. |  Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Storage (R) |
-| `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. | Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Windows (R) |
-| `linux` | Segredos que sejam do sistema operacional Linux, como contas de serviço e root. |  Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Linux (R) |
-| `seguranca` | Segredos que ficarão mais restritos, à equipe de segurança. |  Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Segurança (R) |
-| `monitoria` | Segredos utilizados pela equipe de monitoramento | Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Monitoramento(R) <br><br>Equipe Segurança(R) <br><br>Equipe Windows(R)<br><br>Equipe Linux(R) |
+| `automacao/cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Gerente de Infraestrutura (RW)<br><br>Gerente de DevOps (RW) <br><br>Equipe API CICD (Contas de integração) (R) |
+| `automacao/cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Gerente de Infraestrutura (RW) <br><br>Equipe API CM (Contas de integração) (R) |
+| `banco_dados` e seus tipos:<br>`elasticsearch`<br>`mssql`<br>`mysql`<br>`oracle`<br>`postgres`<br>`sybase` | Segredos das bases de dados. |  Gerente de Banco de Dados (RW)<br>Equipe de Banco de Dados (R)<br><br>Equipe API CICD (Contas de integração) (R)<br>Equipe API CM (Contas de integração) (R)<br><br>Equipe de Linux (R) <br><br>Equipe de Desenvolvimento (R - **somente para DHT**)|
+| `aplicacao` | Segredos utilizados para o acesso ao sistema. Normalmente são as contas "admin" das aplicações. | Gerente de Infraestrutura (RW) <br><br>Equipe da Aplicação (**grupo específico quando necessário**) (R)|
+| `storage` | Segredos do sistema de armazenamento. |  Gerente de Infraestrutura (RW) <br><br>Equipe de Storage (R) |
+| `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. | Gerente de Infraestrutura (RW) <br><br>Equipe de Windows (R) |
+| `linux` | Segredos que sejam do sistema operacional Linux, como contas de serviço e root. |  Gerente de Infraestrutura (RW) <br><br>Equipe de Linux (R) |
+| `seguranca` | Segredos que ficarão mais restritos, à equipe de segurança. |  Gerente de Infraestrutura (RW) <br><br>Equipe de Segurança (R) |
+| `monitoria` | Segredos utilizados pela equipe de monitoramento | Gerente de Infraestrutura (RW) <br><br>Equipe de Monitoramento(R) <br><br>Equipe de Segurança(R) <br><br>Equipe de Windows(R)<br><br>Equipe de Linux(R) |
 
 
 <br><br>
@@ -282,7 +288,6 @@ senha_des1
 <br><br>
 
 # Integração via OpenShift (Chart)
-
 A integração entre o Openshift e o Cofre de Senhas é feita através de um [Operator do Kubernetes](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator).
 Foi criado o [*chart*](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração. 
-Veja [como usar](/devops/orientacoes-tecnicas/cofre-senha.md).
+> Veja [como usar](/devops/orientacoes-tecnicas/cofre-senha.md).
