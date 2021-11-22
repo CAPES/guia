@@ -13,28 +13,31 @@
 <br><br>
 
 # Visão Geral
-No gerenciamento de um ambiente computacional com certa complexidade, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados, se faz necessário. O uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades e problemas. 
+No gerenciamento de um ambiente computacional com certa complexidade, como o da CAPES, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados entre outros, se faz necessário. Entretanto, obviamente, o controle com uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades e problemas em tal gerenciamento. 
 
-Com isto, a DTI/CGII implantou um **[cofre de senhas](https://git.capes.gov.br/cgii/seguranca/vault)** (acesso restrito), utilizando o software **Vault** da empresa Hashicorp, que centraliza tais dados sensíveis e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
+Com isto, a DTI/CGII implantou um **[Cofre de Senhas](https://git.capes.gov.br/cgii/seguranca/vault)** (acesso restrito), utilizando o software **Vault** da empresa Hashicorp, que centraliza tais dados sensíveis (segredos) e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
 
 <br><br>
 
 # Normas Gerais de Uso
 
-* **Complexidade da senha (PORTARIA EM CONSTRUÇÃO)** - define o número mínimo de caracteres que a senha deve conter.
-
-* **Contas de serviços (locais, super usuários, certificados, tokens....)** - todos os segredos utilizados no funcionamento do ambiente computacional devem ser registrados no Cofre de Senhas. As contas locais de administração (root, admin, sa, administrador...) serão compartilhadas apenas com os administradores respectivos daquela ferramenta, **quando estritamente necessário**, pois a regra é que os sistemas permitam o uso de contas pessoais, integradas ao LDAP/AD, quando possível, para que seja usado a conta de perfil de administrativo (`adm.<login>`).
-
-* **Gestão no Cadastro e Compartilhamento da senha** - Cada área - CGS (sistemas), CGII (infraestrutura) e NDAC (Banco de Dados) - tem um administrador que é responsáveis por gerenciar o cadastro e compartilhamento necessário das senhas. Via de regra, o compartilhamento é feito da seguinte forma:
-    * **Para acesso ao banco de dados** - as senhas que são cadastradas no *datasource* da aplicação são criadas pela área de **banco de dados** e compartilhadas com:
-      
-      * **Equipe GCM** - para a configuração das aplicações de ambiente DHT (não produção).
-      * **Equipe Infraestrutura** - para a configuração das aplicações de ambiente de produção.
-      * **Automação via API** - para autoconfiguração
+* **Segredos** - todos os segredos - contas (usuário/senhas) de serviço, banco de dados, contas locais e de super-usuários (root, admin, sa, administrador), certificados, tokens e entre outros - utilizados para o funcionamento do ambiente computacional, deverão ser armazenados no Cofre de Senhas.
 
 <br>
 
-* **Criação / Alteração / Exclusão (produção)** - tais ações nos segredos, para o ambiente de produção, requer o [registro de uma mudança](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home).
+* **Permissões** - as contas locais de administração (root, admin...) serão compartilhadas com os administradores respectivos da ferramenta, **quando estritamente necessário**, pois a regra padrão é que os sistemas permitam o uso de contas pessoais, integradas ao LDAP/AD quando possível, para que seja usado a conta de perfil de administrativo (`adm.<login>`), ou seja, o login com contas impessoais (root, admin...) somente será feito quando não houver outra opção.
+   * [Tabela de Controle de Acesso](#permissões) - a tabela detalhes sobre a norma padrão no compartilhamento dos segredos com as equipes.
+   * Os usuários com acesso no Cofre de Senhas serão concedidos mediante autorização da coordenação da DTI.
+
+<br>
+
+* **Complexidade da senha** - define o número mínimo de caracteres que a senha deve conter. (PORTARIA EM CONSTRUÇÃO)
+
+
+<br>
+
+* **Criação / Alteração / Exclusão** - tais ações nos segredos, para o ambiente de produção, requer o [registro de uma mudança](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home). Para o ambiente DHT, não há necessidade.
+  * **Ambiente DHT** - considera-se DHT (não produção) os ambientes "Desenvolvimento", "Homologação", "Teste" e "PreProd".
 
 
 > :blue_book: As exceções a estas regras devem ser registradas via CATI sendo necessário autorização da coordenação.
@@ -43,10 +46,10 @@ Com isto, a DTI/CGII implantou um **[cofre de senhas](https://git.capes.gov.br/c
 
 ## Nomenclatura 
 ### Estrutura dos Segredos
-A estrutura do cofre de senhas foi definida de forma que os segredos fiquem organizados de acordo com o sistema a qual o segredo corresponde. Além de facilitar a criação de políticas no compartilhamento com os usuários, quando um sistema for descontinuado, a exclusão também será fácilitada.
+A estrutura do Cofre de Senhas foi definida de forma que os segredos fiquem organizados de acordo com o sistema a qual o segredo corresponde. Além de facilitar a criação de políticas no compartilhamento com os usuários, quando um sistema for descontinuado, a exclusão também será fácilitada.
 
-Os segredos foram hierarquizados em sub-pastas ou caminhos (*paths*), considerando a ***secret engine*** do tipo `chave-valor`, pois este será o mecanismo mais utilizado. Para os demais *secret engines* adota-se o caminho raiz com o nome do próprio *secret engine*, exemplo: `ssh_<sistema>`.
-> ***Secret Engine*** - O cofre de senha possui mecanismos diferentes para o armazenamento de segredos (ssh, totp, pki), porém esta documentação é voltada para o de **chave-valor** (KV - *Key Value*).
+Os segredos foram hierarquizados em sub-pastas ou caminhos (*paths*), considerando a ***secret engine*** do tipo `chave-valor`, pois este será o mecanismo mais utilizado para o armazenamento dos segredos. Para as demais *secret engines* adota-se o caminho raiz com o nome do próprio *secret engine*, exemplo: `ssh_<sistema>`.
+> ***Secret Engine*** - O Cofre de Senha possui mecanismos diferentes para o armazenamento de segredos (ssh, totp, pki), porém esta documentação é voltada para o de **chave-valor** (KV - *Key Value*).
 
 Em resumo, os segredos (senhas, certificados, tokens...) são armazenados na hierarquia, definida abaixo, e compartilhada com as equipes. O acesso aos segredos pode ser feito via API ou pela interface web, com o login da Rede CAPES.
 
@@ -186,13 +189,15 @@ style s1d1_w_s fill:#FA8072
 ```
 
 
-<br>
+<br><br><br>
 
 ## Permissões
 
-O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, mediante justificativa. Todavia, grupos pré-definidos são utilizados no compartilhamento dos segredos com as equipes que atuam em determinada categoria (linux, windows...). A tabela abaixo mostrar a regra padrão adotada.
+O acesso aos segredos serão concedidos conforme necessidade de uso, mediante justificativa. Todavia, grupos pré-definidos são utilizados no compartilhamento dos segredos com as equipes que atuam em determinada categoria (linux, windows...). A tabela abaixo mostrar a regra padrão adotada.
 
-### Tabela de Acessos
+<br>
+
+### Tabela de Controle de Acesso
 
 | **Pasta** | **Objetivo** | **Permissões** |
 | --------- | ------------ | -------------- |
@@ -201,8 +206,8 @@ O acesso aos segredos no cofre serão concedidos conforme necessidade de uso, me
 | --------- | ------------ | -------------- |
 | `automacao/cicd` | ***Continuous Integration / Continuous Deployment***: segredos usados por ferramentas de tal categoria como: OpenShift, Gitlab. | Gerente do Cofre - Infraestrutura (RW)<br><br>Gerente do Cofre - DevOps (RW) <br><br>API - Contas de integração - CICD (R) |
 | `automacao/cm` | ***Configuration Management***: segredos usados por ferramentas de tal categoria como: Ansible, Foreman, Puppet. | Gerente do Cofre - Infraestrutura (RW) <br><br>API - Contas de integração - CM  (R) |
-| `banco_dados` e seus tipos:<br>`elasticsearch`<br>`mssql`<br>`mysql`<br>`oracle`<br>`postgres`<br>`sybase` | Segredos das bases de dados. |  Gerente do Cofre - Banco (RW)<br><br>Equipe de Linux (R) <br><br>Equipe de Desenvolvimento (R - **somente para DHT**)|
-| `aplicacao` | Segredos utilizados para o acesso ao sistema. Normalmente são as contas "admin" das aplicações. | Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe da Aplicação (**quando necessário**). (R)|
+| `banco_dados` e seus tipos:<br>`elasticsearch`<br>`mssql`<br>`mysql`<br>`oracle`<br>`postgres`<br>`sybase` | Segredos das bases de dados. |  Gerente do Cofre - Banco (RW)<br>Equipe de Banco (R)<br><br>API - Contas de integração - CICD (R)<br>API - Contas de integração - CM  (R)<br><br>Equipe de Linux (R) <br><br>Equipe de Desenvolvimento (R - **somente para DHT**)|
+| `aplicacao` | Segredos utilizados para o acesso ao sistema. Normalmente são as contas "admin" das aplicações. | Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe da Aplicação (**quando necessário**) (R)|
 | `storage` | Segredos do sistema de armazenamento. |  Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Storage (R) |
 | `windows` | Segredos que sejam do sistema operacional Windows, como contas de serviço e administrador. | Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Windows (R) |
 | `linux` | Segredos que sejam do sistema operacional Linux, como contas de serviço e root. |  Gerente do Cofre - Infraestrutura (RW) <br><br>Equipe Linux (R) |
