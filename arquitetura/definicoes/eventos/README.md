@@ -2,6 +2,7 @@
 
 - Versioning in an Event Sourced[^esversioning]
 - Architecture Patterns with Python[^cosmicpython-isbn] [^cosmicpython-ebook]
+- RabbitMQ Tutorials[^rabbitmq-tuto]
 
 > Embora essa documentação almeje por suficiência, essas foram as leituras principais que inspiraram o conteúdo e recomendamos sua assimilação por serem mais profundas e extensas cobrindo muito mais do que podemos fazer por aqui.
 
@@ -323,6 +324,74 @@ _Partindo da premissa que esse evento realmente é do interesse do consumer e re
 
 Estamos supondo que a interação com o banco de dados foi bem sucedida.
 
+# AMQP
+
+A integração com o _Message Broker_ é um tanto dependente dos requisitos. É algo que pode ser visto em cada caso, mas há dois importantes padrões que devem ser levados em conta:
+
+1. Distribuição assíncrona de tarefas
+2. Publicação de Eventos
+
+## 1. Distribuição assíncrona de tarefas
+
+Esse cenário tem uma ilustração usual que é o de gerar um relatório muito oneroso: _digamos que por qualquer razão que seja esse relatório demorar entre 10 a 30 minutos para ser processado e renderizado num arquivo PDF_.
+
+Então a aplicação ao receber a requisição de geração do relatório vai enviar uma mensagem a uma _pool_ de _workers_ que é capaz de processar esse relatório. Esses _workers_ podem ser tanto uma outra aplicação quanto o próprio conjunto de instâncias da aplicação. O caso de ser a própria aplicação é reaproveitar todo o código utilitário que provavelmente já lida com diversos aspectos do domínio negocial. Também há expectativa de que nem sempre a instância vai estar processando esses relatórios, então as vezes ela está atendendo apenas requisições a sua API REST, as vezes tem algumas tarefas assíncronas para processar. Claro que esses _workers_ poderiam ser instâncias de uma aplicação especializada em processar e renderizar esses relatórios.
+
+Seja uma instância da própria aplicação que envia mensagem, seja uma outra aplicação uma coisa que queremos é lidar com concorrência: não queremos mais de uma instância trabalhando na de maneira duplicada no mesmo relatório. Outro aspecto desejado é que haja alguma estratégia de balanceamento, de modo que todos os _workers_ da _pool_ sejam utilizados. Há mais de uma forma de realizar essa integração atendendo a esses requisitos, mas vamos protelar um possível desenho. Antes vamos pensar no segundo caso.
+
+##  2. Publicação de Eventos
+
+Algumas vezes há uma vasta coleção de outras aplicações interessadas no que uma aplicação faz. As outras aplicações querem reagir a determindas manipulações realizadas pela uma aplicação. Recapitulando no exemplo do primeiro caso, imaginemos que algumas aplicações estão interessadas em saber quando a "geração do relatório foi concluída com sucesso".
+
+O que é desejável é que a aplicação que gera os eventos não precise saber previamente quais aplicações estão interessadas em seus eventos. As aplicações ouvintes de eventos podem surigir e desaparecer sem que a aplicação produtora de eventos se dê conta disso.
+
+## Um Possível Desenho Padrão
+
+Acreditamos que uma forma interessante de atender os 2 casos é fazendo uso de _Topic Exchange_ (com filas aleatórias e efêmeras em alguns pontos) e _Routing keys_. O produtor de mensagens/eventos estabelece um _Topic Exchange_ e para o caso de ser sua própria _pool_ de _workers_ conecta (_binding_) uma Fila ao _Topic Exchange_. Na prática todas todas as instâncias estariam se cadastrando como listener dessa Fila. Outra aplicações podem criar suas próprias Filas e fazer suas instâncias escutarem as devidas Filas. Quando mais de um cliente está ouvindo uma Fila o _Message Broker_ vai entregando uma mensagem a cada cliente daquela Fila em _round-robin_. No caso de só haver uma instância da aplicação ouvinte (ou que **todas** as instâncias dela deveriam reagir aquele evento) é possível utilizar filas aleatórias e efêmeras.
+
+É fundamental que as _Routing keys_ sejam utilizadas corretamente, de modo que a as Filas só recebam o tipo de mensagem que querem e devem processar. Por isso temos algumas **recomendações de nomenclatura** para _Exchanges_, Filas e _Routing keys_.
+
+## Recomendações de Nomenclatura
+
+- **_Exchanges_**: `<prefixo>.<nome><sufixo-tipo>`
+  - O `<prefixo>` recomendamos seja algo que estabeleça algum contexto, como, por exemplo, a sigla da Coordenação da DTI, a sigla da aplicação, a sigla da diretoria da CAPES que lida com os conceitos nas mensagens, etc.;
+  - O `<nome>` deve especializar alguma semântica das mensagens nesse _Exchange_
+  - `<sufixo-tipo` de acordo com o tipo de _Exchange_ utilizar um dos sufixos:
+    - `-topx`: para [_Topic Exchange_](https://www.rabbitmq.com/tutorials/amqp-concepts.html#exchange-topic)
+    - `-dirx`: para [_Direct Exchange_](https://www.rabbitmq.com/tutorials/amqp-concepts.html#exchange-direct)
+    - `-fanx`: para [_Fanout Exchange_](https://www.rabbitmq.com/tutorials/amqp-concepts.html#exchange-fanout)
+    - `-headx`: para [_Headers Exchange_](https://www.rabbitmq.com/tutorials/amqp-concepts.html#exchange-headers)
+  - Exemplos:
+    - `csab.processos-topx`
+    - `sucupira.ppg-topx`
+    - `dri.egressos-topx`
+- **Filas**: não teriam um formato estruturado, mas recomendamos que sejam nomes aleatório para as filas de "_subscribers_" de tópicos [^rabbitmq-tuto3] e que as filas de _worker_[^rabbitmq-tuto4] sejam nomes semanticamente significativos em "_camelCase_"[^camelcase]
+- **_Routing key_**: a "chave de roteamento" seguir o padrão para _Topic Exchange_ no seguinte formato `<Conceito>.<evento>`
+  - `<Conceito>`: a denominação do conceito manipulado em PascalCase[^pascalcase]
+  - `<evento>`: a denominação do evento em camelCase[^camelcase]
+
+### Aplicando ao Exemplo
+
+- **_Exchange_**: `exemplo.relatorioPesadao-topx`
+- **Filas**
+  - _worker pool_: `solicitacoesGeracaoRelatorioPesadao`
+  - "Aplicação A" (só tem uma instância): `""` (string vazia para que o _Message Broker_ gere um nome aleatório)
+  - "Aplicacao B" (06 instâncias rodando): `appbRelatorioPesadaoGerado`
+  - "Aplicacao C" (02 instâncias rodando): `appcRelatorioPesadao`
+- **_Routing keys_**:
+  - _Bindings_:
+    - _worker pool_: `RelatorioPesadao.solicitado` (apenas eventos de solicitação da geração)
+    - "Aplicação A": `RelatorioPesadao.gerado` (apenas eventos de geração concluída)
+    - "Aplicação B": `RelatorioPesadao.gerado` (apenas eventos de geração concluída)
+    - "Aplicação C": `RelatorioPesadao.*` (apenas eventos de geração concluída)
+  - Mensagens: `RelatorioPesadao.solicitado`, `RelatorioPesadao.gerado`, `RelatorioPesadao.erro`, ...
+
+### Documentação das Aplicações que "publicam eventos"
+
+A arquitetura de referência prevê que as aplicações que utilizam mensageria sejam as aplicações de _backend_. As aplicações de _backend_ são esperadas definir uma API REST. As interações (_HTTP VERB_ + _endpoint_) que geram mensagens de eventos como efeito colateral deveriam ter isso bem documentado na especificação em OpenAPI da aplicação (que pode ser visualizada através do Swagger UI):
+
+![](ExemploSwaggerUiEventos.png)
+
 # Notas e Referências
 
 [^esversioning]: Ebook: https://leanpub.com/esversioning/read
@@ -348,3 +417,8 @@ Estamos supondo que a interação com o banco de dados foi bem sucedida.
 [^rfc6906]: RFC 9606 - https://datatracker.ietf.org/doc/html/rfc6906
 [^openapi]: Documentação da especificação de OpenAPI: https://swagger.io/specification/
 [^sWagger-editor]: Para visualizar essa documentação formatada (em um formato _live documentation_) é possível utilizar o Swagger Editor: editor.swagger.io/
+[^rabbitmq-tuto]: https://www.rabbitmq.com/getstarted.html
+[^camelcase]: Especificamente "_lower camel case_" - https://wiki.c2.com/?CamelCase
+[^pascalcase]: Especificamente "_upper camel case_" - https://wiki.c2.com/?PascalCase
+[^rabbitmq-tuto3]: Tutorial 3 (Spring AMQP) - _Publish/Subscribe_ - https://www.rabbitmq.com/tutorials/tutorial-three-spring-amqp.html
+[^rabbitmq-tuto4]: Tutorial 2 (Spring AMQP) - _Work Queues_ - https://www.rabbitmq.com/tutorials/tutorial-three-spring-amqp.html

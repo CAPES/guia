@@ -81,8 +81,11 @@ Originalmente, a solução adotada foi acrescentar o nome dos *nós* no `/etc/ho
 Todo novo nó precisa ser registrado no vIP criado para responder ao DNS do RabbitMQ (rabbitmq.capes.gov.br). Este passo deve ser realizado abrindo um chamado para a Infra.
 No chamado, informe:
   - *"Favor, incluir o IP x.y.w.z do nó (**informe o nome do novo nó**) ao vIP (**informar qual IP do vIP desejado**)"*
-    - vIP DHT: 172.19.204.102                 - Que deverá apontar para rabbitmq.hom.capes.br
-    - vIP PRD: `0.0.0.0 (ainda será criado)`  - Que deverá apontar para rabbitmq.capes.br
+    - vIP DHT: `172.19.204.102` - Que deverá apontar para rabbitmq.hom.capes.br
+    - vIP PRD: `172.19.204.104` - Que deverá apontar para rabbitmq.capes.br
+    > - v-rabbitmq01.capes.gov.br (172.19.101.59)
+    > - v-rabbitmq02.capes.gov.br (172.19.101.60)
+    > - v-rabbitmq03.capes.gov.br (172.19.101.61)
 
 - Instalar pacotes
 ```shell
