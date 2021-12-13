@@ -383,7 +383,7 @@ Acreditamos que uma forma interessante de atender os 2 casos é fazendo uso de _
     - _worker pool_: `RelatorioPesadao.solicitado` (apenas eventos de solicitação da geração)
     - "Aplicação A": `RelatorioPesadao.gerado` (apenas eventos de geração concluída)
     - "Aplicação B": `RelatorioPesadao.gerado` (apenas eventos de geração concluída)
-    - "Aplicação C": `RelatorioPesadao.*` (apenas eventos de geração concluída)
+    - "Aplicação C": `RelatorioPesadao.*` (todos os eventos)
   - Mensagens: `RelatorioPesadao.solicitado`, `RelatorioPesadao.gerado`, `RelatorioPesadao.erro`, ...
 
 ### Documentação das Aplicações que "publicam eventos"
