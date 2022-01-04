@@ -21,7 +21,7 @@ relacionados às atividades de desenvolvimento e operação da CAPES
 ## Orientações Técnicas
 - [Chart CAPES Aplic.](./orientacoes-tecnicas/chart-capes-aplic.md)
 - [CI/CD](./orientacoes-tecnicas/ci-cd.md)
-- [Cofre de Senhas (v3.0.0)](./orientacoes-tecnicas/cofre-senha.md) (EM PROCESSO DE MIGRAÇÃO - ACIONE THIAGO CRUZ PARA USO)
+- [Cofre de Senhas (v3.0.0)](./orientacoes-tecnicas/cofre-senha.md) (Atual)
     - [Cofre de Senhas (v2.0.0)](./orientacoes-tecnicas/cofre-senha_v2.md)
     - [Cofre de Senhas (v1.0.0)](./orientacoes-tecnicas/cofre-senha_v1.md)
 - [DNS](./orientacoes-tecnicas/dns.md)
