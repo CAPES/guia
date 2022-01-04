@@ -256,6 +256,9 @@ Um dos métodos é acessar a ferramenta com o Token do usuário. Para conseguir 
 <br>
 
 ### Listar os Segredos 
+Segue exemplo de como listar os segredos usando a API.
+> :warning: O comando utiliza o pacote **jq** para facilitar a visualização da saída, em formato *json*.
+
 * **Lista todas as senhas** - para listar todas as senhas (chave-valor) existentes no segredo `teste_vault/des/banco_dados/oracle`
 
 ```bash
