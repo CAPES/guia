@@ -6,11 +6,11 @@ Neste Guia será descrito o passo a passo de como realizar a migração de uma a
 
 ## Pré-requisitos
 
-### a) Atualização para o CofreSenha 2.0
+### a) Atualização para o CofreSenha 3.0
 
-Como pré-requisito para migração ao OCP, é necessário que a aplicação já esteja utilizando a versão 2.0 do Cofre de Senhas.
+Como pré-requisito para migração ao OCP, é necessário que a aplicação já esteja utilizando a versão 3.0 do Cofre de Senhas.
 
-Ver documentação de [implantação cofre de senha 2.0](../orientacoes-tecnicas/cofre-senhas.md)
+Ver documentação de [implantação cofre de senha 3.0](../orientacoes-tecnicas/cofre-senha.md)
 
 ### b) Revisão das URIs de conexão com banco de dados
 
