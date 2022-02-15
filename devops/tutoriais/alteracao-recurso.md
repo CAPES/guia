@@ -57,6 +57,8 @@ app:
 ```
 
 
+As alterações devem ser feitas somente no item `resource.requests`.
 
+**O `resource.limits` não deve ser alterado.**
 
 
