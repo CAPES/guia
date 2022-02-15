@@ -16,7 +16,7 @@ Neste Guia será descrito o passo a passo de como realizar a alteração de recu
 
 ### Alteração dos arquivos DHT
 
-Estando com os arquivos do seu projeto git da aplicação <app-xpto>:
+Estando com os arquivos do seu projeto git da aplicação `app-xpto`:
 
 Na pasta `/devops/<backend/frontend>/<app-xpto>`, alterar em todos os arquivos `values` dos ambientes de DHT. (Não alterar o arquivo `values-prod.yaml`)
 ```
