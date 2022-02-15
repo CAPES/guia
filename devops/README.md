@@ -14,6 +14,7 @@ relacionados às atividades de desenvolvimento e operação da CAPES
 ## Tutoriais
 - [Implantação de Aplicação no OpenShift](./tutoriais/implantacao.md)
 - [Migração de Aplicação para o OCP](./tutoriais/migracao-app-ocp.md)
+- [Alteração de Recursos](./tutoriais/alteracao-recurso.md)
 
 ## Templates de Solicitações
 - [Solicitação de Volume](./templates/solicitacao_volume.md)
