@@ -39,8 +39,8 @@ app:
       ....
       resources:
         requests:
-          memory: "XXXMi" // <<< Alterar para o valor da coluna "CPU Recomendado"
-          cpu: "XXXm"     // <<< Alterar para o valor da coluna "MEM Recomendado"
+          memory: "XXXMi" // <<< Alterar para o valor da coluna "MEM Recomendado"
+          cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU Recomendado"
       ....
 ```
 
