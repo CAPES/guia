@@ -16,6 +16,8 @@ Diretrizes sobre o assunto de segurança da informação, sobre:
 
 * [Anti-SPAM](seguranca/antispam/README.md) - veja como utilizar o filtro de e-mails não solicitados (SPAM).
 
-* [Cofre de Senhas](seguranca/cofre-senhas.md) - gestão das **senhas de serviço** uilizadas para interconexão entre sistemas, serviços e bancos de dados.
-
 * [Logs de Eventos - SIEM](seguranca/logs.md) - envio e gerenciamento dos **logs** dos servidores, serviços e sistemas para a ferramenta de correlacionamento de eventos SIEM - *Security information and event management*.
+
+* **Segredos e Senhas**
+  * [Cofre de Senhas](seguranca/cofre-senhas.md) - gestão das **senhas de serviço** utilizadas para interconexão entre sistemas, serviços e bancos de dados, incluindo-se certificados digitais, tokens e outros segredos.
+  * [Política de Senhas](seguranca/politica-senhas.md) - diretrizes utilizadas para a gestão das senhas (usuários e contas de serviço) do ambiente e procedimentos de alteração das senhas.
