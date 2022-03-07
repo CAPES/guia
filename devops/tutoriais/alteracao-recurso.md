@@ -62,3 +62,44 @@ As alterações devem ser feitas somente no item `resource.requests`.
 **O `resource.limits` não deve ser alterado.**
 
 
+### Alteração dos arquivos Produção
+
+Estando com os arquivos do seu projeto git da aplicação `app-xpto`:
+
+As alterações devem ser feitas tanto nas camadas de `backend` e `frontend`.
+
+Na pasta `/devops/<backend/frontend>/<app-xpto>`, alterar no arquivo `values-prod.yaml`.
+
+Para alteração de recursos computacionais:
+
+```
+app:
+    ....
+    containers:
+      ....
+      resources:
+        requests:
+          memory: "XXXMi" // <<< Alterar para o valor da coluna "MEM Recomendado"
+          cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU Recomendado"
+      ....
+```
+
+Para alteração de replicas nas configurações de auto-scale (HPA):
+```
+app:
+    ....
+    deployment:
+      ...
+      hpa:
+        enable: true
+        minReplicas: XX // << Mínimo recomendável
+        maxReplicas: XX // << Manter o valor (NÃO ALTERAR)
+        memory:
+          averageUtilization: 80
+        cpu:
+          averageUtilization: 80
+      ....
+```
+
+
+
