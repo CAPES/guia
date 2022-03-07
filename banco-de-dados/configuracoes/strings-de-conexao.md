@@ -379,19 +379,17 @@ Banco: Dsnv~~
 Port number: 5432
 Banco: homologacao~~ 
  
-```bash
-~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/homologacao~~
-```
  
+~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/homologacao~~
+
 ##### PREPROD ==>> ***DESATIVADO*** <<== 
 ~~Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
 Port number: 5432
 Banco: preprod~~ 
  
-```bash
-~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/preprod~~
-```
  
+~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/preprod~~
+
 ##### TESTE  ==>> ***DESATIVADO*** <<==
 ~~Host name: postgres.teste.capes.gov.br(melhor opção) ou 172.19.100.121
 Port number: 5432
