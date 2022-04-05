@@ -311,54 +311,39 @@ jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oracledhtsrv05.hom.c
  
 ### PRODUÇÃO
  
-#### ENTERPRISEDB
-
-Host name: f-prod-postgres01.fc.capes.gov.br(melhor opção) ou 172.19.100.240
+```bash
+Host name: postgres.capes.gov.br
 Port number: 5432
 Banco: producao
- 
-```bash
-jdbc:postgresql://f-prod-postgres01.fc.capes.gov.br:5432/producao
-```
- 
- 
-Host name: postgresro.capes.gov.br(melhor opção) ou 172.19.100.155
+ou
+Host name: postgres9.capes.gov.br
 Port number: 5432
-Banco: producao  ==>> Banco D-1
- 
-```bash
-jdbc:postgresql://postgresro.capes.gov.br:5432/producao
-```
- 
- 
-#### SISREL
+Banco: producao
 
-Host name: v-postgresisrel01.capes.gov.br(melhor opção) ou 172.19.100.203
-Port number: 5432
-Banco: sisrel2
- 
-```bash
-jdbc:postgresql://v-postgresisrel01.capes.gov.br:5432/sisrel2
-```
- 
-
-#### POSTGRES9
-Host name: postgres9.capes.gov.br(melhor opção) ou 172.19.212.10
-Port number: 5432
-Banco: postgres
- 
-```bash
-jdbc:postgresql://postgres9.capes.gov.br:5432/postgres
+jdbc:postgresql://postgres.capes.gov.br:5432/producao
+ou
+jdbc:postgresql://postgres9.capes.gov.br:5432/producao
 ```
  
  #### ESPELHO DE PRODUÇÃO
 
-Host name: 172.19.100.155
+```bash
+Host name: postgresro.capes.gov.br
 Port number: 5432
 Banco: producao
  
+jdbc:postgresql://postgresro.capes.gov.br:5432/producao
+``` 
+ 
+
+#### SISREL
+
 ```bash
-jdbc:postgresql://172.19.100.155:5432/producao
+Host name: v-postgresisrel01.capes.gov.br(melhor opção) ou 172.19.100.203
+Port number: 5432
+Banco: sisrel2
+ 
+jdbc:postgresql://v-postgresisrel01.capes.gov.br:5432/sisrel2
 ```
  
 ### DESENVOLVIMENTO/HOMOLOGACAO/TESTE/PREPROD
