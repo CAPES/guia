@@ -37,7 +37,7 @@ Antes de utilizar, é necessário entender os seguintes conceitos utilizados na 
 Para acessar a ferramenta Graylog, acesse o endereço abaixo com o **login da Rede CAPES**:
 * https://logs.capes.gov.br/
 
-> NOTA: O acessos deve ser solicitados pelo **CATI**, informando `login` e `nome da aplicação` para que o pedido seja analisado.
+> NOTA: O acesso deve ser solicitados pelo **CATI**, informando `login` e `nome da aplicação` para que o pedido seja analisado.
 
 <br><br>
 
