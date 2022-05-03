@@ -193,7 +193,7 @@ style s1d1_w_s fill:#FA8072
 
 ## Permissões
 
-O acesso aos segredos serão concedidos conforme necessidade de uso, mediante justificativa. Todavia, grupos pré-definidos são utilizados no compartilhamento dos segredos com as equipes que atuam em determinada categoria (linux, windows...). A tabela abaixo mostrar a regra padrão adotada.
+O acesso aos segredos serão concedidos conforme necessidade de uso, mediante justificativa. Todavia, grupos pré-definidos são utilizados no compartilhamento dos segredos com as equipes que atuam em determinada categoria (linux, windows...). A tabela abaixo mostra a regra padrão adotada.
 
 <br>
 
