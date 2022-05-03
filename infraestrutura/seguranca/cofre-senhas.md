@@ -31,7 +31,7 @@ Com isto, a DTI/CGII implantou um **[Cofre de Senhas](https://git.capes.gov.br/c
 
 <br>
 
-* **Complexidade da senha** - define o número mínimo de caracteres que a senha deve conter. (PORTARIA EM CONSTRUÇÃO)
+* **Complexidade da senha** - define o número mínimo de caracteres que a senha deve conter, conforme [portaria nº179, de 9 de Novembro de 2021](http://cad.capes.gov.br/ato-administrativo-detalhar?idAtoAdmElastic=7762#anchor).
 
 
 <br>
