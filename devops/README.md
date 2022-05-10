@@ -24,7 +24,7 @@ relacionados às atividades de desenvolvimento e operação da CAPES
 - [CI/CD](./orientacoes-tecnicas/ci-cd.md)
 - [Cofre de Senhas (v3.0.0)](./orientacoes-tecnicas/cofre-senha.md) (Atual)
     - [Cofre de Senhas (v2.0.0)](./orientacoes-tecnicas/cofre-senha_v2.md)
-    - [Cofre de Senhas (v1.0.0)](./orientacoes-tecnicas/cofre-senha_v1.md)
+    - [Cofre de Senhas (v0.1.0)](./orientacoes-tecnicas/cofre-senha_v1.md)
 - [DNS](./orientacoes-tecnicas/dns.md)
 - [Storage](./orientacoes-tecnicas/storage.md)
 
