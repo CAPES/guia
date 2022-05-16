@@ -2,7 +2,7 @@
 
 Neste Guia será descrito o passo a passo de como realizar a alteração de recursos nas aplicações do Openshift OCP.
 
-## Pré-requisitos 
+## Pré-requisitos
 
 Para implementação das mudanças, deve ser realizado um novo deploy nos ambientes.
 
@@ -51,16 +51,16 @@ app:
       ....
       resources:
         requests:
-          memory: "XXXMi" // <<< Alterar para o valor da coluna "MEM Recomendado"
-          cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU Recomendado"
+          memory: "XXXMi" // <<< Alterar para o valor da coluna "RAM / Novo Request"
+          cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU / Novo Request"
+        limits:
+          memory: "XXXMi" // <<< Alterar para o valor da coluna "RAM / Novo Limit"
+          cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU / Novo Limit"
       ....
 ```
 
 
-As alterações devem ser feitas somente no item `resource.requests`.
-
-**O `resource.limits` não deve ser alterado.**
-
+As alterações devem ser feitas somente nos itens `resource.requests` e `resource.limits`.
 
 ### Alteração dos arquivos Produção
 
@@ -78,9 +78,12 @@ app:
     containers:
       ....
       resources:
-        requests:
-          memory: "XXXMi" // <<< Alterar para o valor da coluna "MEM Recomendado"
-          cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU Recomendado"
+      requests:
+        memory: "XXXMi" // <<< Alterar para o valor da coluna "RAM / Novo Request"
+        cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU / Novo Request"
+      limits:
+        memory: "XXXMi" // <<< Alterar para o valor da coluna "RAM / Novo Limit"
+        cpu: "XXXm"     // <<< Alterar para o valor da coluna "CPU / Novo Limit"
       ....
 ```
 
@@ -100,6 +103,3 @@ app:
           averageUtilization: 80
       ....
 ```
-
-
-
