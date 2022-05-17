@@ -3,22 +3,28 @@ Aqui você encontra referências de materiais, treinamentos e cursos sobre prát
 
 # Cursos e Treinamentos
 
-## Devops
-1. [Wikipedia](https://pt.wikipedia.org/wiki/DevOps)
-1. [Curso da 4Linux](https://www.4linux.com.br/curso/devops-gratis)
-1. [DevOps Institute](https://devopsinstitute.com/)
-
 ## GIT
-1. [Curso Udemy](https://www.udemy.com/course/git-e-github-para-iniciantes/)
-1. [Documentação e Vídeos Tutoriais](https://git-scm.com/doc)
+- [Documentação Capes](/devops/treinamentos/git.md)
+- [Curso Udemy](https://www.udemy.com/course/git-e-github-para-iniciantes/)
+- [Documentação e Vídeos Tutoriais](https://git-scm.com/doc)
 
 ## Docker e Container
-1. [Cursos da Red Hat](https://learn.openshift.com/subsystems/)
-1. [Livro Docker](https://leanpub.com/dockerparadesenvolvedores)
-1. [Documentação do Docker](https://docs.docker.com/)
-1. [Guia de referência do Dockerfile](https://docs.docker.com/engine/reference/builder/)
-1. [Documentação CAPES](/Devops/ferramentas-servicos/docker)
-1. [12factor](https://12factor.net/pt_br/)
+- [Livro Docker](https://leanpub.com/dockerparadesenvolvedores)
+- [Documentação do Docker](https://docs.docker.com/)
+- [Guia de referência do Dockerfile](https://docs.docker.com/engine/reference/builder/)
+- [Curso Docker para Iniciantes](https://www.coursera.org/projects/docker-for-absolute-beginners)
+- [Documentação CAPES](/devops/ferramentas-servicos/docker)
+
+## Openshift
+1. [Cursos da Red Hat](https://developers.redhat.com/learn/openshift)
+1. [Cursos da Classcentral](https://www.classcentral.com/course/edx-fundamentals-of-containers-kubernetes-and-red-hat-openshift-9105)
+
+## Devops
+- [12factor](https://12factor.net/pt_br/)
+- [Wikipedia](https://pt.wikipedia.org/wiki/DevOps)
+- [Curso da 4Linux](https://www.4linux.com.br/curso/devops-gratis)
+- [DevOps Institute](https://devopsinstitute.com/)
+- [Trilha Devops - $PAGO$](https://www.linuxtips.io/pages/trilha-de-treinamentos)
 
 ## Harbor
 1. [Webnar da VMware](https://www.youtube.com/watch?v=EpDPrqPDxAc)
@@ -32,20 +38,18 @@ Aqui você encontra referências de materiais, treinamentos e cursos sobre prát
 1. [Documentação](https://docs.gitlab.com/runner/)
 
 ## Kubernetes
-1. [Curso da Udacity](https://www.udacity.com/course/scalable-microservices-with-kubernetes--ud615)
-1. [Curso da Kubernetes](https://www.katacoda.com/courses/kubernetes)
+- [Documentação básica](https://kubernetes.io/pt-br/docs/home/)
+- [Curso da Udacity](https://www.udacity.com/course/scalable-microservices-with-kubernetes--ud615)
+- [Curso da Kubernetes](https://www.katacoda.com/courses/kubernetes)
 
-## Openshift
-1. [Cursos da Red Hat](https://learn.openshift.com/)
-1. [Cursos da Classcentral](https://www.classcentral.com/course/edx-fundamentals-of-containers-kubernetes-and-red-hat-openshift-9105)
 
 ## Helm
-1. [Documentação](https://helm.sh/docs/)
-1. [Documentação CAPES](/Devops/ferramentas-servicos/helm)
+- [Documentação](https://helm.sh/docs/)
+- [Documentação CAPES](/devops/ferramentas-servicos/helm)
 
 ## Velero
 1. [Tutorial no Youtube](https://www.youtube.com/watch?v=xxbkxLBl5T4)
 1. [Documentação](https://velero.io/docs/v1.2.0/)
-1. [Documentação CAPES](/Devops/ferramentas-servicos/velero)
+1. [Documentação CAPES](/devops/ferramentas-servicos/velero)
 
 
