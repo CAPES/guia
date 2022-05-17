@@ -8,7 +8,7 @@ relacionados às atividades de desenvolvimento e operação da CAPES
 - [Aplicação de Exemplo](https://git.capes.gov.br/cgs/DEVOPS/app-sample)
 
 ## Cursos e Treinamentos
-- [Listagem de cursos](./primeiros-passos/nateriais.md)
+- [Listagem de cursos](./primeiros-passos/materiais.md)
 - [Git](./treinamentos/git.md)
 
 ## Tutoriais
