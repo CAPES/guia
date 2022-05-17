@@ -91,7 +91,7 @@ Para: http://charts.capes.gov.br/capes/infra
 ...
 dependencies:
   - name: capes-aplic
-    version: "0.6.2"
+    version: "0.6.3"
     repository: "http://charts.capes.gov.br/capes/infra"
     alias: app
 ...

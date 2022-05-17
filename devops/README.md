@@ -5,11 +5,11 @@ relacionados às atividades de desenvolvimento e operação da CAPES
 
 ## Primeiros passos
 - [Primeiros passos](./primeiros-passos/primeiros-passos.md)
+- [Aplicação de Exemplo](https://git.capes.gov.br/cgs/DEVOPS/app-sample)
 
-## Treinamentos
-- [Docker](./treinamentos/docker.md)
+## Cursos e Treinamentos
+- [Listagem de cursos](./primeiros-passos/nateriais.md)
 - [Git](./treinamentos/git.md)
-- [Openshift](./treinamentos/openshift.md)
 
 ## Tutoriais
 - [Implantação de Aplicação no OpenShift](./tutoriais/implantacao.md)
@@ -22,9 +22,7 @@ relacionados às atividades de desenvolvimento e operação da CAPES
 ## Orientações Técnicas
 - [Chart CAPES Aplic.](./orientacoes-tecnicas/chart-capes-aplic.md)
 - [CI/CD](./orientacoes-tecnicas/ci-cd.md)
-- [Cofre de Senhas (v3.0.0)](./orientacoes-tecnicas/cofre-senha.md) (Atual)
-    - [Cofre de Senhas (v2.0.0)](./orientacoes-tecnicas/cofre-senha_v2.md)
-    - [Cofre de Senhas (v0.1.0)](./orientacoes-tecnicas/cofre-senha_v1.md)
+- [Cofre de Senhas (v3.0.0)](./orientacoes-tecnicas/cofre-senha.md)
 - [DNS](./orientacoes-tecnicas/dns.md)
 - [Storage](./orientacoes-tecnicas/storage.md)
 

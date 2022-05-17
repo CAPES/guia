@@ -30,12 +30,12 @@ via libvirt, LXC (Linux Containers) e systemd-nspawn.
 
 Formação:​ `<registry>/<nome do projeto>/nome da imagem:<tag>​`
 
-1. Registry​: `registry.paas.capes.gov.br​`
+1. Registry​: `registry.capes.gov.br​`
 1. Nome do projeto​: sicapes, sap, freire, scba, sisuab​
 1. Nome da imagem​: php-fpm-7.3-alpine, jboss-5.2.0-java-6, nginx-1.14-alpine​
 1. Tag​: 1.0.0, 1.2.3, 2.5.0​
 
-Exemplo​: `registry.paas.capes.gov.br/freire/php-fpm-7.3-alpine:1.01​`
+Exemplo​: `registry.capes.gov.br/freire/php-fpm-7.3-alpine:1.01​`
 
 #### Builder no cluster
 
@@ -52,7 +52,7 @@ A instrução FROM inicializa um novo estágio de construção e define a
 imagem base para instruções subsequentes.​
 
 Deverá sempre indicar o repositório privado da CAPES iniciado por
-`registry.paas.capes.gov.br​`
+`registry.capes.gov.br​`
 
 Caso não existe imagem base, a mesma deverá ser criada​.
 
