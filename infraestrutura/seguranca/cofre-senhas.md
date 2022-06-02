@@ -235,8 +235,8 @@ O acesso a ferramenta Vault pode ser feito feito da seguinte forma:
 * Acesse a URL https://cofre.capes.gov.br:8200/ui/vault/auth?with=ldap
 * Pelo **Método** `LDAP`, entre com as credenciais:
   * **Username**: 
-    * `<login>` - conta de Rede da CAPES.
-    * `<adm.login>` - para usuários administradores do Cofre (conta administrativa).
+    * `<login>` - conta de Rede da CAPES; ou
+    * `<adm.login>` - este caso sendo mandatório para usuários administradores do Cofre (conta administrativa).
   * **Password**: `<senha_da_rede>`
 
 
