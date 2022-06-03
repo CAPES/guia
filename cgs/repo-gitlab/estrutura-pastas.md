@@ -63,6 +63,9 @@ Para mais informações sobre Dockerfile:
 - [Manual de referência](https://docs.docker.com/engine/reference/builder/)
 - [Melhores práticas](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
+
+Além dos arquivos acima citados, existe, em cada camada, a pastas de configuração de release/deploy da aplicação. Esta pasta, que deve ser nomeada com o nome do projeto, é chamada de chart da aplicação. @todo
+
 ## Pasta `system`
 
 Também separada em camadas por pastas (`backend/` e `frontend/`). Esta é a pasta que contém o código-fonte da aplicação.
