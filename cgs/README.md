@@ -46,10 +46,12 @@ MSS2 --> MSS4(MSS)
 
 # Tópicos Importantes
 
-- GitLab/Repositório
-  - Estrutura
+- Repositório Gitlab
+  - Estrutura de Pastas
+  - Branches & Tags
+  - Pipeline
     - Pastas (camadas, pasta devops, pasta system)
-    - Branches & Tags
+    - 
       - master
       - develop
       - feature/*
