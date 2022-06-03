@@ -46,16 +46,10 @@ MSS2 --> MSS4(MSS)
 
 # Tópicos Importantes
 
-- Repositório Gitlab
-  - Estrutura de Pastas
-  - Branches & Tags
-  - Pipeline
-    - Pastas (camadas, pasta devops, pasta system)
-    - 
-      - master
-      - develop
-      - feature/*
-  - Pipeline
+- [Repositório Gitlab](./repo-gitlab/README.md)
+  - [Estrutura de Pastas](./repo-gitlab/estrutura-pastas.md)
+  - [Branches & Tags](./repo-gitlab/branchs-tags.md)
+  - [Pipeline](./repo-gitlab/pipeline.md)
 - Helm Charts
   - `capes-aplic`
     - Conceitos
