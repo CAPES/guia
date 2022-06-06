@@ -64,22 +64,17 @@ Para mais informações sobre Dockerfile:
 - [Melhores práticas](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
 
 
-Além dos arquivos acima citados, existe, em cada camada, a pastas de configuração de release/deploy da aplicação. Esta pasta, que deve ser nomeada com o nome do projeto, é chamada de chart da aplicação. @todo
+Além dos arquivos acima citados, existe, em cada camada, a pastas de configuração de release/deploy da aplicação. Esta pasta, que deve ser nomeada com o nome do projeto e contém o chart da aplicação com as configurações de release de cada ambiente. Para mais informações sobre charts, acesse a [Visão Geral sobre charts](../helm-charts/visao-geral.md).
 
 ## Pasta `system`
 
 Também separada em camadas por pastas (`backend/` e `frontend/`). Esta é a pasta que contém o código-fonte da aplicação.
 
-As pastas devem seguir a estrutura recomendada pela ferramenta de gerenciamento de pacotes e construção da respectiva linguagem/pilha defenida pela CGA/CAPES:
+As pastas devem seguir a estrutura recomendada pela ferramenta de gerenciamento de pacotes e construção da respectiva linguagem/pilha definida pela CGG/CAPES:
 
-- Angular -> [Yarn][f28e2f7b]
-- Java -> [Maven][04f5fb26]
-- PHP -> [Composer][74b9d439]
-- Python -> [Pip][ffcd6064]
-
-  [f28e2f7b]: https://yarnpkg.com/ "Home | Yarn - Package Manager"
-  [04f5fb26]: https://maven.apache.org/ "Maven – Welcome to Apache Maven"
-  [74b9d439]: https://getcomposer.org/ "A Dependency Manager for PHP"
-  [ffcd6064]: https://pypi.org/project/pip/ "The PyPA recommended tool for installing Python packages."
-
-@todo
+Linguagem | Pilha Capes | Gerenciador de Pacote
+--------- | ------ | ---------------------
+Angular   |        | [Yarn](https://yarnpkg.com/)
+Java      |        | [Maven](https://maven.apache.org/)
+PHP       | [Laravel](https://git.capes.gov.br/cgs/narq/frameworks/php/capes-arquitetura-laravel) | [Composer](https://getcomposer.org/)
+Python    |        | [Pip](https://pypi.org/project/pip/)

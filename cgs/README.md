@@ -51,21 +51,10 @@ MSS2 --> MSS4(MSS)
   - [Branches & Tags](./repo-gitlab/branchs-tags.md)
   - [Pipeline](./repo-gitlab/pipeline.md)
 - Helm Charts
-  - `capes-aplic`
-    - Conceitos
-      - Montagem nos pods
-    - Objetos??
-      - Deployment
-        - start pods
-      - Services
-      - Routes
-      - HPA
-      - Probes (liveness & readness)
-      - Storage
-        - PV
-        - PVC
-  - `cofresenha`
-  - `cronjob`
+  - [Visão Geral](./helm-charts/visao-geral.md)
+- Openshift
+  - Visão Geral
+  - Principais Componentes
 - Stages
   - _Stages são as implatanções da aplicação_
     - Estáticas
