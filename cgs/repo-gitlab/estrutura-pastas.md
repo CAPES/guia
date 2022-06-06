@@ -57,7 +57,7 @@ A pasta `devops` é responsável por conter as configurações de pipeline, a in
 
 O arquivo `devops/.gitlab-ci.yaml` é o arquivo de manifesto da pipeline da aplicação. O fluxo de pipeline é padrão para qualquer tipo de aplicação e esse arquivo não deve ser mexido ou alterado. Para mais informações acesso o tópico de [pipeline](./pipeline.md).
 
-Na raiz das pastas das camas, existe o arquivo `backend|frontend/Dockerfile`. Este é o arquivo com as instruções de build das aplicações, tanto para a camada de backend, quanto para o frontend. É o documento que contém todos os comandos necessários para montar construir a imagem Docker da aplicação. 
+Na raiz das pastas das camas, existe o arquivo `backend|frontend/Dockerfile`. Este é o arquivo com as instruções de build das aplicações, tanto para a camada de backend, quanto para o frontend. É o documento que contém todos os comandos necessários para montar construir a imagem Docker da aplicação.
 
 Para mais informações sobre Dockerfile:
 - [Manual de referência](https://docs.docker.com/engine/reference/builder/)
@@ -69,5 +69,17 @@ Além dos arquivos acima citados, existe, em cada camada, a pastas de configura�
 ## Pasta `system`
 
 Também separada em camadas por pastas (`backend/` e `frontend/`). Esta é a pasta que contém o código-fonte da aplicação.
+
+As pastas devem seguir a estrutura recomendada pela ferramenta de gerenciamento de pacotes e construção da respectiva linguagem/pilha defenida pela CGA/CAPES:
+
+- Angular -> [Yarn][f28e2f7b]
+- Java -> [Maven][04f5fb26]
+- PHP -> [Composer][74b9d439]
+- Python -> [Pip][ffcd6064]
+
+  [f28e2f7b]: https://yarnpkg.com/ "Home | Yarn - Package Manager"
+  [04f5fb26]: https://maven.apache.org/ "Maven – Welcome to Apache Maven"
+  [74b9d439]: https://getcomposer.org/ "A Dependency Manager for PHP"
+  [ffcd6064]: https://pypi.org/project/pip/ "The PyPA recommended tool for installing Python packages."
 
 @todo
