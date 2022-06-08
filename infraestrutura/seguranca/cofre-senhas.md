@@ -243,7 +243,8 @@ O acesso a ferramenta Vault pode ser feito feito da seguinte forma:
 
 
 ![Vault](cofre-senhas-ldap.png)
-![Vault TOTP](cofre-senhas-totp.png)
+
+![Vault MFA](cofre-senhas-mfa.png)
 
 
 <br>
