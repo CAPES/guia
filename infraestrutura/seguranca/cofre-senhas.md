@@ -6,6 +6,7 @@
     - [Tabela de Controle de Acesso](#tabela-de-controle-de-acesso)
 - [Como Acessar o Cofre de Senhas Vault](#como-acessar-o-cofre-de-senhas-vault)
   - [Interface Web](#interface-web)
+    - [Segundo Fator de Autenticação](#segundo-fator-de-autenticação)
   - [API](#api)
     - [Listar os Segredos](#listar-os-segredos)
 - [Integração via OpenShift (Chart)](#integração-via-openshift-chart)
@@ -233,17 +234,42 @@ Veja abaixo as formas para acessar o Cofre de Senhas Vault.
 ## Interface Web
 O acesso a ferramenta Vault pode ser feito feito da seguinte forma:
 * Acesse a URL https://cofre.capes.gov.br:8200/ui/vault/auth?with=ldap
-* Pelo **Método** `LDAP`, entre com as credenciais:
+* Pelo **método** `LDAP`, entre com as credenciais:
   * **Username**: 
     * `<login>` - conta de Rede da CAPES; ou
     * `<adm.login>` - este caso sendo mandatório para usuários administradores do Cofre (conta administrativa).
   * **Password**: `<senha_da_rede>`
+  * **Segundo Fator de Autenticação - 2FA** - após login, será exigido o código criado pelo gerador TOTP (*Time-based One Time Password*). Para uso do 2FA recomenda-se o uso de um dos aplicativos [abaixo](#segundo-fator-de-autenticação).
 
 
 ![Vault](cofre-senhas-ldap.png)
+![Vault TOTP](cofre-senhas-totp.png)
 
 
 <br>
+
+### Segundo Fator de Autenticação
+Para uso do mecanismo de segundo fator de autenticação, um dos aplicativos abaixo precisam ser utilizados:
+
+* **[Authy](https://authy.com/) (Preferencial)** -  Recomenda-se instalá-lo no dispositivo móvel particular e de uso restrito.
+  * [Android](https://play.google.com/store/apps/details?id=com.authy.authy)
+  * [IOS](https://itunes.apple.com/us/app/authy/id494168017)
+
+<br>
+
+* **[Google Authenticator](https://support.google.com/accounts/answer/1066447?co=GENIE.Platform%3DAndroid&hl=pt-BR)** - recomenda-se instalá-lo no dispositivo móvel particular e de uso restrito.
+  * [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=pt_BR)
+  * [IOS](https://itunes.apple.com/br/app/google-authenticator/id388497605?mt=8)
+<br>
+
+> :warning: **Sincronia de Data/Hora** - A autenticação com segundo fator é sensível ao sincronismo de data/hora. Certifique que seu dispositivo está sincronizado, consulte a hora certa em https://ntp.br/.
+<br>
+
+Caso seja necessário re-gerar a sincronia do segundo fator de autenticação no dispositivo (exemplo: troca/perda de aparelho) entre em contato com a CGII via CATI.
+
+<br><br>
+
+
 
 ## API
 Também é possível usar a API para ver os segredos.  
