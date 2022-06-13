@@ -42,24 +42,26 @@ graph LR
     E --> F(MR Master)
     F --> F1(Deploy Homologação)
     F --> G(Aceite MR)
-    G --> G1(Deploy Pré-prod)
+    G --> G1(Deploy Pré-produção)
     G --> H(Geração de Tag)
     H --> I(Deploy Produção)    
 ```
 
 #### Feature Branch
-- `Commits` nessa `branch` **NÃO** acarretam nenhum evento de pipeline.
-- Solicitação de `MERGE REQUEST` para a branch ```develop``` executará a criação de ambiente dinâmico.
+- `Commits` nessa `branch` **NÃO** acarretam nenhum evento de pipeline
+- Solicitação de `MERGE REQUEST` para a branch `develop` executará a criação de ambiente dinâmico
 
 #### Develop
-- A aceitação de ```MERGE REQUEST``` ou a execução de algum `commit` na branch ```develop```, executará a pipeline para `deploy` no ambiente de `teste` e `desevolvimento`
+- A aceitação de `MERGE REQUEST` ou a execução de algum `commit` na branch `develop`, executará a pipeline para `deploy` no ambiente de `teste` e `desevolvimento`
+- Solicitação de `MERGE REQUEST` para a branch `master`, executará a pipeline para `deploy` no ambiente de `homologação`
+
 
 #### Master
-- Solicitação de ```MERGE REQUEST``` ao ```master``` servirá de gatilho para pipeline.
-- A aceitação de ```MERGE REQUEST``` ao ```master```, servirá de gatilho para pipeline.
+- A aceitação de ```MERGE REQUEST``` ao ```master```, irá executar a pipeline para `deploy` no ambiente de `pré-produção`
 
 #### Tag
-- A criação de tag servirá de gatilho para pipeline que atualizará o produção.
+- A `criação de tag` servirá de gatilho para pipeline de `deploy` no ambiente de `produção`.
+- O job de `deploy de produção` é `manual`, deverá ser executado apertando o `play` do job.
 
 
 ### Acompanhar Pipelines
