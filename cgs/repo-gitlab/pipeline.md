@@ -35,9 +35,9 @@ include:
 graph LR
     A(Branch Feature) --> B(MR Branch Develop)
     B --> B1(Deploy Feature)
-    B --> C(Aceite MR Develop)
+    B --> C(Aceite MR)
     C --> C1(Deploy Desenvolvimento)
-    C --> C2(Deploy Teste)    
+    C --> C2(Deploy Teste - se houver)    
 ```
 
 ```mermaid
@@ -45,13 +45,22 @@ graph LR
     A(Branch Develop) --> B(MR Branch Master)
     A --> A1(Commit Branch Develop)
     A1 --> A2(Deploy Desenvolvimento) 
-    A1 --> A3(Deploy Teste)
+    A1 --> A3(Deploy Teste - se houver)
     B --> B1(Deploy Homologação)
     B --> C(Aceite MR)
     C --> C1(Deploy Pré-produção)
-    C --> D(Geração de Tag)
-    D --> E(Deploy Produção)    
 ```
+
+
+```mermaid
+graph LR
+    A(Branch Master) --> B(Geração de Tag)
+    A --> A1(Commit Branch Master)
+    A1 --> A2(Deploy Pré-produção - se houver) 
+    B --> C(Play Manual Job)
+    C --> E(Deploy Produção)    
+```
+
 
 #### Feature Branch
 - `Commits` nessa `branch` **NÃO** acarretam nenhum evento de pipeline
