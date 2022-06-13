@@ -55,15 +55,6 @@ MSS2 --> MSS4(MSS)
 - Openshift
   - Visão Geral
   - Principais Componentes
-- Stages
-  - _Stages são as implatanções da aplicação_
-    - Estáticas
-      - `prod`
-      - DHT
-        - `des`
-        - `hom`
-    - Efêmeras
-      - `feature-*`
 
 # Notas e Referências
 
