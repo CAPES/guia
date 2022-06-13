@@ -32,8 +32,7 @@ include:
 
 ```mermaid
 graph LR
-    A(Develop) --> B(Feature Branch)
-    B --> C(MR Develop)
+    B(Feature Branch) --> C(MR Develop)
     C --> C1(Deploy Ambiente Dinâmico)
     C --> D(Aceite MR)
     D --> E(Commit Develop)
