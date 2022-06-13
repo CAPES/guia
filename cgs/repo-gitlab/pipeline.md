@@ -32,11 +32,12 @@ include:
 
 ```mermaid
 graph LR
-    B(Feature Branch) --> C(MR Develop)
+    B(Branch Feature) --> C(MR Develop)
     C --> C1(Deploy Ambiente Dinâmico)
     C --> D(Aceite MR)
-    D --> E(Deploy Desenvolvimento)
-    D --> F(MR Master)
+    D --> E1(Deploy Desenvolvimento)
+    D --> E(Branch Develop)
+    E --> F(MR Master)
     F --> F1(Deploy Homologação)
     F --> G(Aceite MR)
     G --> G1(Deploy Pré-prod)
