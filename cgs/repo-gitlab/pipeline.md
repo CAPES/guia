@@ -48,16 +48,14 @@ graph LR
     A1 --> A3(Deploy Teste - se houver)
     B --> B1(Deploy Homologação)
     B --> C(Aceite MR)
-    C --> C1(Deploy Pré-produção)
+    C --> C1(Deploy Pré-produção - se houver)
 ```
 
 
 ```mermaid
 graph LR
     A(Branch Master) --> B(Geração de Tag)
-    A --> A1(Commit Branch Master)
-    A1 --> A2(Deploy Pré-produção - se houver) 
-    B --> C(Play Manual Job)
+    B --> C(Play Job - Manual)
     C --> E(Deploy Produção)    
 ```
 
