@@ -33,18 +33,24 @@ include:
 
 ```mermaid
 graph LR
-    B(Branch Feature) --> C(MR Develop)
-    C --> C1(Deploy Ambiente Dinâmico)
-    C --> D(Aceite MR)
-    D --> D1(Deploy Desenvolvimento)
-    D --> D2(Deploy Teste)
-    D --> E(Branch Develop)
-    E --> F(MR Master)
-    F --> F1(Deploy Homologação)
-    F --> G(Aceite MR)
-    G --> G1(Deploy Pré-produção)
-    G --> H(Geração de Tag)
-    H --> I(Deploy Produção)    
+    A(Branch Feature) --> B(MR Branch Develop)
+    B --> B1(Deploy Feature)
+    B --> C(Aceite MR Develop)
+    C --> C1(Deploy Desenvolvimento)
+    C --> C2(Deploy Teste)    
+```
+
+```mermaid
+graph LR
+    A(Branch Develop) --> B(MR Branch Master)
+    A --> A1(Commit Branch Develop)
+    A1 --> A2(Deploy Desenvolvimento) 
+    A1 --> A3(Deploy Teste)
+    B --> B1(Deploy Homologação)
+    B --> C(Aceite MR)
+    C --> C1(Deploy Pré-produção)
+    C --> D(Geração de Tag)
+    D --> E(Deploy Produção)    
 ```
 
 #### Feature Branch
