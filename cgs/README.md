@@ -50,11 +50,10 @@ MSS2 --> MSS4(MSS)
   - [Estrutura de Pastas](./repo-gitlab/estrutura-pastas.md)
   - [Branches & Tags](./repo-gitlab/branchs-tags.md)
   - [Pipeline](./repo-gitlab/pipeline.md)
-- Helm Charts
-  - [Visão Geral](./helm-charts/visao-geral.md)
-- Openshift
-  - Visão Geral
-  - Principais Componentes
+- [Helm Charts](./helm-charts/visao-geral.md)
+- [Openshift](./openshift/README.md)
+  - [Visão Geral](./openshift/visao-geral.md)
+  - [Principais Componentes](./openshift/principais-componentes.md)
 
 # Notas e Referências
 

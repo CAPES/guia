@@ -3,7 +3,7 @@
 
 ## O que é o Helm?
 
-O Helm é uma ferramenta utilizada para definir, instalar e atualizar até o aplicações em cluster Kubernetes. O Helm usa um formato de empacotamento chamado `chart`.
+O Helm é uma ferramenta utilizada para definir, instalar e atualizar aplicações em cluster Kubernetes. O Helm usa um formato de empacotamento chamado `chart`.
 
 Um `chart` é uma pasta que contém uma coleção de arquivos que descrevem um conjunto relacionado de objetos do Kubernetes. Um único chart pode ser usado para implantar algo simples, como um pod memcached, ou algo complexo, como uma pilha completa de aplicativos web com servidores HTTP, bancos de dados, caches e assim por diante.
 
