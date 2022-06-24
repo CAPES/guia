@@ -1,0 +1,62 @@
+cronjob:
+  schedule: "*/5 * * * *"
+  restartPolicy: Never
+  concurrencyPolicy: Forbid
+  container:
+    image:
+      name: replicas/netshoot
+      tag: latest
+      imagePullPolicy: IfNotPresent
+    env:
+    - name: CREDENTIALS
+      valueFrom:
+        secretKeyRef:
+            name: credentials
+            key: oauth-client-credentials
+
+    command: ["/usr/local/bin/job"]
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "300m"
+      limits:
+        memory: "768Mi"
+        cpu: "500m"
+    volumeMounts:
+    - name: job-script-vl
+      mountPath: /usr/local/bin/
+  volumes:
+  - name: job-script-vl
+    configMap:
+      name: job-script-cm
+      items:
+      - key: job.sh
+        path: job
+      defaultMode: 0775
+  configMaps:
+  - name: job-script-cm
+    data:
+      job.sh: |
+        #!/bin/sh
+
+        BASIC_CREDENTIALS=$(echo -n $CREDENTIALS | base64 | tr -d '\n')
+
+        # Obter o token do SSO
+        curl -X POST -H "Authorization: Basic $BASIC_CREDENTIALS" -H 'application/x-www-form-urlecoded' 'https://sso.capes.gov.br/sso/oauth?grant_type=client_credentials' | jq -r '.access_token' > /tmp/bearer_token.txt
+
+        if [ $? -ne 0 ]; then
+          echo "Erro ao tentar obter o token de OAuth" > /dev/stderr
+          exit 2;
+        fi
+
+        if [ -r /tmp/bearer_token.txt ]; then
+          # Invocar o processamento dos arquivos
+          if [ $(curl -X POST -o /dev/stderr -w '%{http_code}' -H "Authorization: Bearer $(cat /tmp/bearer_token.txt)" -H 'Accept: application/json;profile="http://myapp.capes.gov.br/refs/UmServico",application/problem+json' 'http://myapp-backend-app.myapp.svc/rest/um-servico') -eq 200 ]; then
+            exit 0;
+          else
+            exit 1
+          fi
+        else
+          echo "Não é possível ler do arquivo com o token" > /dev/stderr
+          exit 3
+        fi

@@ -250,7 +250,7 @@ A **RDM** é feita pelo [formulário](https://docs.google.com/forms/d/e/1FAIpQLS
   * **Necessário utilizar página de aviso de manutenção com previsão de retorno do Serviço?** - `não`
   * **Qual tipo de ação no DNS/Contexto?** - A resposta irá varias de acordo com o sistema a ser migrado, podendo ser interno e/ou externo.
   * **Necessário utilizar um certificado digital?** - `Sim - O Padrão`
-  * **Quais mudanças no DNS|contexto|certificados serão feitas?** - Inserir o DNS que será alterado, exemplo: 
+  * **Quais mudanças no DNS|contexto|certificados serão feitas?** - Inserir o DNS que será alterado, exemplo:
     * DNS interno: `XPTO.capes.gov.br para balanceador interno do OCP`.
     * DNS externo: `XPTO.capes.gov.br para balanceador externo do OCP`.
 * **Segurança e Controle de Acesso** - `Inclusão` considerando que regras já tenham sido mapeadas, porém ainda não solicitadas. As respostas neste tópico, irão depender do sistema que está sendo migrado. Exemplo:
