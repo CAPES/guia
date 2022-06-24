@@ -14,7 +14,7 @@
 <br><br>
 
 # Visão Geral
-No gerenciamento de um ambiente computacional com certa complexidade, como o da CAPES, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados entre outros, se faz necessário. Entretanto, obviamente, o controle com uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades e problemas em tal gerenciamento. 
+No gerenciamento de um ambiente computacional com certa complexidade, como o da CAPES, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados entre outros, se faz necessário. Entretanto, obviamente, o controle com uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades e problemas em tal gerenciamento.
 
 Com isto, a DTI/CGII implantou um **[Cofre de Senhas](https://git.capes.gov.br/cgii/seguranca/vault)** (acesso restrito), utilizando o software **Vault** da empresa Hashicorp, que centraliza tais dados sensíveis (segredos) e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
 
@@ -45,7 +45,7 @@ Com isto, a DTI/CGII implantou um **[Cofre de Senhas](https://git.capes.gov.br/c
 
 <br>
 
-## Nomenclatura 
+## Nomenclatura
 ### Estrutura dos Segredos
 A estrutura do Cofre de Senhas foi definida de forma que os segredos fiquem organizados de acordo com o sistema a qual o segredo corresponde. Além de facilitar a criação de políticas no compartilhamento com os usuários, quando um sistema for descontinuado, a exclusão também será fácilitada.
 
@@ -55,8 +55,8 @@ Os segredos foram hierarquizados em sub-pastas ou caminhos (*paths*), consideran
 Em resumo, os segredos (senhas, certificados, tokens...) são armazenados na hierarquia, definida abaixo, e compartilhada com as equipes. O acesso aos segredos pode ser feito via API ou pela interface web, com o login da Rede CAPES.
 
 A estrutura criada para armazenar os segredos segue as diretriz:
-* **AZUL** - é **mandatório** e indicarão o nome do **sistema** e o **ambiente**. 
-  * **IMPORTANTE**: O nome do sistema será exatamente igual ao cadastrado no projeto do Git. Havendo nome igual, recomenda-se alteração do nome no Git. 
+* **AZUL** - é **mandatório** e indicarão o nome do **sistema** e o **ambiente**.
+  * **IMPORTANTE**: O nome do sistema será exatamente igual ao cadastrado no projeto do Git. Havendo nome igual, recomenda-se alteração do nome no Git.
     * Exemplo: Para o projeto `https://git.capes.gov.br/dti/orientacoes-gerais/guia`, considera-se o nome do sistema `guia`.
 
 <br>
@@ -67,7 +67,7 @@ A estrutura criada para armazenar os segredos segue as diretriz:
 
 * **VERDE** - são sub-pastas que não tem um critério de nome, podendo existir ou não. Servirá como forma de organizar ainda mais os segredos. Entretanto, não haverá criação de políticas neste nível, somente no nível superior (amarelo).
 
-<br> 
+<br>
 
 * **VERMELHO** - local dos segredos.
 
@@ -110,10 +110,10 @@ style s1d1_b fill:#FFD433
 style s1d1_b_e fill:#FFD433
 style s1d1_b_ms fill:#FFD433
 style s1d1_b_m fill:#FFD433
-style s1d1_b_o fill:#FFD433 
-style s1d1_b_p fill:#FFD433 
- style s1d1_b_s fill:#FFD433 
- 
+style s1d1_b_o fill:#FFD433
+style s1d1_b_p fill:#FFD433
+ style s1d1_b_s fill:#FFD433
+
 
 style s1d1_l fill:#FFD433
 style s1d1_mon fill:#FFD433
@@ -235,7 +235,7 @@ Veja abaixo as formas para acessar o Cofre de Senhas Vault.
 O acesso a ferramenta Vault pode ser feito feito da seguinte forma:
 * Acesse a URL https://cofre.capes.gov.br:8200/ui/vault/auth?with=ldap
 * Pelo **método** `LDAP`, entre com as credenciais:
-  * **Username**: 
+  * **Username**:
     * `<login>` - conta de Rede da CAPES; ou
     * `<adm.login>` - este caso sendo mandatório para usuários administradores do Cofre (conta administrativa).
   * **Password**: `<senha_da_rede>`
@@ -273,7 +273,7 @@ Caso seja necessário re-gerar a sincronia do segundo fator de autenticação no
 
 
 ## API
-Também é possível usar a API para ver os segredos.  
+Também é possível usar a API para ver os segredos.
 > Para a listagem completa, vide [documentação do fabricante](https://www.vaultproject.io/api-docs).
 
 Um dos métodos é acessar a ferramenta com o Token do usuário. Para conseguir um token, faça login pela [Interface Web](#interface-web) e no menu do canto superior direito, clique em `copy token`.
@@ -282,7 +282,7 @@ Um dos métodos é acessar a ferramenta com o Token do usuário. Para conseguir 
 
 <br>
 
-### Listar os Segredos 
+### Listar os Segredos
 Segue exemplo de como listar os segredos usando a API.
 > :warning: O comando utiliza o pacote **jq** para facilitar a visualização da saída, em formato *json*.
 
@@ -319,5 +319,5 @@ senha_des1
 
 # Integração via OpenShift (Chart)
 A integração entre o Openshift e o Cofre de Senhas é feita através de um [Operator do Kubernetes](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator) ([código do operador](https://git.capes.gov.br/cgs/DEVOPS/Operators/cofresenha-operator)).
-Foi criado o [*chart*](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração. 
+Foi criado o [*chart*](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração.
 > Veja [como usar](/devops/orientacoes-tecnicas/cofre-senha.md).
