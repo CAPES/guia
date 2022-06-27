@@ -3,7 +3,10 @@
 Espaço destinado a documentação de guias e procedimentos operacionais
 relacionados às atividades de desenvolvimento e operação da CAPES
 
+
+
 ## Primeiros passos
+- [Guia Prático CGS](./cgs/README.md)
 - [Primeiros passos](./primeiros-passos/primeiros-passos.md)
 - [Aplicação de Exemplo](https://git.capes.gov.br/cgs/DEVOPS/app-sample)
 
