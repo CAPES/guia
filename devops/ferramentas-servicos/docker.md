@@ -295,13 +295,13 @@ CMD ["python3", "/var/www/app.py"]
 
 O comando `docker build` constroi a imagem 
 
-$ `docker build -t registry.paas.capes.gov.br/capes-api/capes-api:1.0.0
+$ `docker build -t registry.capes.gov.br/capes-api/capes-api:1.0.0
 .​`
 
 O comando `docker run` roda o container a partir da imagem criada
 
 $ `docker run –rm –p 8080:8080
-registry.paas.capes.gov.br/capes-api/capes-api:1.0.0​`
+registry.capes.gov.br/capes-api/capes-api:1.0.0​`
 
 O Comando `docker images​` lista as imagens
 
@@ -313,7 +313,7 @@ Para publicar a imagem deve-se fazer o acesso ao registry privado da CAPES​
 
 O comando `docker login` faz a solicitação de acesso
 
-$ `docker login registry.paas.capes.gov.br​`
+$ `docker login registry.capes.gov.br​`
 
 Informar usuário e senha​
 
@@ -323,7 +323,7 @@ $ Password: `*******​`
 
 O comando `docker push` envia a imagem para o registry da capes​
 
-$ `docker push registry.paas.capes.gov.br/capes-api/capes-api:1.0.0`
+$ `docker push registry.capes.gov.br/capes-api/capes-api:1.0.0`
 
 
 # Referências
