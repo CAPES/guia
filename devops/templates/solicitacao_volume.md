@@ -71,24 +71,12 @@ R: N/A
 #### Desenvolvimento (DHT)
 ```
 v-okd-compute01-h.hom.capes.gov.br
-172.19.206.140
-v-okd-compute02-h.hom.capes.gov.br
-172.19.206.141
-v-okd-compute03-h.hom.capes.gov.br
-172.19.206.165
-f-okd-compute04-h.hom.capes.gov.br
-172.19.206.166
+
 ```
 
 #### Ambiente Produtivo (PROD)
 ```
 v-okd-compute01.capes.gov.br
-172.19.206.16
-v-okd-compute02.capes.gov.br
-172.19.206.17
-v-okd-compute03.capes.gov.br
-172.19.206.18
-v-okd-compute04.capes.gov.br
-172.19.206.19
+
 
 ```

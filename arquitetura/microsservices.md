@@ -60,9 +60,9 @@ Este ferramenta permite que um MSS enderece uma atividade a outro e não precise
 O ambiente "DHT" é formado por um conjunto instâncias que formam um cluster único. Dentro do cluster existem áreas para cada ambiente (desenvolvimento, homologação e testes).
 
 Atualmente, o cluster DHT é composto por 3 nós:
-- V-RABBITMQHA01-H (172.19.126.96)
-- V-RABBITMQHA02-H (172.19.126.97)
-- V-RABBITMQHA03-H (172.19.126.98)
+- V-RABBITMQHA01-H (XXX.XXX.XXX.XXX)
+- V-RABBITMQHA02-H (XXX.XXX.XXX.XXX)
+- V-RABBITMQHA03-H (XXX.XXX.XXX.XXX)
 
 Para cada um dos nós que fazem parte do cluster, execute os seguintes passos:
 
@@ -73,15 +73,15 @@ Passos necessários para ambos os cenários: primeiro nó do cluster e demais *n
 - DNS - Garantir que cada um dos nós consiga acesso a outro por nome.
 Originalmente, a solução adotada foi acrescentar o nome dos *nós* no `/etc/hosts` de cada um dos nós:
 ```vim
-172.19.126.96	V-RABBITMQHA01-H.capes.gov.br V-RABBITMQHA01-H
-172.19.126.97   V-RABBITMQHA02-H.capes.gov.br V-RABBITMQHA02-H
-172.19.126.98   V-RABBITMQHA03-H.capes.gov.br V-RABBITMQHA03-H
+XXX.XXX.XXX.XXX	V-RABBITMQHA01-H.capes.gov.br V-RABBITMQHA01-H
+XXX.XXX.XXX.XXX   V-RABBITMQHA02-H.capes.gov.br V-RABBITMQHA02-H
+XXX.XXX.XXX.XXX   V-RABBITMQHA03-H.capes.gov.br V-RABBITMQHA03-H
 ```
 - vIP - Registro do IP do nó do vIP
 Todo novo nó precisa ser registrado no vIP criado para responder ao DNS do RabbitMQ (rabbitmq.capes.gov.br). Este passo deve ser realizado abrindo um chamado para a Infra.
 No chamado, informe:
   - *"Favor, incluir o IP x.y.w.z do nó (**informe o nome do novo nó**) ao vIP (**informar qual IP do vIP desejado**)"*
-    - vIP DHT: 172.19.204.102                 - Que deverá apontar para rabbitmq.hom.capes.br
+    - vIP DHT: XXX.XXX.XXX.XXX                - Que deverá apontar para rabbitmq.hom.capes.br
     - vIP PRD: `0.0.0.0 (ainda será criado)`  - Que deverá apontar para rabbitmq.capes.br
 
 - Instalar pacotes
@@ -246,7 +246,7 @@ subgraph "Topologia Apache Skywalking"
   dnet[Rede Desenvolvimento] -- :8080 e :11800 --> sky[skywalking.hom]
   hnet[Rede Homologacao] -- :8080 e :11800 --> sky[skywalking.hom]
   tnet[Rede Teste] -- :8080 e :11800 --> sky[skywalking.hom]
-  sky[skywalking.hom] -- :9200 --> es[172.19.126.72]
+  sky[skywalking.hom] -- :9200 --> es[1XXX.XXX.XXX.XXX]
 end
 ```
 
@@ -434,7 +434,7 @@ Para configurar a comunicação entre o `Módulo PHP` e o `Agent Skywalking`, se
 O formato geral do comando `sky-php-agent --grpc [Collect-address]:Port`
 
 ```shell
-$ sky-php-agent --grpc 10.10.10.10:11800
+$ sky-php-agent --grpc XXX.XXX.XXX.XXX:11800
 ```
 
 ## Contêineres Docker

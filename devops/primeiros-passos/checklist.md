@@ -42,6 +42,6 @@ O checklist abaixo tem como objetivo conhecer a aplicação que será migrada ou
 |Time de Desenvolvimento | Utiliza alguma ferramenta APM? Qual?	| Ex: Sim/Não|
 |Time de Desenvolvimento | Utiliza alguma ferramenta de depuração? Qual?	| Ex: Sim/Não|
 |Time de Desenvolvimento | DNS da aplicação	| Ex: app.capes.gov.br|
-|Time de Desenvolvimento | Onde a aplicação ficará disponível	| Ex: Interno(CAPES e/ou Ip: 172.19.0.0/16) e/ou Externamente|
+|Time de Desenvolvimento | Onde a aplicação ficará disponível	| Ex: Interno(CAPES e/ou Ip: XXX.XXX.XXX.XXX) e/ou Externamente|
 
 

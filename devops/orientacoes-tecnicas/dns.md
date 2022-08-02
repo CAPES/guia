@@ -13,16 +13,7 @@ Atualmente o Openshift possui três tipos de balanceadores
 
 |Tipo|Host|IP| VIP|                                                       
 |:---|:---|:---|:---|                                                     
-|DHT|v-okd-bal-dht01.hom.capes.gov.br | 172.19.206.142|172.19.206.146|   
-|DHT|v-okd-bal-dht02.hom.capes.gov.br | 172.19.206.143|172.19.206.147|   
-|DHT|v-okd-bal-dht03.hom.capes.gov.br | 172.19.206.144|172.19.206.148|   
-|DHT|v-okd-bal-dht04.hom.capes.gov.br | 172.19.206.145|172.19.206.149|   
-|Produção Interno|v-okd-bal-in-prod01.capes.gov.br | 172.19.204.31| 172.19.204.29|
-|Produção Interno|v-okd-bal-in-prod02.capes.gov.br | 172.19.204.32| 172.19.204.30|
-|Produção Público|v-okd-bal-prod01.capes.gov.br |172.19.204.21|172.19.204.25|
-|Produção Público|v-okd-bal-prod02.capes.gov.br |172.19.204.22|172.19.204.26|
-|Produção Público|v-okd-bal-prod03.capes.gov.br |172.19.204.23|172.19.204.27|
-|Produção Público|v-okd-bal-prod04.capes.gov.br |172.19.204.24|172.19.204.28|
+
 
 
 ## DNS
@@ -36,10 +27,7 @@ Dados os padrões de nomenclatura[^padroes] estabelecidos, os ambientes de desen
 Deverão ser alterados os DNS atuais para apontar para os VIPS dos balanceadores de DHT fazendo Round-robin
 
 > Ex: 
-> - sigla-da-aplicacao.hom.capes.gov.br -> 172.19.206.146
-> - sigla-da-aplicacao.hom.capes.gov.br -> 172.19.206.147
-> - sigla-da-aplicacao.hom.capes.gov.br -> 172.19.206.148
-> - sigla-da-aplicacao.hom.capes.gov.br -> 172.19.206.149
+> - sigla-da-aplicacao.hom.capes.gov.br -> XXX.XXX.XXX.XXX
 
 Além disso deve-se criar duas rotas no Openshift no padrão estabelecido.
 
@@ -64,8 +52,7 @@ Para o ambiente de Produção temos dois cenários o de Produção interno e Pro
 Deverão ser criados/alterados os DNS para apontar para os VIPS dos balanceadores de Produção Interno fazendo Round-robin
 
 > Ex: 
-> - sigla-da-aplicacao.capes.gov.br -> 172.19.204.29
-> - sigla-da-aplicacao.capes.gov.br -> 172.19.204.30
+> - sigla-da-aplicacao.capes.gov.br -> XXX.XXX.XXX.XXX
 
 Além disso deve-se criar uma rota do Openshift no padrão estabelecido.
 
@@ -77,10 +64,7 @@ Além disso deve-se criar uma rota do Openshift no padrão estabelecido.
 Deverão ser criados/alterados os DNS para apontar para os VIPS dos balanceadores de Produção Público fazendo Round-robin
 
 > Ex: 
-> - sigla-da-aplicacao.capes.gov.br -> 172.19.204.25
-> - sigla-da-aplicacao.capes.gov.br -> 172.19.204.26
-> - sigla-da-aplicacao.capes.gov.br -> 172.19.204.27
-> - sigla-da-aplicacao.capes.gov.br -> 172.19.204.28
+> - sigla-da-aplicacao.capes.gov.br -> XXX.XXX.XXX.XXX
 
 
 Além disso deve-se criar uma rota do Openshift no padrão estabelecido.

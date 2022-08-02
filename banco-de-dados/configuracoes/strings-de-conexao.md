@@ -339,7 +339,7 @@ jdbc:postgresql://postgresro.capes.gov.br:5432/producao
 #### SISREL
 
 ```bash
-Host name: v-postgresisrel01.capes.gov.br(melhor opção) ou 172.19.100.203
+Host name: v-postgresisrel01.capes.gov.br(melhor opção) ou XXX.XXX.XXX.XXX
 Port number: 5432
 Banco: sisrel2
  
@@ -353,14 +353,14 @@ jdbc:postgresql://v-postgresisrel01.capes.gov.br:5432/sisrel2
 
 
 ##### DESENVOLVIMENTO ==>> ***DESATIVADO*** <<== 
-~~Host name: v-des-enterprisedb01.des.capes.gov.br(melhor opção) ou 172.19.100.177
+~~Host name: v-des-enterprisedb01.des.capes.gov.br(melhor opção) ou XXX.XXX.XXX.XXX
 Port number: 5432
 Banco: Dsnv~~ 
  
 ~~jdbc:postgresql://v-des-enterprisedb01.des.capes.gov.br:5432/Dsnv~~
 
 ##### HOMOLOGACAO ==>> ***DESATIVADO*** <<== 
-~~Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
+~~Host name: postgres.hom.capes.gov.br(melhor opção) ou XXX.XXX.XXX.XXX
 Port number: 5432
 Banco: homologacao~~ 
  
@@ -368,7 +368,7 @@ Banco: homologacao~~
 ~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/homologacao~~
 
 ##### PREPROD ==>> ***DESATIVADO*** <<== 
-~~Host name: postgres.hom.capes.gov.br(melhor opção) ou 172.19.100.179
+~~Host name: postgres.hom.capes.gov.br(melhor opção) ou XXX.XXX.XXX.XXX
 Port number: 5432
 Banco: preprod~~ 
  
@@ -376,7 +376,7 @@ Banco: preprod~~
 ~~jdbc:postgresql://postgres.hom.capes.gov.br:5432/preprod~~
 
 ##### TESTE  ==>> ***DESATIVADO*** <<==
-~~Host name: postgres.teste.capes.gov.br(melhor opção) ou 172.19.100.121
+~~Host name: postgres.teste.capes.gov.br(melhor opção) ou XXX.XXX.XXX.XXX
 Port number: 5432
 Banco: teste~~ 
  
@@ -385,7 +385,7 @@ Banco: teste~~
  
 ##### SISREL DES
  
-Host name: v-postegres-sisrel-des.capes.gov.br (melhor opção) ou 172.19.100.154
+Host name: v-postegres-sisrel-des.capes.gov.br (melhor opção) ou XXX.XXX.XXX.XXX
 Port number: 5432
 Banco: sisrel_des 
  
@@ -438,29 +438,29 @@ jdbc:postgresql:/postgresdhtsrv04.hom.capes.gov.br:5432/<banco de dados>
 ### PRODUÇÃO
  
 #### PROD0
-Host name: 172.19.100.214
+Host name: XXX.XXX.XXX.XXX
 Port number: 5000
  
 ```bash
-jdbc:jtds:sybase://172.19.100.214:5000:/<NOME_DO_BANCO>
+jdbc:jtds:sybase://XXX.XXX.XXX.XXX:XXXXX:/<NOME_DO_BANCO>
 ```
  
  
 #### PROD1
-Host name: 172.19.100.215
+Host name: XXX.XXX.XXX.XXX
 Port number: 5000
  
 ```bash
-jdbc:jtds:sybase://172.19.100.215:5000:/<nomedobanco>
+jdbc:jtds:sybase://XXX.XXX.XXX.XXX:5000:/<nomedobanco>
 ```
  
  
 #### PROD_DW
-Host name: 172.19.100.213
+Host name: XXX.XXX.XXX.XXX
 Port number: 6500
  
 ```bash
-jdbc:jtds:sybase://172.19.100.213:6500:/<nomedobanco>
+jdbc:jtds:sybase://XXX.XXX.XXX.XXX:6500:/<nomedobanco>
 ```
  
  
@@ -468,37 +468,37 @@ jdbc:jtds:sybase://172.19.100.213:6500:/<nomedobanco>
 ### DESENVOLVIMENTO
  
 #### DESENV0
-Host name: 172.19.100.130
+Host name: XXX.XXX.XXX.XXX
 Port number: 5200
  
 ```bash
-jdbc:jtds:sybase://172.19.100.130:5200:/<nomedobanco>
+jdbc:jtds:sybase://XXX.XXX.XXX.XXX:5200:/<nomedobanco>
 ```
  
  
 #### DESENV1
-Host name: 172.19.100.136
+Host name: XXX.XXX.XXX.XXX
 Port number: 5300
  
 ```bash
-jdbc:jtds:sybase://172.19.100.136:5300:/<nomedobanco>
+jdbc:jtds:sybase://XXX.XXX.XXX.XXX:5300:/<nomedobanco>
 ```
  
 ### HOMOLOGAÇÃO
  
 #### HOM0
-Host name: 172.19.100.130
+Host name: XXX.XXX.XXX.XXX
 Port number: 5000
  
 ```bash
-jdbc:jtds:sybase://172.19.100.133:5000:/<nomedobanco>
+jdbc:jtds:sybase://XXX.XXX.XXX.XXX:5000:/<nomedobanco>
 ```
  
  
 #### HOM1
-Host name: 172.19.100.136
+Host name: XXX.XXX.XXX.XXX
 Port number: 5100
  
 ```bash
-jdbc:jtds:sybase://172.19.100.136:5100:/<nomedobanco>
+jdbc:jtds:sybase://XXX.XXX.XXX.XXX:5100:/<nomedobanco>
 ```

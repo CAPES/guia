@@ -107,7 +107,7 @@ siprec-web
 
 # Impactos
 
-- Mover o balanceamento do mod_cluster do siprec do balanceador 172.19.150.54 para o balanceador interno.capes.gov.br (172.19.150.117)
+- Mover o balanceamento do mod_cluster do siprec do balanceador XXX.XXX.XXX.XXX para o balanceador interno.capes.gov.br (XXX.XXX.XXX.XXX)
 - Suspeitamos que seja necessário efetuar configurações para o provisionamento de alguns cabeçalhos e cookies nas requisições (com sorte o **ngnix** consegue lidar com tudo)
 
 ## Refatoramentos

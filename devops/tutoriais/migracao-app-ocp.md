@@ -218,10 +218,10 @@ No linux editar o arquivo `/etc/hosts` e inserir o dns da aplicação e o ip do 
 ```
 ...
 ## Para aplicações internas
-172.19.208.52 xpto.capes.gov.br
+XXX.XXX.XXX.XXX xpto.capes.gov.br
 
 ## Para aplicações externas
-172.19.208.60 xpto.capes.gov.br
+XXX.XXX.XXX.XXX xpto.capes.gov.br
 ...
 ```
 

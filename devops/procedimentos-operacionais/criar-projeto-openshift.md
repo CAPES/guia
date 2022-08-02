@@ -66,7 +66,7 @@ Ao término da criação do namespace automaticamente é criado o manifesto do t
   spec:
     egress:
     - to:
-        cidrSelector: 172.19.0.0/16
+        cidrSelector: XXX.XXX.XXX.XXX
       type: Allow
     - to:
         cidrSelector: 0.0.0.0/0
