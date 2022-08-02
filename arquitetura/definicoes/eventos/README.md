@@ -233,8 +233,8 @@ components:
         Uma _string_ que descreve um Media Type, incluindo parâmetros.
         **Exemplos**:
         - `application/problem+json`
-        - `application/vnd.capes.gov.br+json;profile="https://pessoas.capes.gov.br/refs/pessoas/UnidadePessoa"`
-        - `application/vnd.capes.gov.br+json;profile="https://pessoas.capes.gov.br/refs/pessoas/UnidadePessoa/desativar"`
+        - `application/vnd.capes.gov.br+json;profile="https://xpto.capes.gov.br/refs/pessoas/UnidadePessoa"`
+        - `application/vnd.capes.gov.br+json;profile="https://xpto.capes.gov.br/refs/pessoas/UnidadePessoa/desativar"`
       externalDocs:
         description: IANA
         url: https://www.iana.org/assignments/media-types/media-types.xhtml
@@ -270,12 +270,12 @@ Exemplo:
   "id": "EmailPrincipalAlterado-1020304",
   "links": {
     "event": {
-      "rel": "https://pessoas.capes.gov.br/refs/commons/Event",
-      "href": "https://pessoas.capes.gov.br/feeds/emails/1020304",
+      "rel": "https://xpto.capes.gov.br/refs/commons/Event",
+      "href": "https://xpto.capes.gov.br/feeds/emails/1020304",
       "responseTypes": [
-        "application/vnd.capes.gov.br+json;profile=https://pessoas.capes.gov.br/refs/feeds/EmailPrincipalAlterado",
-        "application/vnd.capes.gov.br+json;profile=https://pessoas.capes.gov.br/refs/feeds/EmailPrincipalAlterado1",
-        "application/vnd.capes.gov.br+json;profile=https://pessoas.capes.gov.br/refs/feeds/EmailPrincipalAlterado3",
+        "application/vnd.capes.gov.br+json;profile=https://xpto.capes.gov.br/refs/feeds/EmailPrincipalAlterado",
+        "application/vnd.capes.gov.br+json;profile=https://xpto.capes.gov.br/refs/feeds/EmailPrincipalAlterado1",
+        "application/vnd.capes.gov.br+json;profile=https://xpto.capes.gov.br/refs/feeds/EmailPrincipalAlterado3",
         "application/json;odata.metadata=none"
       ]
     }
@@ -283,7 +283,7 @@ Exemplo:
 }
 ```
 
-- A `rel` do _link_ `event` poderia ser algo como `https://pessoas.capes.gov.br/refs/eventos/emails/EmailPrincipalAlterado`, indicando uma relação mais específica que de um Evento genérico
+- A `rel` do _link_ `event` poderia ser algo como `https://xpto.capes.gov.br/refs/eventos/emails/EmailPrincipalAlterado`, indicando uma relação mais específica que de um Evento genérico
 - `responseTypes` é importante para a negociação de conteúdo, de forma que o cliente possa verificar se conhece algumas das representações disponíveis para obter os dados do Evento e processá-lo
   - _**Se a URI de `rel` for um recurso obtível**_ uma consulta com um `Accept` adequado (por exemplo passando `https://rest.capes.gov.br/refs/commons/LinkRelation` no parâmetros `profile`) poderia retornar um `LinkRelation` contendo o `responseTypes` para a negociação de conteúdo
 
