@@ -204,7 +204,7 @@ Para a aplicação entrar em produção será necessário a entrega de uma GMUD,
 
 >  Anexo a GMUD deverá ser entregue um checklist com os débitos técnicos da aplicação. Vide [PDTIC](https://www.capes.gov.br/images/novo_portal/documentos/governanca_dti/01072020_PDTIC_2020_2023_CGD_junho2020.pdf)
 
-> Vide: [Formulário de requisição de mudança](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home)
+> Vide: [Formulário de requisição de mudança](https://xpto.com/cgii/ccm/gmud/wikis/home)
 >
 > Equipe responsável: Time do Projeto
 

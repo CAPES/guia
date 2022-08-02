@@ -20,7 +20,7 @@ Se todos os _Jobs_ em um _Stage_:
 
 ## Configuração
 
-Os scripts de pipeline foram definidos no repositório [gitlab-pipeline](https://git.capes.gov.br/cgs/DEVOPS/automations/gitlab-pipeline), portanto para a criacão de um pipeline padrão da CAPES basta incluí-los no _devops/.gitlab-ci.yaml_ do projeto.
+Os scripts de pipeline foram definidos no repositório [gitlab-pipeline](https://xpto.com/cgs/DEVOPS/automations/gitlab-pipeline), portanto para a criacão de um pipeline padrão da CAPES basta incluí-los no _devops/.gitlab-ci.yaml_ do projeto.
 
 
 ### Exemplo

@@ -3,11 +3,11 @@ Git é um sistema de controle de versão distribuído (DVCS). Isso significa que
 
 Desta forma, o Gitlab[^Gitlab] é uma aplicação que implementa o conceito de um Git, sendo que nele há um conjunto de componentes que aprimoram o uso da ferramenta e agregam valor, permitindo fluxos mais completos dentro do ciclo de vida do desenvolvimento. Além disto, permite integração com outros serviços de comunicação (Mattermost) e utilização do conceito de CI/CD. Ele possui uma interface Web para visualização e edição dos códigos, porém permite o uso de softwares que implementam git.
 
-> **NOTA**: Essa página destina-se a orientar sobre o funcionamento e uso do Git, assim como sua política de uso, voltado aos usuários da ferramenta. Para assuntos relacionados à administração do Gitlab (administradores da ferramenta) viste a página do **[Gitlab](https://git.capes.gov.br/cgii/armazenamento/git/gitlab/wikis/home)**. 
+> **NOTA**: Essa página destina-se a orientar sobre o funcionamento e uso do Git, assim como sua política de uso, voltado aos usuários da ferramenta. Para assuntos relacionados à administração do Gitlab (administradores da ferramenta) viste a página do **[Gitlab](https://xpto.com/cgii/armazenamento/git/gitlab/wikis/home)**. 
 
 # Descrição Técnica
 Em resumo, a da solução permite:
-* **git.capes.gov.br** - repositório para armazenar os códigos/scripts das aplicações (**repository**), além de possuir outros recursos internos como: 
+* **xpto.com** - repositório para armazenar os códigos/scripts das aplicações (**repository**), além de possuir outros recursos internos como: 
   * cadastro de tarefas (**issues**)
   * documentação (**wiki**) 
   * uso de esteira de desenvolvimento (**CI/CD**)
@@ -32,9 +32,9 @@ graph TD
     Mattermost
     end
 
-CLI---git(https://git.capes.gov.br)
-Navegador---git(https://git.capes.gov.br)
-click git "https://git.capes.gov.br"
+CLI---git(https://xpto.com)
+Navegador---git(https://xpto.com)
+click git "https://xpto.com"
 
 Mattermost---mchat(https://mchat.capes.gov.br)
 Navegador---mchat(https://mchat.capes.gov.br)

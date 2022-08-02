@@ -7,7 +7,7 @@
 - [Notas e Referências](#notas-e-referências)
 
 # Visão Geral
-Para um controle nos acessos SSH aos servidores, foi implantada a solução **[FreeIPA](https://git.capes.gov.br/cgii/gerenciamento-de-identidade/freeipa)** (acesso restrito) que gerencia as permissões e o controle de acessos dos usuários aos grupos de servidores.
+Para um controle nos acessos SSH aos servidores, foi implantada a solução **[FreeIPA](https://xpto.com/cgii/gerenciamento-de-identidade/freeipa)** (acesso restrito) que gerencia as permissões e o controle de acessos dos usuários aos grupos de servidores.
 
 <br><br>
 
@@ -87,11 +87,11 @@ touch ~/.ssh/config
 Adicione o conteúdo a seguir no arquivo `~/.ssh/config`, substituido `<login>` pelo login de rede a ser utilizado
 
 ```ssh_config
-Host git.capes.gov.br
+Host xpto.com
     User git
 Host ssh.capes.gov.br
     User <login>
-Host *.capes.gov.br !ssh.capes.gov.br !git.capes.gov.br
+Host *.capes.gov.br !ssh.capes.gov.br !xpto.com
     User <login>
     ProxyJump ssh.capes.gov.br
 ```

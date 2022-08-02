@@ -267,11 +267,11 @@ Exemplo:
 
 ```json
 {
-  "id": "EmailPrincipalAlterado-1020304",
+  "id": "EmailPrincipalAlterado-0000000",
   "links": {
     "event": {
       "rel": "https://xpto.capes.gov.br/refs/commons/Event",
-      "href": "https://xpto.capes.gov.br/feeds/emails/1020304",
+      "href": "https://xpto.capes.gov.br/feeds/emails/0000000",
       "responseTypes": [
         "application/vnd.capes.gov.br+json;profile=https://xpto.capes.gov.br/refs/feeds/EmailPrincipalAlterado",
         "application/vnd.capes.gov.br+json;profile=https://xpto.capes.gov.br/refs/feeds/EmailPrincipalAlterado1",
@@ -332,15 +332,15 @@ Estamos supondo que a interação com o banco de dados foi bem sucedida.
 [^obs1]: Também fazemos extenso uso de práticas de REST
 [^rest]: "Transferência Representacional de Estado"
 [^rabbitmq]: https://www.rabbitmq.com/
-[^rabbitmq-ops]: https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/microsservices.md#message-broker-rabbitmq
+[^rabbitmq-ops]: https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/microsservices.md#message-broker-rabbitmq
 [^event-sourcing]: https://martinfowler.com/eaaDev/EventSourcing.html
 [^event-producers]: Produtores de Eventos
 [^event-consumer]: Consumidores de Eventos
 [^capes-mediatype]: Futuro. Um futuro Media Type da CAPES
-[^esteriotipos-rest]: Conforme padronizado para APIs REST: https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md#arqu%C3%A9tipos-de-recursos
+[^esteriotipos-rest]: Conforme padronizado para APIs REST: https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md#arqu%C3%A9tipos-de-recursos
 [^como-atom]: Como as que podem ser inspiradas por Atom Feeds - https://datatracker.ietf.org/doc/html/rfc5023
-[^padaro-json]: Conforme padronizado para APIs REST: https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md#desenho-de-representa%C3%A7%C3%A3o
-[^padrao-links]: Conforme padronizado para APIs REST: https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md#desenho-de-representa%C3%A7%C3%A3o
+[^padaro-json]: Conforme padronizado para APIs REST: https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md#desenho-de-representa%C3%A7%C3%A3o
+[^padrao-links]: Conforme padronizado para APIs REST: https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md#desenho-de-representa%C3%A7%C3%A3o
 [^versionamento-eventos-depreciacao]: Estamos estudando o melhor formato para manter os clientes informados a respeitos de depreciação e "fim da vida" de determinadas representações numa API REST
 [^message-broker]: Apesar de _broker_ ser comumente traduzido para **corretor**, a expressão **corretor de mensagens** pode ficar dispersa, por isso traduzimos como **intermediário de mensagens**
 [^mediatype-futuro1]: Futuramente será melhor detalhado numa documentação sobre o _Media Type_ da CAPES

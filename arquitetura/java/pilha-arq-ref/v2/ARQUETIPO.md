@@ -3,7 +3,7 @@
 # Leituras Recomendadas
 
 - [Apache Maven - Introduction to Archetypes](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html)
-- [Estrutura de pastas nos repositórios de aplicações da CGS](https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/ferramentas/version-control-system/guia-de-uso-git.md#reposit%C3%B3rio)
+- [Estrutura de pastas nos repositórios de aplicações da CGS](https://xpto.com/dti/orientacoes-gerais/guia/blob/master/ferramentas/version-control-system/guia-de-uso-git.md#reposit%C3%B3rio)
 
 # Introdução
 
@@ -48,7 +48,7 @@ mvn archetype:generate -B \
 
 **Outras propridades que podem ser utilizadas como parâmetros**:
 - `git`: repositório git associado com o projeto
-  - Exemplo: `-Dgit=git://git.capes.gov.br:cgs/narq/frameworks/java/capes-arquitetura-spring-boot.git`
+  - Exemplo: `-Dgit=git://xpto.com:cgs/narq/frameworks/java/capes-arquitetura-spring-boot.git`
 - `descricao`: Descrição do projeto. Será colocada na tag `<description>`
   - Exemplo: `-Ddescricao="Uma descrição minimalista da aplicação."`
 - `javac-path`: O caminho para o binário do compilador Java que se deseja que esse projeto Maven utilize[^mvn-configs]

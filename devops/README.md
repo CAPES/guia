@@ -8,7 +8,7 @@ relacionados às atividades de desenvolvimento e operação da CAPES
 ## Primeiros passos
 - [Guia Prático CGS](./cgs/README.md)
 - [Primeiros passos](./primeiros-passos/primeiros-passos.md)
-- [Aplicação de Exemplo](https://git.capes.gov.br/cgs/DEVOPS/app-sample)
+- [Aplicação de Exemplo](https://xpto.com/cgs/DEVOPS/app-sample)
 
 ## Cursos e Treinamentos
 - [Listagem de cursos](./primeiros-passos/materiais.md)

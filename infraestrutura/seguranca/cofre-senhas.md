@@ -16,7 +16,7 @@
 # Visão Geral
 No gerenciamento de um ambiente computacional com certa complexidade, como o da CAPES, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados entre outros, se faz necessário. Entretanto, obviamente, o controle com uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades e problemas em tal gerenciamento.
 
-Com isto, a DTI/CGII implantou um **[Cofre de Senhas](https://git.capes.gov.br/cgii/seguranca/vault)** (acesso restrito), utilizando o software **Vault** da empresa Hashicorp, que centraliza tais dados sensíveis (segredos) e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
+Com isto, a DTI/CGII implantou um **[Cofre de Senhas](https://xpto.com/cgii/seguranca/vault)** (acesso restrito), utilizando o software **Vault** da empresa Hashicorp, que centraliza tais dados sensíveis (segredos) e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
 
 <br><br>
 
@@ -37,7 +37,7 @@ Com isto, a DTI/CGII implantou um **[Cofre de Senhas](https://git.capes.gov.br/c
 
 <br>
 
-* **Criação / Alteração / Exclusão** - tais ações nos segredos, para o ambiente de produção, requer o [registro de uma mudança](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home). Para o ambiente DHT, não há necessidade.
+* **Criação / Alteração / Exclusão** - tais ações nos segredos, para o ambiente de produção, requer o [registro de uma mudança](https://xpto.com/cgii/ccm/gmud/wikis/home). Para o ambiente DHT, não há necessidade.
   * **Ambiente DHT** - considera-se DHT (não produção) os ambientes "Desenvolvimento", "Homologação", "Teste" e "PreProd".
 
 
@@ -57,7 +57,7 @@ Em resumo, os segredos (senhas, certificados, tokens...) são armazenados na hie
 A estrutura criada para armazenar os segredos segue as diretriz:
 * **AZUL** - é **mandatório** e indicarão o nome do **sistema** e o **ambiente**.
   * **IMPORTANTE**: O nome do sistema será exatamente igual ao cadastrado no projeto do Git. Havendo nome igual, recomenda-se alteração do nome no Git.
-    * Exemplo: Para o projeto `https://git.capes.gov.br/dti/orientacoes-gerais/guia`, considera-se o nome do sistema `guia`.
+    * Exemplo: Para o projeto `https://xpto.com/dti/orientacoes-gerais/guia`, considera-se o nome do sistema `guia`.
 
 <br>
 
@@ -318,6 +318,6 @@ senha_des1
 <br><br>
 
 # Integração via OpenShift (Chart)
-A integração entre o Openshift e o Cofre de Senhas é feita através de um [Operator do Kubernetes](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator) ([código do operador](https://git.capes.gov.br/cgs/DEVOPS/Operators/cofresenha-operator)).
-Foi criado o [*chart*](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração.
+A integração entre o Openshift e o Cofre de Senhas é feita através de um [Operator do Kubernetes](https://xpto.com/cgs/DEVOPS/helm/chart-cofresenha-operator) ([código do operador](https://xpto.com/cgs/DEVOPS/Operators/cofresenha-operator)).
+Foi criado o [*chart*](https://xpto.com/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração.
 > Veja [como usar](/devops/orientacoes-tecnicas/cofre-senha.md).

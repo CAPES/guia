@@ -6,7 +6,7 @@ imagens em busca de vulnerabilidades e assina imagens como confiáveis.
 
 ## Instalação e Configuração
 
-> Vide: [Helm Chart](https://git.capes.gov.br/cgs/DEVOPS/helm/harbor)
+> Vide: [Helm Chart](https://xpto.com/cgs/DEVOPS/helm/harbor)
 
 ## Procedimentos Operacionais
 
@@ -138,7 +138,7 @@ A tabela a seguir mostra os vários níveis de permissão do usuário em um proj
 
 
 ## Referências
-- [Chart do Harbor](https://git.capes.gov.br/cgs/DEVOPS/helm/harbor)
+- [Chart do Harbor](https://xpto.com/cgs/DEVOPS/helm/harbor)
 - [Github do Harbor](https://github.com/goharbor/harbor)
 - [Documentação do Harbor](https://github.com/goharbor/harbor/tree/master/docs)
 - [Guia de Instalação do Harbor](https://github.com/goharbor/harbor/blob/master/docs/installation_guide.md)

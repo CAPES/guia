@@ -1,5 +1,5 @@
 # Template
-Um componente Angular poderá ser criado usando como base o projeto [Angular component Template](https://git.capes.gov.br/cgs/narq/componentes-javascript/angular-component-template.git), o qual é detalhado a seguir.
+Um componente Angular poderá ser criado usando como base o projeto [Angular component Template](https://xpto.com/cgs/narq/componentes-javascript/angular-component-template.git), o qual é detalhado a seguir.
 
 ## Estrutura de pastas do projeto
 * devops
@@ -19,7 +19,7 @@ Contém as configurações do pipeline.
 Contém arquivos/pastas do componente.
 Sob esta pasta, a estruturação é livre, salvo exista alguma padronização.
 
-Se fizer uso do [Angular component Template](https://git.capes.gov.br/cgs/narq/componentes-javascript/angular-component-template.git), configure os seguintes aquivos:
+Se fizer uso do [Angular component Template](https://xpto.com/cgs/narq/componentes-javascript/angular-component-template.git), configure os seguintes aquivos:
 
 ### system/package.json
 
@@ -38,10 +38,10 @@ Se fizer uso do [Angular component Template](https://git.capes.gov.br/cgs/narq/c
 Descreva o componente, bem como ele deve ser usadado exmplificando com *snippets*.
 
 **NOTA**: Para que o pipeline seja executado corretamente, é-se necessário: 
-i) atender as regras de uso do Git [Guia de uso Git](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Guia-de-uso-Git); 
-ii) o projeto do componente deverá está sob o grupo [Componentes Javascript](https://git.capes.gov.br/cgs/narq/componentes-javascript).
+i) atender as regras de uso do Git [Guia de uso Git](https://xpto.com/dti/orientacoes-gerais/guia/wikis/Guia-de-uso-Git); 
+ii) o projeto do componente deverá está sob o grupo [Componentes Javascript](https://xpto.com/cgs/narq/componentes-javascript).
 
 # Fluxo de buid da aplicações
-- A codificação de cada componente deverá iniciar com a criação de seu repositório no git, na [seção Javascript](https://git.capes.gov.br/cgs/narq/componentes-javascript).
+- A codificação de cada componente deverá iniciar com a criação de seu repositório no git, na [seção Javascript](https://xpto.com/cgs/narq/componentes-javascript).
 - **Após a conclusão de sua codificação**, realizar solicitação de _Merge Request_ à Arquitetura.
 - O _Merge Request_ sendo aprovado, o pipeline enviará o código para o [Sinopia Capes](http://npm.ci.capes.gov.br/) com o nome informado na linha 2 do arquivo `system/package.json` - `"name": "@capes/<component-name>"`

@@ -5,7 +5,7 @@ Aqui encontram-se as principais orientações sobre o funcionamento dos serviço
 
 
 # Conteúdo
-* [Gerenciamento de Mudanças](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home) - conheça sobre o processo de mudanças no ambiente de produção.
+* [Gerenciamento de Mudanças](https://xpto.com/cgii/ccm/gmud/wikis/home) - conheça sobre o processo de mudanças no ambiente de produção.
 * [Gestão de Projetos](https://gip.capes.gov.br/pwa) - veja os projetos da TI.
 * [Arquitetura de Sistemas](arquitetura/README.md) - navegue sobre os métodos utilizados na arquitetura dos sitemas.
 * [Banco de Dados](banco-de-dados/README.md) - descubra os métodos de conexão com os bancos de dados.

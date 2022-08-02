@@ -97,10 +97,10 @@ A partir da versão `2.0.0` pretendemos seguir caminho usual de SemVer[^semver].
 [^cobertura-existe-falta-extrair]: Já existe bateria de teste, falta coletar os valores
 [^problem-spring-Web]: `org.zalando:problem-spring-web` https://github.com/zalando/problem-spring-web
 [^doc-so-escrita]: Documentação apenas escrita, ainda não publicada
-[^pipeline-cicd]: Impacto no Pipeline de desenvolvimento de aplicações. Isso normalmente envolve alterar o[ Pipeline de aplicações](https://git.capes.gov.br/cgs/DEVOPS/automations/gitlab-pipeline) ou [Chart `capes-aplic`](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-capes-aplic)
+[^pipeline-cicd]: Impacto no Pipeline de desenvolvimento de aplicações. Isso normalmente envolve alterar o[ Pipeline de aplicações](https://xpto.com/cgs/DEVOPS/automations/gitlab-pipeline) ou [Chart `capes-aplic`](https://xpto.com/cgs/DEVOPS/helm/chart-capes-aplic)
 [^testes]: _Frameworks_ e infraestrutura para desenvolvimento e execução de testes automatizados.
 [^antes]: antes...
 [^aspecto-arq]: Aspecto de Arquitetura
 [^aspecto-pilha]: Aspecto de Pilha
-[^cronjob-chart]: https://git.capes.gov.br/cgs/DEVOPS/helm/cronjob
+[^cronjob-chart]: https://xpto.com/cgs/DEVOPS/helm/cronjob
 [^semver]: _Semantic Versioning_ (Versionamento Semântico) - https://semver.org/

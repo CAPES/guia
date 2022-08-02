@@ -7,7 +7,7 @@ incluído no GitLab que coordena os _Jobs_.
 
 ## Instalação do Runner no Openshift
 
-> Vide: [GitLab Runner Chart](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-gitlab-runner)
+> Vide: [GitLab Runner Chart](https://xpto.com/cgs/DEVOPS/helm/chart-gitlab-runner)
 
 
 ## Referências

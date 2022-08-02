@@ -64,7 +64,7 @@ O módulo `br.gov.capes.cgs.narq:feature-toggle-starter` é configurado nas prop
 ```yaml
 unleash:
   mode: gitlab
-  endpoint: https://git.capes.gov.br/api/v4/feature_flags/unleash/2
+  endpoint: https://xpto.com/api/v4/feature_flags/unleash/2
   token: SyHHPwRf3mJ3TunTYyHU
   env: development
 ```
@@ -152,7 +152,7 @@ Qualquer um desses _beans_ deve recuar caso a aplicação defina seu próprio _b
 
 [^cd]: ContinuousDelivery - https://martinfowler.com/bliki/ContinuousDelivery.html
 [^rbac]: Segurança - [_Roles_ (Papeis), _Scopes_, Permissões e `GrantedAuthority`](./SEGURANCA.md#roles-papeis-scopes-permissões-e-grantedauthority)
-[^repo-pipeline]: Gitlab Pipeline - https://git.capes.gov.br/cgs/DEVOPS/automations/gitlab-pipeline
+[^repo-pipeline]: Gitlab Pipeline - https://xpto.com/cgs/DEVOPS/automations/gitlab-pipeline
 [^obs-versao-no-archetype]: A versão já está configurado no `pom.xml` que é gerado pelo arquétipo e a tag `<version>` e a tag de propriedade podem ser suprimidas nesse caso.
 [^unleash]: Unleash - https://getunleash.io/
 [^gitlab-credentials]: Get access credentials - https://docs.gitlab.com/ee/operations/feature_flags.html#integrate-feature-flags-with-your-application

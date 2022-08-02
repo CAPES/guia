@@ -12,4 +12,4 @@ As tarefas que são padronizadas e podem ser feitas via linha de comando podem s
 # Receita Modelo
 A criação das receitas utiliza diretrizes internas que podem ser encontradas na documentação modelo:
 
-* [Ansible - Receita Modelo ](https://git.capes.gov.br/cgii/automacao/ansible-modelo/blob/master/README.md)
+* [Ansible - Receita Modelo ](https://xpto.com/cgii/automacao/ansible-modelo/blob/master/README.md)

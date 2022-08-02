@@ -2,8 +2,8 @@
 
 # Leituras Recomendadas
 
-- [CAPES Cronjob HelmChart](https://git.capes.gov.br/cgs/DEVOPS/helm/cronjob/blob/master/README.md)
-- [Eventos & Mensageria entre aplicações](https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/definicoes/eventos/README.md)
+- [CAPES Cronjob HelmChart](https://xpto.com/cgs/DEVOPS/helm/cronjob/blob/master/README.md)
+- [Eventos & Mensageria entre aplicações](https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/definicoes/eventos/README.md)
 - [Mensageria](MENSAGERIA.md)
 
 # Introdução
@@ -29,7 +29,7 @@ Há pelo menos 2 formas de implementar as rotinas:
 ## Invocação a Endpoint REST
 
 - [WEB/HTTP (REST)](REST.md)
-- [Definições para construção de API REST](https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md)
+- [Definições para construção de API REST](https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md)
 
 Nesse caso o processamento desejado fica como efeito colateral da invocação de uma _endpoint_ REST, e o `CronJob` apenas executa periódicamente a invocação desse(s) _endpoint(s)_.
 Uma vantagem dessa abordagem é a possibilidade desse endpoint estar disponível para ser invocado por outros clientes que não sejam o `CronJob`. A execução arbitrária fora da agenda pode ser útil ou necessária. Outra possível vantagem é de manter uma base de código mais coesa, uma vez que provavelmente a aplicação que executa o processamento rotineiro é a mesma que implementa as outras operações funcionais. Uma possível desvantagem é que que há uma integração de rede entre a rotina e o que por ela deveria ser processado o que pode dificultar a depuração da aplicação.
@@ -154,7 +154,7 @@ Em vez de um `ConfigMap` com o script que invoca o _endpoint_ que processa a rot
 
 [^k8s-cronjob]: CronJob - https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 [^ocp-cronjob]: Running tasks in pods using jobs - https://docs.openshift.com/container-platform/4.7/nodes/jobs/nodes-nodes-jobs.html
-[^chart-cronjob]: README - https://git.capes.gov.br/cgs/DEVOPS/helm/cronjob/blob/master/README.md
+[^chart-cronjob]: README - https://xpto.com/cgs/DEVOPS/helm/cronjob/blob/master/README.md
 [^springboot-apprunner]: `org.springframework.boot.ApplicationRunner` - https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/ApplicationRunner.html
 [^spring-component-annotation]: `org.springframework.stereotype.Component` https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/stereotype/Component.html
 [^man-curl]:curl.1 the man page - https://curl.se/docs/manpage.html

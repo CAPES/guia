@@ -110,5 +110,5 @@ deployment:
 
 
 # Referências
-- [Chart do cofre de senha](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha)
-- [Operator do cofre de senha](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator)
+- [Chart do cofre de senha](https://xpto.com/cgs/DEVOPS/helm/chart-cofresenha)
+- [Operator do cofre de senha](https://xpto.com/cgs/DEVOPS/helm/chart-cofresenha-operator)

@@ -25,7 +25,7 @@ Após a instalação, execute os seguintes comandos para configurar o ambiente d
 > **1000**, altere a propriedade **UID** no arquivo **.env** para o valor correto. Isso é necessário para configurar corretamente as permissões dos arquivos da aplicação no sistema de arquivos.*
 
 ```sh
-git clone https://git.capes.gov.br/cgs/narq/pocs/poc-microsservico/php/task-list.git
+git clone https://xpto.com/cgs/narq/pocs/poc-microsservico/php/task-list.git
 cd task-list
 cp .env.example .env
 docker-compose up -d

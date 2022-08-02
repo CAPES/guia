@@ -3,7 +3,7 @@ O objetivo deste documento é descrever os requisitos mínimos para que uma apli
 
 
 1. Base de código[^1]
-   1. A base do código deve estar no GitLab (https://git.capes.gov.br/)
+   1. A base do código deve estar no GitLab (https://xpto.com/)
    1. A aplicação deve ter apenas uma base de código e, partindo dessa, ser implantada em distintos ambientes.
 
 1. Dependência[^3]

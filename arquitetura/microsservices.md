@@ -261,7 +261,7 @@ Sua arquitetura consiste em quatro partes: Probes, Platform backend, Storage and
 
 ### Instalação
 
-A instalação da ferramenta está definida como "Infraestrutura como Código", utilizando o Ansible. Para mais informações da instalação veja as documentações no [respositório da ferramenta](https://git.capes.gov.br/cgs/narq/skywalking).
+A instalação da ferramenta está definida como "Infraestrutura como Código", utilizando o Ansible. Para mais informações da instalação veja as documentações no [respositório da ferramenta](https://xpto.com/cgs/narq/skywalking).
 
 #### Probes
 

@@ -6,7 +6,7 @@
 - [springdoc-openapi - OpenAPI 3 Library for spring-boot](https://springdoc.org/)
   - [GitHub Repo](https://github.com/springdoc/springdoc-openapi)
 - [Swagger 2.X Annotations](https://github.com/swagger-api/swagger-core/wiki/Swagger-2.X---Annotations)
-- **[Definições para construção de API REST](https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/doc_pilha_java_2/arquitetura/rest-apis.md)**[^rest-api-specs]
+- **[Definições para construção de API REST](https://xpto.com/dti/orientacoes-gerais/guia/blob/doc_pilha_java_2/arquitetura/rest-apis.md)**[^rest-api-specs]
 
 # Ferramentas úteis
 
@@ -225,7 +225,7 @@ Há diversas outras anotações no Swagger Core. Reforçamos e reiteramos a reco
 
 # Notas e Referências
 
-[^rest-api-specs]: Apesar de tangente a utilização de OpenAPI e Swagger UI consideramos fundamental que as APIs REST da CAPES sigam as recomendações:  https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/doc_pilha_java_2/arquitetura/rest-apis.md
+[^rest-api-specs]: Apesar de tangente a utilização de OpenAPI e Swagger UI consideramos fundamental que as APIs REST da CAPES sigam as recomendações:  https://xpto.com/dti/orientacoes-gerais/guia/blob/doc_pilha_java_2/arquitetura/rest-apis.md
 [^springdoc]: https://springdoc.org/
 [^1]: Esse artefato está disponível como uma das dependências seletivas de `br.gov.capes.cgs.narq:capes-arquitetura-spring-boot-web-starter`
 [^obs-versao-no-archetype]: A versão já está configurado no `pom.xml` que é gerado pelo arquétipo e a tag `<version>` e a tag de propriedade podem ser suprimidas nesse caso.
@@ -251,6 +251,6 @@ Há diversas outras anotações no Swagger Core. Reforçamos e reiteramos a reco
 [^spring-pathvariable-javadoc]: `org.springframework.web.bind.annotation.PathVariable` - https://docs.spring.io/spring-framework/docs/5.3.12/javadoc-api/org/springframework/web/bind/annotation/PathVariable.html
 [^spring-requestheader-javadoc]: `org.springframework.web.bind.annotation.RequestHeader` - https://docs.spring.io/spring-framework/docs/5.3.12/javadoc-api/org/springframework/web/bind/annotation/RequestHeader.html
 [^k8s-configmap]: Kubernetes ConfigMaps - https://kubernetes.io/pt-br/docs/concepts/configuration/configmap/
-[^pipeline-apps]: **Gitlab Pipeline** é a pipeline padrão para aplicações - https://git.capes.gov.br/cgs/DEVOPS/automations/gitlab-pipeline
-[^chart-capes-aplic]: Helm Chart Capes Aplic - https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/devops/orientacoes-tecnicas/chart-capes-aplic.md
+[^pipeline-apps]: **Gitlab Pipeline** é a pipeline padrão para aplicações - https://xpto.com/cgs/DEVOPS/automations/gitlab-pipeline
+[^chart-capes-aplic]: Helm Chart Capes Aplic - https://xpto.com/dti/orientacoes-gerais/guia/blob/master/devops/orientacoes-tecnicas/chart-capes-aplic.md
 [^obs-versionamento]: Em caso de inconsistência entre as versões apontas aqui, a implementação tem precedência. Favor informar a arquitetura nesses casos: lista.arquitetura@capes.gov.br

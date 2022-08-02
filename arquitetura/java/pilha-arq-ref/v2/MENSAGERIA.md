@@ -2,7 +2,7 @@
 
 # Leituras Recomendadas
 
-- [Eventos & Mensageria entre aplicações](https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/definicoes/eventos/README.md)
+- [Eventos & Mensageria entre aplicações](https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/definicoes/eventos/README.md)
 - [ AMQP 0-9-1 Model Explained - RabbitMQ](https://www.rabbitmq.com/tutorials/amqp-concepts.html)
 
 # Introdução
@@ -227,10 +227,10 @@ Os exemplos devem ser suficientes para implementar o que está descrito como um 
 [^spring-RabbitListener-javadoc]: `org.springframework.amqp.rabbit.annotation.RabbitListener` - https://docs.spring.io/spring-amqp/docs/2.3.10/api/org/springframework/amqp/rabbit/annotation/RabbitListener.html
 [^spring-QueueBinding-javadoc]: `org.springframework.amqp.rabbit.annotation.QueueBinding` - https://docs.spring.io/spring-amqp/docs/2.3.10/api/org/springframework/amqp/rabbit/annotation/QueueBinding.html
 [^spring-Binding-javadoc]: `org.springframework.amqp.core.Binding` - https://docs.spring.io/spring-amqp/docs/2.3.10/api/org/springframework/amqp/core/Binding.html
-[^formato-msg-event-capes]: Vide https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/melhoria_arquitetura-eventos/arquitetura/definicoes/eventos/README.md#131-publicar-evento
+[^formato-msg-event-capes]: Vide https://xpto.com/dti/orientacoes-gerais/guia/blob/melhoria_arquitetura-eventos/arquitetura/definicoes/eventos/README.md#131-publicar-evento
 [^fasterxml-jackson]: Jackson Project - https://github.com/FasterXML/jackson
 [^spring-RabbitTemplate-javadoc]: `org.springframework.amqp.rabbit.core.RabbitTemplate` - https://docs.spring.io/spring-amqp/docs/2.3.10/api/org/springframework/amqp/rabbit/core/RabbitTemplate.html
-[^docs-eventos]: Eventos & Mensageria entre aplicações - https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/definicoes/eventos/README.md
+[^docs-eventos]: Eventos & Mensageria entre aplicações - https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/definicoes/eventos/README.md
 [^rabbitmq-jms-no-xa]: https://www.rabbitmq.com/jms-client.html#limitations
 [^jms]: Java Message Service - https://www.oracle.com/java/technologies/java-message-service.html
 [^jta]: Java Transaction API - https://www.oracle.com/java/technologies/jta.html

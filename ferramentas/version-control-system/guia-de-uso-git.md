@@ -12,7 +12,7 @@ Cada projeto ficará organizado conforme mostrado na figura acima em que cada it
 - **COORDENAÇÃO**: Subgrupo[^2] do gitlab que representa a coordenação abaixo da coordenação geral.
 - **PROJETO**: Subgrupo[^2] do gitlab que representa que agrupa um ou mais projetos[^3].
 - **SISTEMA**: Subgrupo[^3] do gitlab que vai gerenciar o conteúdo/arquivo do sistema.
-* Vide item:  [DevOps - Criar Projetos](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/procedimentos-operacionais/criar-grupos-projetos)
+* Vide item:  [DevOps - Criar Projetos](https://xpto.com/dti/orientacoes-gerais/guia/wikis/Devops/procedimentos-operacionais/criar-grupos-projetos)
 
 ### Repositório
 A raiz do repositório deverá ser composta apenas dos seguintes elementos:
@@ -28,7 +28,7 @@ A raiz do repositório deverá ser composta apenas dos seguintes elementos:
 1. No gitlab, um **grupo** é um agrupador que concentra várias funcionalidades, tais como: subgrupos, wiki, variáveis que podem ser compartilhadas com seus subcomponentes.
 1. No gitlab, um **subgrupo** é criado tal qual a grupo normal, diferente apenas por está dentro de um grupo. Porém, um subgrupo herda várias propriedades do grupo pai. 
 1. No gitlab, um **projeto** é um agrupador de várias funcionalidades, dentre elas um repositório git. 
-* Vide item:  [DevOps - Criar Grupos](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/procedimentos-operacionais/criar-grupos-projetos)
+* Vide item:  [DevOps - Criar Grupos](https://xpto.com/dti/orientacoes-gerais/guia/wikis/Devops/procedimentos-operacionais/criar-grupos-projetos)
 
 # Git Flow
 ![Fluxo_do_Git](uploads/be817a8d0bf7cf9b9847a82a376b3ccb/Fluxo_do_Git.png)

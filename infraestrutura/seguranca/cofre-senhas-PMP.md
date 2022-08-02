@@ -19,7 +19,7 @@
 # Visão Geral
 No gerenciamento de um ambiente computacional com certa complexidade, o gerenciamento das senhas de serviço (senhas não pessoais) que integram os serviços, sistemas e bancos de dados, se faz necessário. O uso de planilhas, e-mail e ferramentas descentralizadas trazem vulnerabilidades problemas na gestão de forma profissional. 
 
-Com isto, a DTI/CGII implantou um **[cofre de senhas](https://git.capes.gov.br/cgii/seguranca/pmp)** (acesso restrito), utilizando o software **PMP (Password Manager Pro** da empresa Manage Engine, que centraliza tais dados sensíveis e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
+Com isto, a DTI/CGII implantou um **[cofre de senhas](https://xpto.com/cgii/seguranca/pmp)** (acesso restrito), utilizando o software **PMP (Password Manager Pro** da empresa Manage Engine, que centraliza tais dados sensíveis e permite o compartilhamento das contas com colaboradores e também através do uso de API, para as automações necessárias.
 
 <br><br>
 
@@ -36,7 +36,7 @@ Com isto, a DTI/CGII implantou um **[cofre de senhas](https://git.capes.gov.br/c
 
 <br>
 
-* **Alteração / Exclusão da senha** - a alteração da senha requer atualização tanto no cofre de senhas quanto na aplicação, sendo necessário o [registro de uma mudança](https://git.capes.gov.br/cgii/ccm/gmud/wikis/home), aplicando-se também para o caso de desativação de uma senha.
+* **Alteração / Exclusão da senha** - a alteração da senha requer atualização tanto no cofre de senhas quanto na aplicação, sendo necessário o [registro de uma mudança](https://xpto.com/cgii/ccm/gmud/wikis/home), aplicando-se também para o caso de desativação de uma senha.
 
 * **Contas locais, super usuários e senhas de certificados** - as senhas locais de administração (root, admin, sa, administrador...), normalmente criadas na instalação de um serviço, precisam estar registradas no cofre de senhas e serão compartilhadas apenas com os administradores respectivos daquela ferramenta, **quando estritamente necessário**. Os sistemas que permitem a criação de contas pessoais (ou integradas ao AD), com perfil de administrador devem ser utilizadas sempre que possível.
 

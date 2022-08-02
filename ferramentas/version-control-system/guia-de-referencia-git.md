@@ -43,7 +43,7 @@ Configurando Informações do Usuário, Inicializando e Clonando Repositórios
 ## Clonando um projeto   
 
 - ```git clone [url]```
-  > Ex: ```git clone https://git.capes.gov.br/cgs/csae/freire/freire.git```
+  > Ex: ```git clone https://xpto.com/cgs/csae/freire/freire.git```
   
 ## Branches
 

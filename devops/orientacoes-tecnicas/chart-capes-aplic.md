@@ -109,5 +109,5 @@ app:
 ```
 
 ## Referências
-- [Aplicação de Exemplo](https://git.capes.gov.br/cgs/DEVOPS/app-sample)
-- [Chart do Capes Aplic](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-capes-aplic)
+- [Aplicação de Exemplo](https://xpto.com/cgs/DEVOPS/app-sample)
+- [Chart do Capes Aplic](https://xpto.com/cgs/DEVOPS/helm/chart-capes-aplic)

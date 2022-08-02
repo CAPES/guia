@@ -2,7 +2,7 @@
 
 # Leituras Recomendadas
 
-- [Definições para construção de API REST](https://git.capes.gov.br/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md)
+- [Definições para construção de API REST](https://xpto.com/dti/orientacoes-gerais/guia/blob/master/arquitetura/rest-apis.md)
 
 # Introdução
 

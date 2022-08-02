@@ -58,7 +58,7 @@ dep-chart:
 
 Chart | Descrição
 ----- | -----------
-[capes-aplic](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-capes-aplic) | É o chart template padrão de aplicações em container da Capes.
-[cofre-senha](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) | Chart de integração entre o Openshift OCP e o Cofre de Senhas (Vault Hashicorp)
-[cronjob](https://git.capes.gov.br/cgs/DEVOPS/helm/cronjob) | Agendador de tarefas/jobs. Um job cria um ou mais Pods para realizar determinadas tarefas.
-[memcached](https://git.capes.gov.br/cgs/DEVOPS/helm/memcached) | Chart para utilização do memcached em aplicações PHP
+[capes-aplic](https://xpto.com/cgs/DEVOPS/helm/chart-capes-aplic) | É o chart template padrão de aplicações em container da Capes.
+[cofre-senha](https://xpto.com/cgs/DEVOPS/helm/chart-cofresenha) | Chart de integração entre o Openshift OCP e o Cofre de Senhas (Vault Hashicorp)
+[cronjob](https://xpto.com/cgs/DEVOPS/helm/cronjob) | Agendador de tarefas/jobs. Um job cria um ou mais Pods para realizar determinadas tarefas.
+[memcached](https://xpto.com/cgs/DEVOPS/helm/memcached) | Chart para utilização do memcached em aplicações PHP

@@ -8,7 +8,7 @@ O checklist abaixo tem como objetivo conhecer a aplicação que será migrada ou
 |Infraestrutura | Quantidade de CPU por máquina (Produção)	| Ex: 2 CPU|
 |Infraestrutura | Quantidade de Memória  por máquina (Produção)	| Ex: 8GB|
 |Time de Desenvolvimento | Implantação ou Migração	| Ex: Implantação/Migração|
-|Time de Desenvolvimento | Endereço GIT	| Ex: https://git.capes.gov.br/cgs/CSAE/sistema/aplicacao.git|
+|Time de Desenvolvimento | Endereço GIT	| Ex: https://xpto.com/cgs/CSAE/sistema/aplicacao.git|
 |Time de Desenvolvimento | Id da aplicação no Gestão	| Ex: 2982 |
 |Time de Desenvolvimento | SSO - Provedor de serviço	| Ex: aplic.capes.gov.br|
 |Time de Desenvolvimento | SSO - Tipo de Autenticação	| Ex: OAUTH|

@@ -10,7 +10,7 @@ SubGraph1 --> SubGraph1Flow
   SubGraph1Flow -- internet --> pomCentral[Maven Central]
   SubGraph1Flow -- internet --> packagist[packagist.org]
   SubGraph1Flow -- internet --> github[github.com]
-  Satis2Nexus -- Capes --> gitlab[git.capes.gov.br]
+  Satis2Nexus -- Capes --> gitlab[xpto.com]
   Satis2Nexus -- Capes --> svn[svn.capes.gov.br]
   Satis2Nexus --> internet[Internet :80 :443]
   Satis2Nexus --> SubGraph1Flow
@@ -81,7 +81,7 @@ Figura 1 - Exemplo de preenchimento para criar um **Blob Storage**.
 ## Repositórios
 ### Repositório interno Capes
 
-**NOTA1:** Este tipo de repositório deverá ser empregado para armazenar artefatos em VCS internos na capes. (*git.capes.gov.br* ou *svn.capes.gov.br*).
+**NOTA1:** Este tipo de repositório deverá ser empregado para armazenar artefatos em VCS internos na capes. (*xpto.com* ou *svn.capes.gov.br*).
 
 **NOTA2:** Este tipo de repostório demanda um Storage, crie-o antes de seguir em frente. [Instruções para criação de storage](#criar-store)
 

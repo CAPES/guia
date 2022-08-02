@@ -31,5 +31,5 @@ Consultar os projetos disponibilizados [^2] e [^3].
 ## Referências
 
 [^1]: https://12factor.net/pt_br/config
-[^2]: https://git.capes.gov.br/cgs/narq/pocs/feature-toggle/capes-feature-toggle-service
-[^3]: https://git.capes.gov.br/cgs/narq/pocs/feature-toggle/capes-feature-toggle-client
+[^2]: https://xpto.com/cgs/narq/pocs/feature-toggle/capes-feature-toggle-service
+[^3]: https://xpto.com/cgs/narq/pocs/feature-toggle/capes-feature-toggle-client

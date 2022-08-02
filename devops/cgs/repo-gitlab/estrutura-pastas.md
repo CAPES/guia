@@ -76,5 +76,5 @@ Linguagem | Pilha Capes | Gerenciador de Pacote
 --------- | ------ | ---------------------
 Angular   |        | [Yarn](https://yarnpkg.com/)
 Java      |        | [Maven](https://maven.apache.org/)
-PHP       | [Laravel](https://git.capes.gov.br/cgs/narq/frameworks/php/capes-arquitetura-laravel) | [Composer](https://getcomposer.org/)
+PHP       | [Laravel](https://xpto.com/cgs/narq/frameworks/php/capes-arquitetura-laravel) | [Composer](https://getcomposer.org/)
 Python    |        | [Pip](https://pypi.org/project/pip/)

@@ -126,7 +126,7 @@ O Actuator dispõe de _endpoints_ HTTP que podem ser utilizados pelos probes de 
 [^porta8089]: A porta 8089 é uma porta não atribuida no registro da IANA - https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt - visitado em 2022-03-22
 [^springboot-actuator-k8s-probes]: 2.9. Kubernetes Probes - https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints.kubernetes-probes
 [^springboot-actuator-endpoints]: 2.2. Exposing Endpoints - https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.endpoints.exposing
-[^exeplo-values-yaml]: É um exemplo do que poderia ser adicionado nos arquivos `values-*.yaml` que configuram o deploy da aplicação através do [Helm Chart CAPES-Aplic](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-capes-aplic)
+[^exeplo-values-yaml]: É um exemplo do que poderia ser adicionado nos arquivos `values-*.yaml` que configuram o deploy da aplicação através do [Helm Chart CAPES-Aplic](https://xpto.com/cgs/DEVOPS/helm/chart-capes-aplic)
 [^exploit]: Ataques, como de DDoS, ou abusos, como coleta de dados sensíveis, são exemplos de exploração indevida das aplicações.
 [^obs-versao-no-archetype]: A versão já está configurado no `pom.xml` que é gerado pelo arquétipo e a tag `<version>` e a tag de propriedade podem ser suprimidas nesse caso.
 [^springdoc-actuator]: Actuator support - https://springdoc.org/#actuator-support

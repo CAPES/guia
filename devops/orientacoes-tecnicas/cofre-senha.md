@@ -1,7 +1,7 @@
 # Introdução
 
-Essa documentação aborda os aspectos técnicos da integração, via API, entre o Openshift e o Cofre de Senhas (ferramenta Vault da Hashicorp) que é feita através de um [Operator do Kubernetes](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha-operator).
-Foi criado o [*chart*](https://git.capes.gov.br/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração.
+Essa documentação aborda os aspectos técnicos da integração, via API, entre o Openshift e o Cofre de Senhas (ferramenta Vault da Hashicorp) que é feita através de um [Operator do Kubernetes](https://xpto.com/cgs/DEVOPS/helm/chart-cofresenha-operator).
+Foi criado o [*chart*](https://xpto.com/cgs/DEVOPS/helm/chart-cofresenha) nomeado de `cofresenha` para facilitar a utilização dessa integração.
 
 <br>
 

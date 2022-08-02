@@ -87,7 +87,7 @@ Exemplo:
 ENTRYPOINT ["./app.jar", "--spring.jta.atomikos.datasource.oracle.password=${DB_PASS}"]
 ```
 
-Isso permite melhor controle da aplicação pela pilha spring boot através do orquestrador, sem precisar reconstruir a imagem. Essa prática é uma direta consequência da recomendação sobre **Configurações** no [_Twelve Factors_](https://git.capes.gov.br/dti/orientacoes-gerais/guia/wikis/Devops/primeiros-passos/12factor).
+Isso permite melhor controle da aplicação pela pilha spring boot através do orquestrador, sem precisar reconstruir a imagem. Essa prática é uma direta consequência da recomendação sobre **Configurações** no [_Twelve Factors_](https://xpto.com/dti/orientacoes-gerais/guia/wikis/Devops/primeiros-passos/12factor).
 
 ### 2. Configure a utilização de memória da JVM[^jvm-mem-at-docker]
 
