@@ -46,4 +46,3 @@ Seção destinada a documentação e definição do Núcleo de Arquitetura.
 
   - [Construção & Implantação de Aplicações](arquitetura/arquitetura/release-and-deploy.md)
 
-# [Recomendações e Considerações](recomendacoes/README.md)
