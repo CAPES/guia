@@ -8,5 +8,5 @@ Aqui encontram-se as principais orientações sobre o funcionamento dos serviço
 * [Arquitetura de Sistemas](arquitetura/README.md) - navegue sobre os métodos utilizados na arquitetura dos sitemas.
 
 <div align="center">
-![CAPES](capes-logo.png)
+[CAPES](capes-logo.png)
 </div>
