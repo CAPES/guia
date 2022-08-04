@@ -7,6 +7,6 @@ Aqui encontram-se as principais orientações sobre o funcionamento dos serviço
 # Conteúdo
 * [Arquitetura de Sistemas](arquitetura/README.md) - navegue sobre os métodos utilizados na arquitetura dos sitemas.
 
-<div align="center">
+
 ![CAPES logo](./capes-logo.png "Capes Logo")
-</div>
+
