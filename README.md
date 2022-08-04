@@ -1,18 +1,48 @@
-# Visão Geral deste Guia
+# Introdução
 
-Aqui encontram-se as principais orientações sobre o funcionamento dos serviços ofertados pela DTI ao seus colaboradores, constando também diretrizes sobre o desenvolvimento de sistemas.
-<br>
+Seção destinada a documentação e definição do Núcleo de Arquitetura.
 
+# Definições
 
-# Conteúdo
-* [Gerenciamento de Mudanças](https://xpto.com/cgii/ccm/gmud/wikis/home) - conheça sobre o processo de mudanças no ambiente de produção.
-* [Gestão de Projetos](https://gip.capes.gov.br/pwa) - veja os projetos da TI.
-* [Arquitetura de Sistemas](arquitetura/README.md) - navegue sobre os métodos utilizados na arquitetura dos sitemas.
-* [Banco de Dados](banco-de-dados/README.md) - descubra os métodos de conexão com os bancos de dados.
-* [DevOps](devops/README.md) - entenda sobre o funcioamento da integração de desenvolvimento e Operações, juntamente com suas tecnologias..
-* [Infraestrutura Tecnológica](infraestrutura/README.md) - compreenda sobre a infraestrutura de TI (conectividade, plataformas, segurança) utilizada.
-* [Ferramentas](ferramentas/README.md) - veja as ferrementas homologadas que são utilizadas para trabalho.
+- [Definições para construção de API REST](rest-apis.md)
+- [Eventos & Mensageria entre aplicações](definicoes/eventos/README.md)
+- [Microsserviços](microsservices.md)
+- [Especificações de Monitoramento de Aplicações](arquitetura/monitoramento-aplicacoes.md)
+- [Formato de Logging](definicoes/logging/README.md)
 
-<div align="center">
-![CAPES](capes-logo.png)
-</div>
+# Tecnologias
+
+## Backend
+
+### Java
+- Pilha na Arquitetura de Referência
+  - [Versão 1][0ce381c9]
+    - Leitura recomendada: [Entendendo o Projeto](https://wiki.capes.gov.br/index.php/DTI:Arquitetura_Servicos_Java_Guia_Programacao_Entendendo_Projeto)
+  - [Versão 2](java/pilha-arq-ref/v2/README.md)
+- JBoss
+  - [JMX remoto no JBoss EAP 6](jboss/jmx-remote-jboss-eap6.md)
+- Spring Boot
+  - [Orientações Técnicas](java/springboot/orientacoes-tecnicas.md)
+  - [Logging de aplicações](java/springboot/logback.md)
+
+  [0ce381c9]: https://wiki.capes.gov.br/index.php/DTI:Arquitetura_Servicos_Java "Ligação externa - Wiki da DTI"
+
+### PHP
+
+- [Laravel](php/laravel)
+- Zend
+- Symfony
+
+### Python
+
+## [Frontend](frontend/README.md)
+- [Angular](frontend/angular.md)
+
+## Ferramentas
+
+  - [Nexus - Gerenciador de Respositórios de Artefatos](ferramentas/nexus.md)
+
+# Instruções Técnicas
+
+  - [Construção & Implantação de Aplicações](arquitetura/arquitetura/release-and-deploy.md)
+
