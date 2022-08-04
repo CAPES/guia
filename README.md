@@ -33,7 +33,6 @@ Seção destinada a documentação e definição do Núcleo de Arquitetura.
 - Zend
 - Symfony
 
-### Python
 
 ## [Frontend](frontend/README.md)
 - [Angular](frontend/angular.md)
